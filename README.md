@@ -1,4 +1,4 @@
-# Cellication🔬
+# Cellification🔬
 - - -
 
 ## 커밋 메시지 규칙
