@@ -17,4 +17,28 @@ spring:
         - id: capstone-user-service
           uri: lb://CAPSTONE-USER-SERVICE
           predicates:
+            - Path=/capstone-user-service/login
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
+        - id: capstone-user-service
+          uri: lb://CAPSTONE-USER-SERVICE
+          predicates:
+            - Path=/capstone-user-service/users
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
+        - id: capstone-user-service
+          uri: lb://CAPSTONE-USER-SERVICE
+          predicates:
             - Path=/capstone-user-service/**
+            - Method=GET, DELETE
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
+            - AuthorizationHeaderFilter
+
+token:
+  secret: user_token
