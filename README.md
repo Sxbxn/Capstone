@@ -10,3 +10,7 @@
 - 20220406 CreateUser(유저 생성 기능 구현 완료)
 - 20220406 getUsers(모든 유저 조회 기능 구현 완료)
 - 20220406 getUser(특정 유저 조회 기능 구현 완료)
+
+# 내일 해야할 일
+- cell-service에서 cell정보 DB에 저장하는 createCell 기능,
+- cell-service에서 cell정보 삭제하는 deleteCell 기능,
