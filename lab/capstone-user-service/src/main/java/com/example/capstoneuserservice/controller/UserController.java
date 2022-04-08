@@ -5,6 +5,7 @@ import com.example.capstoneuserservice.jpa.UserEntity;
 import com.example.capstoneuserservice.service.UserService;
 import com.example.capstoneuserservice.vo.RequestUser;
 import com.example.capstoneuserservice.vo.ResponseUser;
+import org.bouncycastle.math.raw.Mod;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/capstone-user-service")
+@RequestMapping("/")
 public class UserController {
 
     private Environment env;
@@ -29,6 +30,7 @@ public class UserController {
         this.userService = userService;
     }
 
+    // 현재 user-service 상태 확인
     @GetMapping("/health_check")
     public String status() {
 //        return String.format("It's Working in User Service");
@@ -42,11 +44,13 @@ public class UserController {
                 env.getProperty("local.server.port"));
     }
 
+    // user-service 가 잘 실행되는지 확인
     @GetMapping
     public String welcome(){
         return env.getProperty("greeting.message");
     }
 
+    // user 새로 생성
     @PostMapping("/users")
     public ResponseEntity<ResponseUser> createUser(@RequestBody RequestUser user) {
         ModelMapper mapper = new ModelMapper();
@@ -60,6 +64,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.CREATED).body(responseUser);
     }
 
+    // 모든 user 조회
     @GetMapping("/users")
     public ResponseEntity<List<ResponseUser>> getUsers(){
         Iterable<UserEntity> userList = userService.getUserByAll();
@@ -72,6 +77,7 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
+    // 특정 user 조회
     @GetMapping("/users/{userId}")
     public ResponseEntity<ResponseUser> getUser(@PathVariable("userId") String userId){
         UserDto userDto = userService.getUserByUserId(userId);
@@ -80,4 +86,11 @@ public class UserController {
 
         return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
+
+    // 특정 user 삭제
+    @DeleteMapping("/{userId}")
+    public void deleteUser(@PathVariable("userId") String userId){
+        userService.deleteUserByUserId(userId);
+    }
+    // 특정 user 변경
 }
