@@ -5,17 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#22343C"
-    tools:context=".loadingActivity">
-
-<!--    <ImageView-->
-<!--        android:id="@+id/imageView"-->
-<!--        android:layout_width="97dp"-->
-<!--        android:layout_height="94dp"-->
-<!--        android:layout_marginTop="408dp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/ic_baseline_settings_24" />-->
+    tools:context=".LoadingActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"
