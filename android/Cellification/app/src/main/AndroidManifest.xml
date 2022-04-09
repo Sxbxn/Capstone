@@ -9,9 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Cellification">
+        <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".LoadingActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
