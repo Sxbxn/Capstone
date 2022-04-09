@@ -6,60 +6,59 @@
     android:layout_height="match_parent"
     android:background="#22343C">
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="209dp"
-        android:layout_height="237dp"
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="249dp"
+        android:layout_height="305dp"
         android:layout_marginTop="36dp"
         android:background="@drawable/dash_line"
-        android:contentDescription="uploadFile"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        app:srcCompat="@drawable/ic_baseline_add_circle_outline" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:autoSizeTextType="uniform"
-        android:text="CELLIFICATION"
-        android:textColor="@color/white"
-        android:textSize="35dp"
-        android:textStyle="normal|bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.513"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
-        android:layout_width="225dp"
+        android:id="@+id/button3"
+        android:layout_width="100dp"
         android:layout_height="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/button_style"
-        android:text="분석"
+        android:text="결과"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="100dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/button_style"
+        android:text="재선택"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="227dp"
         android:background="@drawable/bottom_bar"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints">
+
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/imageButton5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -67,7 +66,7 @@
             app:srcCompat="@drawable/ic_baseline_save" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/imageButton6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -75,7 +74,7 @@
             app:srcCompat="@drawable/ic_baseline_home" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/imageButton7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -83,5 +82,4 @@
             app:srcCompat="@drawable/ic_baseline_settings_gray" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
