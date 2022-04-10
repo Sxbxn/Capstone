@@ -12,5 +12,5 @@ public class CellDto {
     private Long deadCell;
     private Long viability;
 
-//    private String userId;
+    private String userId;
 }
