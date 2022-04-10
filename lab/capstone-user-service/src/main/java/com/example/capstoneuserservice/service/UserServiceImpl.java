@@ -7,6 +7,8 @@ import com.example.capstoneuserservice.vo.ResponseCell;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreaker;
+import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -21,6 +23,7 @@ import java.util.UUID;
 public class UserServiceImpl implements UserService{
     UserRepository userRepository;
     BCryptPasswordEncoder passwordEncoder;
+    CircuitBreakerFactory circuitBreakerFactory;
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
@@ -34,9 +37,12 @@ public class UserServiceImpl implements UserService{
     }
 
     @Autowired
-    public UserServiceImpl(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository,
+                           BCryptPasswordEncoder passwordEncoder,
+                           CircuitBreakerFactory circuitBreakerFactory) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.circuitBreakerFactory = circuitBreakerFactory;
     }
 
     @Override
@@ -64,7 +70,10 @@ public class UserServiceImpl implements UserService{
         }
 
         UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
-        List<ResponseCell> cells = new ArrayList<>();
+        CircuitBreaker circuitbreaker = circuitBreakerFactory.create("circuitbreaker");
+        List<ResponseCell> ordersList = circuitbreaker.run(() -> orderServiceClient.getOrders(userId),
+                throwable -> new ArrayList<>());
+        userDto.setOrders(ordersList);
         userDto.setCells(cells);
 
         return userDto;

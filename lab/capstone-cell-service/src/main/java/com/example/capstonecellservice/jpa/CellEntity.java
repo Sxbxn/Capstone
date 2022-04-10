@@ -21,6 +21,8 @@ public class CellEntity implements Serializable {
     private Integer liveCellCount;
     @Column(nullable = false)
     private Integer dieCellCount;
+    @Column(nullable = false)
+    private Double liveCellPercentage;
 
     @Column(nullable = false)
     private String userId;
