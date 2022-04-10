@@ -11,8 +11,7 @@ public class ResponseCell {
     private String cellId;
     private Integer liveCellCount;
     private Integer dieCellCount;
-    private Long liveCellPercentage;
-    private Long dieCellPercentage;
+    private Double liveCellPercentage;
 
     private Date createAt;
     private String userId;

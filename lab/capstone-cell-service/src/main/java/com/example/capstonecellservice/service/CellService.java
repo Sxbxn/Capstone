@@ -8,7 +8,9 @@ import java.util.List;
 
 @Service
 public interface CellService {
+    CellDto createCell(CellDto cellDto);
+
     CellDto getOneCellByUserId(String cellId);
 
-    List<CellDto> getCellByUserId(String userId);
+    Iterable<CellEntity> getCellByUserId(String userId);
 }

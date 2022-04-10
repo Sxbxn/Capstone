@@ -39,6 +39,15 @@ spring:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
             - AuthorizationHeaderFilter
+        - id: capstone-cell-service
+          uri: lb://CAPSTONE-CELL-SERVICE
+          predicates:
+            - Path=/capstone-cell-service/**
+            - Method=GET, POST, DELETE
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-cell-service/(?<segment>.*), /$\{segment}
+#            - AuthorizationHeaderFilter
 
 token:
   secret: user_token
