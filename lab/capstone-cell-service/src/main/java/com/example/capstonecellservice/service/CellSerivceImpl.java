@@ -3,6 +3,7 @@ package com.example.capstonecellservice.service;
 import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.jpa.CellRepository;
+import com.example.capstonecellservice.service.exception.CellnameNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
@@ -28,17 +29,24 @@ public class CellSerivceImpl implements CellService {
     }
 
     @Override
-    public CellDto getCellByCellId(String cellId) {
-        return null;
+    public CellDto getOneCellByCellId(String cellId) {
+        CellEntity cellEntity = cellRepository.findByCellId(cellId);
+
+//        if (cellEntity == null) {
+//            throw new CellnameNotFoundException("Cell not found");
+//        }
+        CellDto cellDto = new ModelMapper().map(cellEntity, CellDto.class);
+
+        return cellDto;
     }
 
     @Override
-    public CellDto getCellByUserId(String userId) {
-        return null;
+    public Iterable<CellEntity> getCellsByUserId(String userId) {
+        return cellRepository.findCellsByUserId(userId);
     }
 
     @Override
-    public Iterable<CellEntity> getCellByAll() {
-        return cellRepository.findAll();
+    public void deleteCellByUserId(String userId, String cellId) {
+        cellRepository.deleteByUserId(userId, cellId);
     }
 }

@@ -7,12 +7,9 @@ public interface CellService {
 
     CellDto createCell(CellDto cellDto);
 
+    CellDto getOneCellByCellId(String cellId); // cellId 통해 cell 정보 get
 
-    CellDto getCellByCellId(String cellId); // cellId 통해 cell 정보 get
+    Iterable<CellEntity> getCellsByUserId(String userId); // userId 통해 cell 정보들 get
 
-    CellDto getCellByUserId(String userId); // userId 통해 cell 정보 get
-
-    Iterable<CellEntity> getCellByAll();
-
-
+    void deleteCellByUserId(String userId, String cellId); // userId와 cellId 통해 해당하는 cell 삭제
 }

@@ -10,7 +10,7 @@ public class CellDto {
     private Long totalCell;
     private Long liveCell;
     private Long deadCell;
-    private Long viability;
+    private Double viability;
 
     private String userId;
 }
