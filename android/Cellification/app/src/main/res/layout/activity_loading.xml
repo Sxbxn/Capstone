@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#22343C"
+    tools:context=".LoadingActivity">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="97dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="52dp"
+        android:background="@drawable/loadingimage"
+        android:indeterminateDrawable="@drawable/loadingdrawable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cell_image"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:layout_width="264dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="56dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="center"
+        android:text="Now Loading.."
+        android:textColor="#FFFFFF"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+    <ImageView
+        android:id="@+id/cell_image"
+        android:layout_width="233dp"
+        android:layout_height="203dp"
+        android:layout_marginTop="44dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/loadingcellimage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
