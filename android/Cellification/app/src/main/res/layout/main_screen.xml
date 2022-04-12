@@ -7,7 +7,7 @@
     android:background="#22343C">
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButton_image_select"
         android:layout_width="209dp"
         android:layout_height="237dp"
         android:layout_marginTop="36dp"
@@ -34,7 +34,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/analysis"
         android:layout_width="225dp"
         android:layout_height="48dp"
         android:layout_marginTop="40dp"
@@ -43,7 +43,7 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
+        app:layout_constraintTop_toBottomOf="@+id/imageButton_image_select" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,11 +55,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/analysis"
         app:layout_constraintVertical_bias="1.0"
         tools:ignore="MissingConstraints">
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/repository"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -67,7 +67,7 @@
             app:srcCompat="@drawable/ic_baseline_save" />
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -75,7 +75,7 @@
             app:srcCompat="@drawable/ic_baseline_home" />
 
         <ImageButton
-            android:id="@+id/imageButton4"
+            android:id="@+id/setting"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
