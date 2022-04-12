@@ -1,8 +1,8 @@
-package com.kyonggi.cellification.repository.datasourceImpl
+package com.kyonggi.cellification.repository.cell.datasourceImpl
 
 import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.data.remote.api.CellServiceRequestFactory
-import com.kyonggi.cellification.repository.datasource.CellRemoteDataSource
+import com.kyonggi.cellification.repository.cell.datasource.CellRemoteDataSource
 import retrofit2.Response
 
 class CellRemoteDataSourceImpl: CellRemoteDataSource {

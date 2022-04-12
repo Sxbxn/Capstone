@@ -1,4 +1,4 @@
-package com.kyonggi.cellification.repository.datasource
+package com.kyonggi.cellification.repository.cell.datasource
 
 import com.kyonggi.cellification.data.model.cell.Cell
 import retrofit2.Response
