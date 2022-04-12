@@ -11,9 +11,8 @@
         android:theme="@style/Theme.Cellification">
         <activity android:name=".MainActivity"></activity>
         <activity
-            android:name=".LoadingActivity"
-            android:exported="true"
-            android:theme="@style/SplashScreen">
+            android:name=".TestActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

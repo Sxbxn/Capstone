@@ -8,11 +8,11 @@ import com.kyonggi.cellification.data.model.user.User
 @Dao
 interface userDao {
     @Query("SELECT * FROM users")
-    suspend fun getUser(): List<User>
+    suspend fun getUsers(): List<User>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun saveUser(users: List<User>)
+    suspend fun saveUsers(users: List<User>)
 
     @Query("DELETE FROM users")
-    suspend fun deleteUser(): List<User>
+    suspend fun deleteUsers(): List<User>
 }
