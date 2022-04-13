@@ -35,7 +35,8 @@ public class CellController {
 
         CellDto cellDto = mapper.map(cell, CellDto.class);
         cellDto.setUserId(userId);
-        cellDto.setViability(Double.valueOf(cellDto.getLiveCell() / cellDto.getTotalCell()) * 100);
+
+        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
         cellService.createCell(cellDto);
 
         ResponseCell responseCell = mapper.map(cellDto, ResponseCell.class);
