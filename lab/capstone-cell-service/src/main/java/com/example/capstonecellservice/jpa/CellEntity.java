@@ -19,11 +19,11 @@ public class CellEntity implements Serializable {
     private String cellId;
 
     @Column(nullable = false)
-    private Long totalCell; // 전체 세포 수
+    private Integer totalCell; // 전체 세포 수
     @Column(nullable = false)
-    private Long liveCell;  // 살아있는 세포 수
+    private Integer liveCell;  // 살아있는 세포 수
     @Column(nullable = false)
-    private Long deadCell;  // 죽은 세포 수
+    private Integer deadCell;  // 죽은 세포 수
     @Column(nullable = false)
     private Double viability; // 몇 퍼센트의 세포가 생존해 있는지 나타내는 수치
 

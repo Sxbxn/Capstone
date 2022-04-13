@@ -3,19 +3,28 @@ package com.example.capstonecellservice.service;
 import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.jpa.CellRepository;
-//import com.example.capstonecellservice.service.exception.CellnameNotFoundException;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
-public class CellSerivceImpl implements CellService {
+@Service
+@Transactional
+public class CellServiceImpl implements CellService {
 
     CellRepository cellRepository;
 
+    @Autowired
+    public CellServiceImpl(CellRepository cellRepository) {
+        this.cellRepository = cellRepository;
+    }
+
     @Override
     public CellDto createCell(CellDto cellDto) {
-        cellDto.setUserId(UUID.randomUUID().toString());
+        cellDto.setCellId(UUID.randomUUID().toString());
 
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);

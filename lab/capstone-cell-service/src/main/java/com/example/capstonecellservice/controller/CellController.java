@@ -7,6 +7,7 @@ import com.example.capstonecellservice.vo.RequestCell;
 import com.example.capstonecellservice.vo.ResponseCell;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,10 +16,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/capstone-cell-service")
+@RequestMapping("/")
 public class CellController {
 
-    private CellService cellService;
+    CellService cellService;
+
+    @Autowired
+    public CellController(CellService cellService) {
+        this.cellService = cellService;
+    }
 
     //Create
     //cell 새로 생성
@@ -29,7 +35,7 @@ public class CellController {
 
         CellDto cellDto = mapper.map(cell, CellDto.class);
         cellDto.setUserId(userId);
-        cellDto.setViability((double) (cellDto.getLiveCell() / cellDto.getTotalCell()) * 100);
+        cellDto.setViability(Double.valueOf(cellDto.getLiveCell() / cellDto.getTotalCell()) * 100);
         cellService.createCell(cellDto);
 
         ResponseCell responseCell = mapper.map(cellDto, ResponseCell.class);
@@ -62,12 +68,11 @@ public class CellController {
     }
 
     //Delete
-    //user의 전체 cell 삭제
-    @DeleteMapping("/{userId")
+    //user의 전체 cell 삭제 (회원 탈퇴시)
+    @DeleteMapping("/{userId}")
     public void deleteCells(@PathVariable("userId") String userId) {
         cellService.deleteCellByUserId(userId);
     }
-
 
     //user의 특정 cell 삭제
     @DeleteMapping("/{userId}/{cellId}")

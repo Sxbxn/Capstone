@@ -2,7 +2,9 @@ package com.example.capstonecellservice.service;
 
 import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.jpa.CellEntity;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface CellService {
 
     CellDto createCell(CellDto cellDto);

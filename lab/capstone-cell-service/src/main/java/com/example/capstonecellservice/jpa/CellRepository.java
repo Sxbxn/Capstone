@@ -3,7 +3,6 @@ package com.example.capstonecellservice.jpa;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface CellRepository extends JpaRepository<CellEntity, Long> {
 
@@ -14,6 +13,6 @@ public interface CellRepository extends JpaRepository<CellEntity, Long> {
     void deleteByUserId(String userId);
 
     @Modifying(clearAutomatically = true)
-    @Query("delete from CellEntity c where c.userId =: userId and c.cellId =: cellId")
+    @Query("delete from CellEntity c where c.userId = :userId and c.cellId = :cellId")
     void deleteByUserIdAndCellId(String userId, String cellId);
 }
