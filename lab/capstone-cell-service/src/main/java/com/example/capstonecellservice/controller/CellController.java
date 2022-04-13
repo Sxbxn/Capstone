@@ -62,10 +62,17 @@ public class CellController {
     }
 
     //Delete
+    //user의 전체 cell 삭제
+    @DeleteMapping("/{userId")
+    public void deleteCells(@PathVariable("userId") String userId) {
+        cellService.deleteCellByUserId(userId);
+    }
+
+
     //user의 특정 cell 삭제
     @DeleteMapping("/{userId}/{cellId}")
     public void deleteCell(@PathVariable("userId") String userId, @PathVariable("cellId") String cellId){
-        cellService.deleteCellByUserId(userId, cellId);
+        cellService.deleteCellByUserIdAndCellId(userId, cellId);
     }
 
 

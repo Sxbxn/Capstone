@@ -11,5 +11,7 @@ public interface CellService {
 
     Iterable<CellEntity> getCellsByUserId(String userId); // userId 통해 cell 정보들 get
 
-    void deleteCellByUserId(String userId, String cellId); // userId와 cellId 통해 해당하는 cell 삭제
+    void deleteCellByUserId(String userId); // userId 통해 cell 전체 삭제
+
+    void deleteCellByUserIdAndCellId(String userId, String cellId); // userId와 cellId 통해 해당하는 cell 삭제
 }
