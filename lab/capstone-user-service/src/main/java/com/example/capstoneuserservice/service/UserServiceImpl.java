@@ -1,9 +1,11 @@
 package com.example.capstoneuserservice.service;
 
+import com.example.capstoneuserservice.client.CellServiceClient;
 import com.example.capstoneuserservice.dto.UserDto;
 import com.example.capstoneuserservice.jpa.UserEntity;
 import com.example.capstoneuserservice.jpa.UserRepository;
 import com.example.capstoneuserservice.vo.ResponseCell;
+import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,15 +16,19 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Service
-public class UserServiceImpl implements UserService{
+@Slf4j
+@Transactional
+public class UserServiceImpl implements UserService {
     UserRepository userRepository;
     BCryptPasswordEncoder passwordEncoder;
+    CellServiceClient cellServiceClient;
     CircuitBreakerFactory circuitBreakerFactory;
 
     @Override
@@ -39,10 +45,12 @@ public class UserServiceImpl implements UserService{
     @Autowired
     public UserServiceImpl(UserRepository userRepository,
                            BCryptPasswordEncoder passwordEncoder,
-                           CircuitBreakerFactory circuitBreakerFactory) {
+                           CircuitBreakerFactory circuitBreakerFactory,
+                           CellServiceClient cellServiceClient) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.circuitBreakerFactory = circuitBreakerFactory;
+        this.cellServiceClient = cellServiceClient;
     }
 
     @Override
@@ -70,11 +78,11 @@ public class UserServiceImpl implements UserService{
         }
 
         UserDto userDto = new ModelMapper().map(userEntity, UserDto.class);
+
         CircuitBreaker circuitbreaker = circuitBreakerFactory.create("circuitbreaker");
-        List<ResponseCell> ordersList = circuitbreaker.run(() -> orderServiceClient.getOrders(userId),
+        List<ResponseCell> cellsList = circuitbreaker.run(() -> cellServiceClient.getCells(userId),
                 throwable -> new ArrayList<>());
-        userDto.setOrders(ordersList);
-        userDto.setCells(cells);
+        userDto.setCells(cellsList);
 
         return userDto;
     }
@@ -98,5 +106,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public void deleteUserByUserId(String userId) {
         userRepository.deleteByUserId(userId);
+        cellServiceClient.deleteCells(userId);
+    }
+
+    @Override
+    public void deleteCellByUserIdAndCellId(String userId, String cellId) {
+        cellServiceClient.deleteCell(userId, cellId);
     }
 }

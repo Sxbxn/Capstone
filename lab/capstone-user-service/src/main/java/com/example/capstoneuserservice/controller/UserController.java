@@ -35,15 +35,15 @@ public class UserController {
     // 현재 user-service 상태 확인
     @GetMapping("/health_check")
     public String status() {
-//        return String.format("It's Working in User Service");
-//                + ", port(local.server.port)=" + env.getProperty("local.server.port")
-//                + ", port(server.port)=" + env.getProperty("server.port")
+        return String.format("It's Working in User Service"
+                + ", port(local.server.port)=" + env.getProperty("local.server.port")
+                + ", port(server.port)=" + env.getProperty("server.port")
 ////                + ", gateway ip=" + env.getProperty("gateway.ip")
 ////                + ", message=" + env.getProperty("greeting.message")
-//                + ", token secret=" + env.getProperty("token.secret")
-//                + ", token expiration time=" + env.getProperty("token.expiration_time"));
-        return String.format("It's Working in User Service on Port %s",
-                env.getProperty("local.server.port"));
+                + ", token secret=" + env.getProperty("token.secret")
+                + ", token expiration time=" + env.getProperty("token.expiration_time"));
+//        return String.format("It's Working in User Service on Port %s",
+//                env.getProperty("local.server.port"));
     }
 
     // user-service 가 잘 실행되는지 확인
@@ -93,6 +93,12 @@ public class UserController {
     @DeleteMapping("/{userId}")
     public void deleteUser(@PathVariable("userId") String userId){
         userService.deleteUserByUserId(userId);
+
     }
-    // 특정 user 변경
+
+    @DeleteMapping("/{userId}/{cellId}")
+    public void deleteCellByUserId(@PathVariable("userId") String userId,
+                                   @PathVariable("cellId") String cellId) {
+        userService.deleteCellByUserIdAndCellId(userId, cellId);
+    }
 }
