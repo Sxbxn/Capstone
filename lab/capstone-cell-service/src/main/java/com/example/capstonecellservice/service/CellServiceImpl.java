@@ -7,12 +7,14 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 @Service
+@Transactional
 public class CellServiceImpl implements CellService{
     CellRepository cellRepository;
 
@@ -49,5 +51,15 @@ public class CellServiceImpl implements CellService{
     @Override
     public Iterable<CellEntity> getCellByUserId(String userId) {
         return cellRepository.findCellsByUserId(userId);
+    }
+
+    @Override
+    public void deleteCellByUserId(String userId) {
+        cellRepository.deleteByUserId(userId);
+    }
+
+    @Override
+    public void deleteCellByUserIdAndCellId(String userId, String cellID) {
+        cellRepository.deleteOneCell(userId, cellID);
     }
 }

@@ -13,4 +13,8 @@ public interface CellService {
     CellDto getOneCellByUserId(String cellId);
 
     Iterable<CellEntity> getCellByUserId(String userId);
+
+    void deleteCellByUserId(String userId);
+
+    void deleteCellByUserIdAndCellId(String userId, String cellID);
 }
