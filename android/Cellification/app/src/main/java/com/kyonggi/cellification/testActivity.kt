@@ -12,8 +12,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
-import com.kyonggi.cellification.ui.AnalysisFragment
-import com.kyonggi.cellification.ui.StorageFragment
+import com.kyonggi.cellification.ui.cell.AnalysisFragment
+import com.kyonggi.cellification.ui.cell.StorageFragment
+import com.kyonggi.cellification.ui.login.LogInActivity
 
 // foget password 변화 테스트
 
@@ -118,7 +119,7 @@ class TestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.login -> {
-                startActivity(Intent(this@TestActivity, LoginActivity::class.java))
+                startActivity(Intent(this@TestActivity, LogInActivity::class.java))
             }
         }
         return false

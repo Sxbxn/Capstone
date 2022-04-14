@@ -1,4 +1,4 @@
-package com.kyonggi.cellification.ui
+package com.kyonggi.cellification.ui.cell
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,7 +13,7 @@ class AnalysisDoneFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_analysis_complete, container, false)
+        return inflater.inflate(R.layout.fragment_analysis_done, container, false)
     }
 
 }

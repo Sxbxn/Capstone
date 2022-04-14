@@ -1,24 +1,21 @@
-package com.kyonggi.cellification
+package com.kyonggi.cellification.ui.login
 
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.kyonggi.cellification.databinding.ActivityLogInBinding
 import com.kyonggi.cellification.databinding.ActivitySignInBinding
 import com.kyonggi.cellification.utils.validateEmail
 import com.kyonggi.cellification.utils.validateName
 import com.kyonggi.cellification.utils.validateSigninPassword
 
-class SigninActivity : AppCompatActivity() {
+class SignInActivity : AppCompatActivity() {
     private lateinit var  binding: ActivitySignInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivitySignInBinding.inflate(layoutInflater)
-        val view = binding.root
-
         super.onCreate(savedInstanceState)
-        setContentView(view)
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val signinButton: Button = binding.buttonSignIn
         val idEditText: EditText = binding.editTextSigninId
