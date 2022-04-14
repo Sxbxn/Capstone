@@ -6,37 +6,47 @@
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     android:orientation="vertical"
-    tools:context=".ui.StorageFragment">
+    tools:context=".ui.cell.StorageFragment">
 
-    <SearchView
-        android:id="@+id/searchView"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:background="@drawable/searchview_style"
-        android:paddingStart="20dp" />
+        android:background="@color/tab_backgroundColor">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            app:theme="@style/AppSearchView"
+            android:queryHint="@string/search_hint"
+            android:background="@drawable/searchview_style"
+            android:paddingStart="10dp" />
+
+    </FrameLayout>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:background="@color/tab_backgroundColor"
-        app:tabIconTint="@color/white"
+        app:tabIconTint="@color/tab_selector_color"
         app:tabIndicatorColor="@color/white"
         app:tabSelectedTextColor="@color/white"
+        app:tabRippleColor="@color/backgroundColor"
         app:tabTextColor="@color/tab_unselected_color">
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/cloud_icon"
-            android:text="Cell Drive" />
+            android:text="@string/tab_drive_text" />
 
         <com.google.android.material.tabs.TabItem
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:icon="@drawable/folder_icon"
-            android:text="Saved" />
+            android:text="@string/tab_save_text" />
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -44,6 +54,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="16dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="2"
         tools:listitem="@layout/item_list"/>
 
 </LinearLayout>
