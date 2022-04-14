@@ -1,4 +1,4 @@
-package com.kyonggi.cellification.ui
+package com.kyonggi.cellification.ui.cell
 
 import android.content.Intent
 import android.os.Bundle

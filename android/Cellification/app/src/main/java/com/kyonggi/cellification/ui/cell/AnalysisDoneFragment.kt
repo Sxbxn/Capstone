@@ -1,4 +1,4 @@
-package com.kyonggi.cellification.ui
+package com.kyonggi.cellification.ui.cell
 
 import android.os.Bundle
 import android.view.LayoutInflater
