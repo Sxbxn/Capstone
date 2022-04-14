@@ -45,43 +45,42 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageButton_image_select" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/bottom_bar"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/analysis"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints">
-        <ImageButton
-            android:id="@+id/repository"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_baseline_save" />
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:layout_marginTop="32dp"-->
+<!--        android:background="@drawable/bottom_bar"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.0"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/analysis"-->
+<!--        app:layout_constraintVertical_bias="1.0"-->
+<!--        tools:ignore="MissingConstraints">-->
+<!--        <ImageButton-->
+<!--            android:id="@+id/repository"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            app:srcCompat="@drawable/ic_baseline_save" />-->
 
-        <ImageButton
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_baseline_home" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/home"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            app:srcCompat="@drawable/ic_baseline_home" />-->
 
-        <ImageButton
-            android:id="@+id/setting"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@android:color/transparent"
-            app:srcCompat="@drawable/ic_baseline_settings_gray" />
+<!--        <ImageButton-->
+<!--            android:id="@+id/setting"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_weight="1"-->
+<!--            android:background="@android:color/transparent"-->
+<!--            app:srcCompat="@drawable/ic_baseline_settings_gray" />-->
 
-    </LinearLayout>
-
+<!--    </LinearLayout>-->
 </androidx.constraintlayout.widget.ConstraintLayout>
