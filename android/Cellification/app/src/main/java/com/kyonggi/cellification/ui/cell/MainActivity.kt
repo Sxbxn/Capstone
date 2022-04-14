@@ -1,4 +1,4 @@
-package com.kyonggi.cellification.ui
+package com.kyonggi.cellification.ui.cell
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

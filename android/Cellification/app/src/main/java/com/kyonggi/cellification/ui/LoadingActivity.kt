@@ -1,10 +1,12 @@
-package com.kyonggi.cellification
+package com.kyonggi.cellification.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import com.kyonggi.cellification.R
+import com.kyonggi.cellification.ui.cell.MainActivity
 
 class LoadingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
