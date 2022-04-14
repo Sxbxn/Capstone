@@ -13,9 +13,8 @@ class LogInActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLogInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         binding = ActivityLogInBinding.inflate(layoutInflater)
-        val view = binding.root
         super.onCreate(savedInstanceState)
-        setContentView(view)
+        setContentView(binding.root)
 
 
         val signinButton: Button = binding.buttonSignin

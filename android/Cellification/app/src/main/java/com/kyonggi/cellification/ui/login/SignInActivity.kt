@@ -13,11 +13,9 @@ import com.kyonggi.cellification.utils.validateSigninPassword
 class SignInActivity : AppCompatActivity() {
     private lateinit var  binding: ActivitySignInBinding
     override fun onCreate(savedInstanceState: Bundle?) {
-        binding = ActivitySignInBinding.inflate(layoutInflater)
-        val view = binding.root
-
         super.onCreate(savedInstanceState)
-        setContentView(view)
+        binding = ActivitySignInBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val signinButton: Button = binding.buttonSignIn
         val idEditText: EditText = binding.editTextSigninId
