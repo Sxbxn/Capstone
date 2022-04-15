@@ -3,4 +3,5 @@
     <string name="search_hint">Enter the viability</string>
     <string name="tab_drive_text">Cell Drive</string>
     <string name="tab_save_text">Saved</string>
+    <string name="app_info_text">앱 정보</string>
 </resources>

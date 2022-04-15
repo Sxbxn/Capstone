@@ -62,5 +62,6 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$interceptor_version"
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0' // DrawerLayout
+    implementation 'androidx.preference:preference:1.2.0'
 
 }
