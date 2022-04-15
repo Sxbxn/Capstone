@@ -211,4 +211,7 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
+# Mac
+.DS_Store
+
 # End of https://www.toptal.com/developers/gitignore/api/android,androidstudio,windows,kotlin
