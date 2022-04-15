@@ -18,6 +18,6 @@ public class RequestUser {
     private String name;
 
     @NotNull(message = "Pwd cannot be null")
-    @Size(min = 8, message = "Pwd must be greater than eight characters")
+    @Size(max = 8, message = "Pwd must be greater than eight characters")
     private String pwd;
 }

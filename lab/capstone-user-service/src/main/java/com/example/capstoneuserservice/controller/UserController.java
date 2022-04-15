@@ -5,7 +5,6 @@ import com.example.capstoneuserservice.jpa.UserEntity;
 import com.example.capstoneuserservice.service.UserService;
 import com.example.capstoneuserservice.vo.RequestUser;
 import com.example.capstoneuserservice.vo.ResponseUser;
-import org.bouncycastle.math.raw.Mod;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -93,12 +92,31 @@ public class UserController {
     @DeleteMapping("/{userId}")
     public void deleteUser(@PathVariable("userId") String userId){
         userService.deleteUserByUserId(userId);
-
     }
 
     @DeleteMapping("/{userId}/{cellId}")
     public void deleteCellByUserId(@PathVariable("userId") String userId,
                                    @PathVariable("cellId") String cellId) {
         userService.deleteCellByUserIdAndCellId(userId, cellId);
+    }
+
+    // user 정보 변경
+    @PostMapping("/{userId}/subin")
+    public ResponseEntity<ResponseUser> updateUser(@PathVariable("userId") String userId, @RequestBody RequestUser user) {
+
+        UserDto findUser = userService.getUserByUserId(userId);
+
+        ModelMapper mapper = new ModelMapper();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+
+        findUser.setEmail(user.getEmail());
+        findUser.setName(user.getName());
+        findUser.setName(user.getPwd());
+
+        userService.updateUser(findUser);
+
+        ResponseUser responseUser = mapper.map(findUser, ResponseUser.class);
+
+        return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
 }

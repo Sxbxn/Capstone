@@ -113,4 +113,20 @@ public class UserServiceImpl implements UserService {
     public void deleteCellByUserIdAndCellId(String userId, String cellId) {
         cellServiceClient.deleteCell(userId, cellId);
     }
+
+    @Override
+    public UserDto updateUser(UserDto userDto) {
+
+        ModelMapper mapper = new ModelMapper();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+
+        UserEntity userEntity = mapper.map(userDto, UserEntity.class);
+        userEntity.setEncryptedPwd(passwordEncoder.encode(userDto.getPwd()));
+
+        userRepository.save(userEntity);
+
+        UserDto returnUserDto = mapper.map(userEntity, UserDto.class);
+
+        return returnUserDto;
+    }
 }
