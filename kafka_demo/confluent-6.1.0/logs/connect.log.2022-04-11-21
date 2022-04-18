@@ -1,0 +1,1191 @@
+[2022-04-11 21:00:09,882] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:00:09,890] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:00:19,893] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:00:19,894] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:00:29,895] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:00:29,896] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:00:39,896] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:00:39,898] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:00:49,901] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:00:49,902] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:00:59,903] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:00:59,903] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:01:09,908] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:01:09,908] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:01:19,913] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:01:19,914] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:01:29,917] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:01:29,918] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:01:39,923] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:01:39,924] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:01:49,926] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:01:49,927] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:01:59,929] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:01:59,929] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:02:09,934] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:02:09,934] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:02:19,937] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:02:19,939] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:02:29,944] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:02:29,944] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:02:39,948] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:02:39,948] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:02:49,951] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:02:49,952] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:02:59,957] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:02:59,958] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:03:09,960] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:03:09,961] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:03:19,963] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:03:19,965] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:03:29,971] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:03:29,972] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:03:39,973] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:03:39,975] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:03:49,978] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:03:49,979] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:03:59,979] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:03:59,980] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:04:09,983] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:04:09,983] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:04:19,988] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:04:19,989] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:04:29,991] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:04:29,992] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:04:39,998] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:04:39,998] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:04:50,000] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:04:50,000] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:05:00,005] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:05:00,006] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:05:10,010] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:05:10,012] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:05:20,016] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:05:20,017] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:05:30,021] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:05:30,023] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:05:40,024] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:05:40,026] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:05:50,032] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:05:50,034] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:06:00,043] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:06:00,045] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:06:10,050] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:06:10,051] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:06:20,057] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:06:20,070] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:06:30,075] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:06:30,076] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:06:40,079] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:06:40,080] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:06:50,085] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:06:50,085] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:07:00,090] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:07:00,091] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:07:10,096] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:07:10,097] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:07:20,101] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:07:20,102] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:07:30,107] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:07:30,108] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:07:40,113] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:07:40,113] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:07:50,118] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:07:50,119] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:00,124] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:08:00,125] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:10,130] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:08:10,133] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:20,135] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:08:20,136] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:30,140] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:08:30,141] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:36,630] INFO AbstractConfig values: 
+ (org.apache.kafka.common.config.AbstractConfig:361)
+[2022-04-11 21:08:36,656] INFO [Worker clientId=connect-1, groupId=connect-cluster] Connector my-sink-connect config updated (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1534)
+[2022-04-11 21:08:36,658] INFO [Worker clientId=connect-1, groupId=connect-cluster] Rebalance started (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:225)
+[2022-04-11 21:08:36,658] INFO [Worker clientId=connect-1, groupId=connect-cluster] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:540)
+[2022-04-11 21:08:36,667] INFO [Worker clientId=connect-1, groupId=connect-cluster] Successfully joined group with generation Generation{generationId=8, memberId='connect-1-f058ab45-5ef0-4b95-a2cd-cd8f11fa635e', protocol='sessioned'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:596)
+[2022-04-11 21:08:36,677] INFO [Worker clientId=connect-1, groupId=connect-cluster] Successfully synced group in generation Generation{generationId=8, memberId='connect-1-f058ab45-5ef0-4b95-a2cd-cd8f11fa635e', protocol='sessioned'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:756)
+[2022-04-11 21:08:36,679] INFO [Worker clientId=connect-1, groupId=connect-cluster] Joined group at generation 8 with protocol version 2 and got assignment: Assignment{error=0, leader='connect-1-f058ab45-5ef0-4b95-a2cd-cd8f11fa635e', leaderUrl='http://127.0.0.1:8083/', offset=7, connectorIds=[my-sink-connect, my-source-connect], taskIds=[my-source-connect-0], revokedConnectorIds=[], revokedTaskIds=[], delay=0} with rebalance delay: 0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1689)
+[2022-04-11 21:08:36,680] INFO [Worker clientId=connect-1, groupId=connect-cluster] Starting connectors and tasks using config offset 7 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1216)
+[2022-04-11 21:08:36,681] INFO [Worker clientId=connect-1, groupId=connect-cluster] Starting connector my-sink-connect (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1299)
+[2022-04-11 21:08:36,681] INFO Creating connector my-sink-connect of type io.confluent.connect.jdbc.JdbcSinkConnector (org.apache.kafka.connect.runtime.Worker:274)
+[2022-04-11 21:08:36,682] INFO SinkConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	topics = [my_topic_users]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:361)
+[2022-04-11 21:08:36,683] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	topics = [my_topic_users]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:361)
+[2022-04-11 21:08:36,685] INFO Instantiated connector my-sink-connect with version 10.4.0 of type class io.confluent.connect.jdbc.JdbcSinkConnector (org.apache.kafka.connect.runtime.Worker:284)
+[2022-04-11 21:08:36,686] INFO Finished creating connector my-sink-connect (org.apache.kafka.connect.runtime.Worker:310)
+[2022-04-11 21:08:36,687] INFO [Worker clientId=connect-1, groupId=connect-cluster] Finished starting connectors and tasks (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1244)
+[2022-04-11 21:08:36,690] INFO SinkConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	topics = [my_topic_users]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:361)
+[2022-04-11 21:08:36,690] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	topics = [my_topic_users]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:361)
+[2022-04-11 21:08:36,692] INFO Setting task configurations for 1 workers. (io.confluent.connect.jdbc.JdbcSinkConnector:51)
+[2022-04-11 21:08:37,163] INFO [Worker clientId=connect-1, groupId=connect-cluster] Tasks [my-sink-connect-0] configs updated (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1549)
+[2022-04-11 21:08:37,670] INFO [Worker clientId=connect-1, groupId=connect-cluster] Handling task config update by restarting tasks [] (org.apache.kafka.connect.runtime.distributed.DistributedHerder:647)
+[2022-04-11 21:08:37,670] INFO [Worker clientId=connect-1, groupId=connect-cluster] Rebalance started (org.apache.kafka.connect.runtime.distributed.WorkerCoordinator:225)
+[2022-04-11 21:08:37,670] INFO [Worker clientId=connect-1, groupId=connect-cluster] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:540)
+[2022-04-11 21:08:37,672] INFO [Worker clientId=connect-1, groupId=connect-cluster] Successfully joined group with generation Generation{generationId=9, memberId='connect-1-f058ab45-5ef0-4b95-a2cd-cd8f11fa635e', protocol='sessioned'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:596)
+[2022-04-11 21:08:37,675] INFO [Worker clientId=connect-1, groupId=connect-cluster] Successfully synced group in generation Generation{generationId=9, memberId='connect-1-f058ab45-5ef0-4b95-a2cd-cd8f11fa635e', protocol='sessioned'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:756)
+[2022-04-11 21:08:37,675] INFO [Worker clientId=connect-1, groupId=connect-cluster] Joined group at generation 9 with protocol version 2 and got assignment: Assignment{error=0, leader='connect-1-f058ab45-5ef0-4b95-a2cd-cd8f11fa635e', leaderUrl='http://127.0.0.1:8083/', offset=9, connectorIds=[my-sink-connect, my-source-connect], taskIds=[my-sink-connect-0, my-source-connect-0], revokedConnectorIds=[], revokedTaskIds=[], delay=0} with rebalance delay: 0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1689)
+[2022-04-11 21:08:37,676] INFO [Worker clientId=connect-1, groupId=connect-cluster] Starting connectors and tasks using config offset 9 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1216)
+[2022-04-11 21:08:37,677] INFO [Worker clientId=connect-1, groupId=connect-cluster] Starting task my-sink-connect-0 (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1258)
+[2022-04-11 21:08:37,678] INFO Creating task my-sink-connect-0 (org.apache.kafka.connect.runtime.Worker:509)
+[2022-04-11 21:08:37,680] INFO ConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig:361)
+[2022-04-11 21:08:37,682] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:361)
+[2022-04-11 21:08:37,691] INFO TaskConfig values: 
+	task.class = class io.confluent.connect.jdbc.sink.JdbcSinkTask
+ (org.apache.kafka.connect.runtime.TaskConfig:361)
+[2022-04-11 21:08:37,692] INFO Instantiated task my-sink-connect-0 with version 10.4.0 of type io.confluent.connect.jdbc.sink.JdbcSinkTask (org.apache.kafka.connect.runtime.Worker:524)
+[2022-04-11 21:08:37,693] INFO JsonConverterConfig values: 
+	converter.type = key
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = true
+ (org.apache.kafka.connect.json.JsonConverterConfig:361)
+[2022-04-11 21:08:37,693] INFO Set up the key converter class org.apache.kafka.connect.json.JsonConverter for task my-sink-connect-0 using the worker config (org.apache.kafka.connect.runtime.Worker:537)
+[2022-04-11 21:08:37,693] INFO JsonConverterConfig values: 
+	converter.type = value
+	decimal.format = BASE64
+	schemas.cache.size = 1000
+	schemas.enable = true
+ (org.apache.kafka.connect.json.JsonConverterConfig:361)
+[2022-04-11 21:08:37,693] INFO Set up the value converter class org.apache.kafka.connect.json.JsonConverter for task my-sink-connect-0 using the worker config (org.apache.kafka.connect.runtime.Worker:543)
+[2022-04-11 21:08:37,693] INFO Set up the header converter class org.apache.kafka.connect.storage.SimpleHeaderConverter for task my-sink-connect-0 using the worker config (org.apache.kafka.connect.runtime.Worker:550)
+[2022-04-11 21:08:37,694] INFO Initializing: org.apache.kafka.connect.runtime.TransformationChain{} (org.apache.kafka.connect.runtime.Worker:632)
+[2022-04-11 21:08:37,695] INFO SinkConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	topics = [my_topic_users]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.SinkConnectorConfig:361)
+[2022-04-11 21:08:37,695] INFO EnrichedConnectorConfig values: 
+	config.action.reload = restart
+	connector.class = io.confluent.connect.jdbc.JdbcSinkConnector
+	errors.deadletterqueue.context.headers.enable = false
+	errors.deadletterqueue.topic.name = 
+	errors.deadletterqueue.topic.replication.factor = 3
+	errors.log.enable = false
+	errors.log.include.messages = false
+	errors.retry.delay.max.ms = 60000
+	errors.retry.timeout = 0
+	errors.tolerance = none
+	header.converter = null
+	key.converter = null
+	name = my-sink-connect
+	predicates = []
+	tasks.max = 1
+	topics = [my_topic_users]
+	topics.regex = 
+	transforms = []
+	value.converter = null
+ (org.apache.kafka.connect.runtime.ConnectorConfig$EnrichedConnectorConfig:361)
+[2022-04-11 21:08:37,696] INFO ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = connector-consumer-my-sink-connect-0
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = connect-my-sink-connect
+	group.instance.id = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	socket.connection.setup.timeout.max.ms = 127000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.2
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.ByteArrayDeserializer
+ (org.apache.kafka.clients.consumer.ConsumerConfig:361)
+[2022-04-11 21:08:37,701] WARN The configuration 'metrics.context.connect.kafka.cluster.id' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:369)
+[2022-04-11 21:08:37,702] WARN The configuration 'metrics.context.connect.group.id' was supplied but isn't a known config. (org.apache.kafka.clients.consumer.ConsumerConfig:369)
+[2022-04-11 21:08:37,702] INFO Kafka version: 6.1.0-ccs (org.apache.kafka.common.utils.AppInfoParser:119)
+[2022-04-11 21:08:37,702] INFO Kafka commitId: 5496d92defc9bbe4 (org.apache.kafka.common.utils.AppInfoParser:120)
+[2022-04-11 21:08:37,702] INFO Kafka startTimeMs: 1649678917702 (org.apache.kafka.common.utils.AppInfoParser:121)
+[2022-04-11 21:08:37,711] INFO [Worker clientId=connect-1, groupId=connect-cluster] Finished starting connectors and tasks (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1244)
+[2022-04-11 21:08:37,712] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Subscribed to topic(s): my_topic_users (org.apache.kafka.clients.consumer.KafkaConsumer:961)
+[2022-04-11 21:08:37,713] INFO Starting JDBC Sink task (io.confluent.connect.jdbc.sink.JdbcSinkTask:48)
+[2022-04-11 21:08:37,713] INFO JdbcSinkConfig values: 
+	auto.create = true
+	auto.evolve = true
+	batch.size = 3000
+	connection.attempts = 3
+	connection.backoff.ms = 10000
+	connection.password = [hidden]
+	connection.url = jdbc:mysql://localhost:3306/mydb
+	connection.user = root
+	db.timezone = UTC
+	delete.enabled = false
+	dialect.name = 
+	fields.whitelist = []
+	insert.mode = insert
+	max.retries = 10
+	pk.fields = []
+	pk.mode = none
+	quote.sql.identifiers = ALWAYS
+	retry.backoff.ms = 3000
+	table.name.format = ${topic}
+	table.types = [TABLE]
+ (io.confluent.connect.jdbc.sink.JdbcSinkConfig:361)
+[2022-04-11 21:08:37,717] INFO Initializing writer using SQL dialect: MySqlDatabaseDialect (io.confluent.connect.jdbc.sink.JdbcSinkTask:67)
+[2022-04-11 21:08:37,718] INFO WorkerSinkTask{id=my-sink-connect-0} Sink task finished initialization and start (org.apache.kafka.connect.runtime.WorkerSinkTask:309)
+[2022-04-11 21:08:37,725] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Cluster ID: IuHWV9wQTZaaNAS3-i9hEA (org.apache.kafka.clients.Metadata:279)
+[2022-04-11 21:08:37,725] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Discovered group coordinator localhost:9092 (id: 2147483647 rack: null) (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:847)
+[2022-04-11 21:08:37,726] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:540)
+[2022-04-11 21:08:37,735] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] (Re-)joining group (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:540)
+[2022-04-11 21:08:37,740] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Successfully joined group with generation Generation{generationId=1, memberId='connector-consumer-my-sink-connect-0-6339d3dc-5647-4aba-99b6-c13796788c06', protocol='range'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:596)
+[2022-04-11 21:08:37,745] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Finished assignment for group at generation 1: {connector-consumer-my-sink-connect-0-6339d3dc-5647-4aba-99b6-c13796788c06=Assignment(partitions=[my_topic_users-0])} (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:626)
+[2022-04-11 21:08:37,749] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Successfully synced group in generation Generation{generationId=1, memberId='connector-consumer-my-sink-connect-0-6339d3dc-5647-4aba-99b6-c13796788c06', protocol='range'} (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:756)
+[2022-04-11 21:08:37,750] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Notifying assignor about the new Assignment(partitions=[my_topic_users-0]) (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:276)
+[2022-04-11 21:08:37,750] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Adding newly assigned partitions: my_topic_users-0 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:288)
+[2022-04-11 21:08:37,767] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Found no committed offset for partition my_topic_users-0 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:1354)
+[2022-04-11 21:08:37,770] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Resetting offset for partition my_topic_users-0 to position FetchPosition{offset=0, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 0 rack: null)], epoch=0}}. (org.apache.kafka.clients.consumer.internals.SubscriptionState:396)
+[2022-04-11 21:08:37,783] INFO Attempting to open connection #1 to MySql (io.confluent.connect.jdbc.util.CachedConnectionProvider:79)
+[2022-04-11 21:08:37,809] INFO Unable to connect to database on attempt 1/3. Will retry in 10000 ms. (io.confluent.connect.jdbc.util.CachedConnectionProvider:86)
+java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:79)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:192)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1392)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:635)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:150)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:89)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at io.confluent.connect.jdbc.dialect.GenericDatabaseDialect.getConnection(GenericDatabaseDialect.java:250)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.newConnection(CachedConnectionProvider.java:80)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.getConnection(CachedConnectionProvider.java:52)
+	at io.confluent.connect.jdbc.sink.JdbcDbWriter.write(JdbcDbWriter.java:64)
+	at io.confluent.connect.jdbc.sink.JdbcSinkTask.put(JdbcSinkTask.java:84)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.deliverMessages(WorkerSinkTask.java:586)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.poll(WorkerSinkTask.java:329)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.iteration(WorkerSinkTask.java:232)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.execute(WorkerSinkTask.java:201)
+	at org.apache.kafka.connect.runtime.WorkerTask.doRun(WorkerTask.java:185)
+	at org.apache.kafka.connect.runtime.WorkerTask.run(WorkerTask.java:234)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.com.send.authentication.CachingSha2PasswordPlugin.process(CachingSha2PasswordPlugin.java:189)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:752)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:553)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1387)
+	... 21 more
+[2022-04-11 21:08:40,147] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:08:40,148] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:47,815] INFO Attempting to open connection #2 to MySql (io.confluent.connect.jdbc.util.CachedConnectionProvider:79)
+[2022-04-11 21:08:47,829] INFO Unable to connect to database on attempt 2/3. Will retry in 10000 ms. (io.confluent.connect.jdbc.util.CachedConnectionProvider:86)
+java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:79)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:192)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1392)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:635)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:150)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:89)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at io.confluent.connect.jdbc.dialect.GenericDatabaseDialect.getConnection(GenericDatabaseDialect.java:250)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.newConnection(CachedConnectionProvider.java:80)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.getConnection(CachedConnectionProvider.java:52)
+	at io.confluent.connect.jdbc.sink.JdbcDbWriter.write(JdbcDbWriter.java:64)
+	at io.confluent.connect.jdbc.sink.JdbcSinkTask.put(JdbcSinkTask.java:84)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.deliverMessages(WorkerSinkTask.java:586)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.poll(WorkerSinkTask.java:329)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.iteration(WorkerSinkTask.java:232)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.execute(WorkerSinkTask.java:201)
+	at org.apache.kafka.connect.runtime.WorkerTask.doRun(WorkerTask.java:185)
+	at org.apache.kafka.connect.runtime.WorkerTask.run(WorkerTask.java:234)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLException: RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.com.send.authentication.CachingSha2PasswordPlugin.process(CachingSha2PasswordPlugin.java:189)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:752)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:553)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1387)
+	... 21 more
+[2022-04-11 21:08:50,150] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:08:50,151] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:08:57,832] INFO Attempting to open connection #3 to MySql (io.confluent.connect.jdbc.util.CachedConnectionProvider:79)
+[2022-04-11 21:08:57,847] ERROR WorkerSinkTask{id=my-sink-connect-0} Task threw an uncaught and unrecoverable exception. Task is being killed and will not recover until manually restarted. Error: java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set) (org.apache.kafka.connect.runtime.WorkerSinkTask:612)
+org.apache.kafka.connect.errors.ConnectException: java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.getConnection(CachedConnectionProvider.java:59)
+	at io.confluent.connect.jdbc.sink.JdbcDbWriter.write(JdbcDbWriter.java:64)
+	at io.confluent.connect.jdbc.sink.JdbcSinkTask.put(JdbcSinkTask.java:84)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.deliverMessages(WorkerSinkTask.java:586)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.poll(WorkerSinkTask.java:329)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.iteration(WorkerSinkTask.java:232)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.execute(WorkerSinkTask.java:201)
+	at org.apache.kafka.connect.runtime.WorkerTask.doRun(WorkerTask.java:185)
+	at org.apache.kafka.connect.runtime.WorkerTask.run(WorkerTask.java:234)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:79)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:192)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1392)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:635)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:150)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:89)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at io.confluent.connect.jdbc.dialect.GenericDatabaseDialect.getConnection(GenericDatabaseDialect.java:250)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.newConnection(CachedConnectionProvider.java:80)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.getConnection(CachedConnectionProvider.java:52)
+	... 13 more
+Caused by: java.sql.SQLException: RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.com.send.authentication.CachingSha2PasswordPlugin.process(CachingSha2PasswordPlugin.java:189)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:752)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:553)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1387)
+	... 21 more
+[2022-04-11 21:08:57,849] ERROR WorkerSinkTask{id=my-sink-connect-0} Task threw an uncaught and unrecoverable exception. Task is being killed and will not recover until manually restarted (org.apache.kafka.connect.runtime.WorkerTask:187)
+org.apache.kafka.connect.errors.ConnectException: Exiting WorkerSinkTask due to unrecoverable exception.
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.deliverMessages(WorkerSinkTask.java:614)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.poll(WorkerSinkTask.java:329)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.iteration(WorkerSinkTask.java:232)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.execute(WorkerSinkTask.java:201)
+	at org.apache.kafka.connect.runtime.WorkerTask.doRun(WorkerTask.java:185)
+	at org.apache.kafka.connect.runtime.WorkerTask.run(WorkerTask.java:234)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.kafka.connect.errors.ConnectException: java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.getConnection(CachedConnectionProvider.java:59)
+	at io.confluent.connect.jdbc.sink.JdbcDbWriter.write(JdbcDbWriter.java:64)
+	at io.confluent.connect.jdbc.sink.JdbcSinkTask.put(JdbcSinkTask.java:84)
+	at org.apache.kafka.connect.runtime.WorkerSinkTask.deliverMessages(WorkerSinkTask.java:586)
+	... 10 more
+Caused by: java.sql.SQLTransientConnectionException: Could not connect to address=(host=localhost)(port=3306)(type=master) : RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.createException(ExceptionFactory.java:79)
+	at org.mariadb.jdbc.internal.util.exceptions.ExceptionFactory.create(ExceptionFactory.java:192)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1392)
+	at org.mariadb.jdbc.internal.util.Utils.retrieveProxy(Utils.java:635)
+	at org.mariadb.jdbc.MariaDbConnection.newConnection(MariaDbConnection.java:150)
+	at org.mariadb.jdbc.Driver.connect(Driver.java:89)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:208)
+	at io.confluent.connect.jdbc.dialect.GenericDatabaseDialect.getConnection(GenericDatabaseDialect.java:250)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.newConnection(CachedConnectionProvider.java:80)
+	at io.confluent.connect.jdbc.util.CachedConnectionProvider.getConnection(CachedConnectionProvider.java:52)
+	... 13 more
+Caused by: java.sql.SQLException: RSA public key is not available client side (option serverRsaPublicKeyFile not set)
+	at org.mariadb.jdbc.internal.com.send.authentication.CachingSha2PasswordPlugin.process(CachingSha2PasswordPlugin.java:189)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.authenticationHandler(AbstractConnectProtocol.java:752)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.createConnection(AbstractConnectProtocol.java:553)
+	at org.mariadb.jdbc.internal.protocol.AbstractConnectProtocol.connectWithoutProxy(AbstractConnectProtocol.java:1387)
+	... 21 more
+[2022-04-11 21:08:57,851] INFO Stopping task (io.confluent.connect.jdbc.sink.JdbcSinkTask:161)
+[2022-04-11 21:08:57,852] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Revoke previously assigned partitions my_topic_users-0 (org.apache.kafka.clients.consumer.internals.ConsumerCoordinator:307)
+[2022-04-11 21:08:57,853] INFO [Consumer clientId=connector-consumer-my-sink-connect-0, groupId=connect-my-sink-connect] Member connector-consumer-my-sink-connect-0-6339d3dc-5647-4aba-99b6-c13796788c06 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483647 rack: null) due to the consumer is being closed (org.apache.kafka.clients.consumer.internals.AbstractCoordinator:1029)
+[2022-04-11 21:08:57,876] INFO Metrics scheduler closed (org.apache.kafka.common.metrics.Metrics:668)
+[2022-04-11 21:08:57,876] INFO Closing reporter org.apache.kafka.common.metrics.JmxReporter (org.apache.kafka.common.metrics.Metrics:672)
+[2022-04-11 21:08:57,876] INFO Metrics reporters closed (org.apache.kafka.common.metrics.Metrics:678)
+[2022-04-11 21:08:57,879] INFO App info kafka.consumer for connector-consumer-my-sink-connect-0 unregistered (org.apache.kafka.common.utils.AppInfoParser:83)
+[2022-04-11 21:09:00,156] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:09:00,156] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:09:10,161] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:09:10,161] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:09:20,164] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:09:20,165] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:09:30,166] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:09:30,166] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:09:40,171] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:09:40,172] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:09:50,175] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:09:50,177] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:10:00,180] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:10:00,181] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:10:10,183] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:10:10,185] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:10:20,189] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:10:20,190] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:10:30,192] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:10:30,193] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:10:40,198] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:10:40,199] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:10:50,202] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:10:50,203] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:11:00,208] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:11:00,210] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:11:10,212] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:11:10,215] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:11:20,217] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:11:20,218] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:11:30,223] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:11:30,225] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:11:40,230] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:11:40,232] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:11:50,232] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:11:50,234] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:12:00,236] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:12:00,239] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:12:10,242] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:12:10,244] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:12:20,246] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:12:20,247] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:12:30,249] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:12:30,250] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:12:40,254] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:12:40,256] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:12:50,260] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:12:50,261] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:13:00,266] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:13:00,268] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:13:10,274] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:13:10,275] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:13:20,280] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:13:20,281] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:13:30,286] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:13:30,288] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:13:40,292] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:13:40,294] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:13:50,295] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:13:50,296] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:14:00,301] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:14:00,301] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:14:10,306] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:14:10,308] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:14:20,310] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:14:20,311] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:14:30,316] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:14:30,317] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:14:40,321] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:14:40,324] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:14:50,330] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:14:50,331] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:15:00,333] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:15:00,333] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:15:10,335] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:15:10,338] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:15:20,342] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:15:20,344] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:15:30,351] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:15:30,354] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:15:40,361] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:15:40,363] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:15:50,368] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:15:50,369] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:16:00,369] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:16:00,370] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:16:10,371] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:16:10,372] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:16:20,376] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:16:20,376] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:16:30,379] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:16:30,380] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:16:40,385] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:16:40,385] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:16:50,389] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:16:50,391] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:17:00,393] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:17:00,394] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:17:10,397] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:17:10,398] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:17:20,398] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:17:20,399] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:17:30,403] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:17:30,403] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:17:40,409] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:17:40,412] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:17:50,414] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:17:50,414] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:18:00,417] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:18:00,420] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:18:10,421] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:18:10,422] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:18:20,427] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:18:20,428] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:18:30,431] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:18:30,433] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:18:40,434] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:18:40,438] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:18:50,443] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:18:50,444] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:19:00,449] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:19:00,450] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:19:10,451] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:19:10,452] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:19:20,458] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:19:20,463] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:19:30,469] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:19:30,470] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:19:40,473] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:19:40,475] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:19:50,476] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:19:50,476] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:20:00,479] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:20:00,481] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:20:10,485] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:20:10,487] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:20:20,488] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:20:20,489] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:20:30,490] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:20:30,490] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:20:40,493] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:20:40,494] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:20:50,500] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:20:50,502] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:21:00,507] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:21:00,507] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:21:10,508] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:21:10,508] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:21:20,513] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:21:20,515] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:21:30,519] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:21:30,520] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:21:40,526] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:21:40,526] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:21:50,529] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:21:50,529] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:22:00,530] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:22:00,531] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:22:10,531] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:22:10,532] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:22:20,537] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:22:20,538] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:22:30,543] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:22:30,543] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:22:40,546] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:22:40,547] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:22:50,552] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:22:50,554] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:23:00,563] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:23:00,568] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:23:10,569] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:23:10,572] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:23:20,574] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:23:20,576] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:23:30,582] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:23:30,596] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:23:40,597] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:23:40,598] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:23:50,603] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:23:50,604] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:24:00,609] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:24:00,610] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:24:10,615] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:24:10,617] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:24:20,617] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:24:20,618] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:24:30,623] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:24:30,624] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:24:40,626] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:24:40,636] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:24:50,642] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:24:50,643] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:25:00,648] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:25:00,650] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:25:10,660] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:25:10,664] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:25:20,670] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:25:20,672] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:25:30,676] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:25:30,680] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:25:40,681] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:25:40,681] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:25:50,686] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:25:50,687] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:26:00,698] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:26:00,700] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:26:10,704] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:26:10,704] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:26:20,710] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:26:20,712] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:26:30,717] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:26:30,717] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:26:40,720] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:26:40,720] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:26:50,724] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:26:50,724] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:27:00,729] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:27:00,732] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:27:10,736] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:27:10,739] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:27:20,740] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:27:20,744] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:27:30,747] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:27:30,753] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:27:40,757] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:27:40,762] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:27:50,766] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:27:50,767] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:28:00,775] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:28:00,775] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:28:10,780] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:28:10,783] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:28:20,784] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:28:20,785] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:28:30,786] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:28:30,787] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:28:40,789] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:28:40,789] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:28:50,795] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:28:50,796] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:29:00,800] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:29:00,801] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:29:10,811] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:29:10,813] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:29:20,828] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:29:20,845] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:29:30,849] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:29:30,851] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:29:40,854] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:29:40,857] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:29:50,860] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:29:50,860] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:30:00,865] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:30:00,866] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:30:10,869] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:30:10,870] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:30:20,875] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:30:20,875] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:30:30,877] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:30:30,877] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:30:40,880] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:30:40,881] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:30:50,885] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:30:50,886] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:31:00,889] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:31:00,890] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:31:10,892] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:31:10,893] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:31:20,900] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:31:20,903] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:31:30,904] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:31:30,905] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:31:40,908] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:31:40,908] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:31:50,914] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:31:50,922] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:32:00,925] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:32:00,926] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:32:10,928] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:32:10,928] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:32:20,933] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:32:20,935] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:32:30,935] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:32:30,936] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:32:40,939] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:32:40,941] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:32:50,946] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:32:50,950] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:33:00,955] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:33:00,959] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:33:10,964] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:33:10,965] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:33:20,969] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:33:20,969] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:33:30,969] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:33:30,970] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:33:40,971] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:33:40,972] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:33:50,974] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:33:50,975] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:34:00,978] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:34:00,978] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:34:10,982] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:34:10,985] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:34:20,993] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:34:20,996] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:34:31,001] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:34:31,004] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:34:41,009] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:34:41,016] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:34:51,020] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:34:51,022] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:35:01,026] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:35:01,029] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:35:11,033] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:35:11,037] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:35:21,042] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:35:21,043] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:35:31,048] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:35:31,049] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:35:41,050] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:35:41,051] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:35:51,055] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:35:51,058] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:36:01,061] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:36:01,065] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:36:11,070] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:36:11,071] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:36:21,073] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:36:21,074] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:36:31,076] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:36:31,077] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:36:41,081] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:36:41,082] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:36:51,088] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:36:51,089] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:37:01,090] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:37:01,092] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:37:11,098] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:37:11,099] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:37:21,105] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:37:21,107] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:37:31,110] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:37:31,114] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:37:41,120] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:37:41,123] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:37:51,126] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:37:51,127] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:38:01,129] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:38:01,131] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:38:11,138] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:38:11,140] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:38:21,156] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:38:21,162] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:38:31,172] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:38:31,179] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:38:41,183] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:38:41,194] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:38:51,202] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:38:51,204] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:39:01,210] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:39:01,212] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:39:11,223] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:39:11,226] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:39:21,232] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:39:21,234] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:39:31,235] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:39:31,236] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:39:41,238] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:39:41,241] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:39:51,243] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:39:51,243] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:40:01,248] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:40:01,250] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:40:11,254] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:40:11,261] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:40:21,264] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:40:21,267] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:40:31,272] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:40:31,273] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:40:41,278] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:40:41,278] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:40:51,279] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:40:51,280] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:41:01,281] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:41:01,281] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:41:11,287] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:41:11,288] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:41:21,290] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:41:21,290] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:41:31,294] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:41:31,294] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:41:41,296] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:41:41,298] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:41:51,303] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:41:51,305] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:42:01,310] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:42:01,321] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:42:11,327] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:42:11,330] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:42:21,340] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:42:21,342] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:42:31,348] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:42:31,351] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:42:41,354] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:42:41,361] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:42:51,367] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:42:51,369] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:43:01,371] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:43:01,372] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:43:11,377] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:43:11,380] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:43:21,385] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:43:21,387] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:43:31,392] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:43:31,394] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:43:41,376] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:43:41,379] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:43:51,375] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:43:51,389] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:44:01,384] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:44:01,386] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:44:11,389] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:44:11,393] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:44:21,399] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:44:21,401] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:44:31,406] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:44:31,408] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:44:41,408] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:44:41,408] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:44:51,409] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:44:51,411] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:45:01,417] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:45:01,419] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:45:11,421] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:45:11,427] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:45:21,436] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:45:21,438] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:45:31,439] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:45:31,442] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:45:41,449] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:45:41,451] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:45:51,454] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:45:51,457] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:46:01,472] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:46:01,476] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:46:11,478] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:46:11,482] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:46:21,488] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:46:21,492] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:46:31,495] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:46:31,498] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:46:41,501] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:46:41,504] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:46:51,508] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:46:51,511] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:47:01,519] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:47:01,523] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:47:11,530] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:47:11,532] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:47:21,538] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:47:21,540] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:47:31,547] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:47:31,553] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:47:41,558] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:47:41,560] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:47:51,564] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:47:51,565] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:48:01,569] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:48:01,571] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:48:11,575] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:48:11,576] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:48:21,579] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:48:21,580] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:48:31,582] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:48:31,583] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:48:41,589] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:48:41,592] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:48:51,593] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:48:51,595] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:49:01,600] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:49:01,603] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:49:11,605] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:49:11,607] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:49:21,609] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:49:21,609] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:49:31,612] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:49:31,616] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:49:41,620] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:49:41,620] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:49:51,620] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:49:51,622] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:50:01,627] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:50:01,627] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:50:11,632] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:50:11,636] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:50:21,641] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:50:21,642] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:50:31,646] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:50:31,648] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:50:41,651] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:50:41,653] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:50:51,658] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:50:51,659] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:51:01,661] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:51:01,664] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:51:11,665] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:51:11,665] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:51:21,671] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:51:21,674] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:51:31,676] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:51:31,676] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:51:41,681] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:51:41,684] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:51:51,689] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:51:51,693] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:52:01,698] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:52:01,700] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:52:11,706] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:52:11,709] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:52:21,715] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:52:21,717] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:52:31,721] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:52:31,722] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:52:41,727] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:52:41,728] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:52:51,732] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:52:51,733] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:53:01,738] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:53:01,738] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:53:11,740] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:53:11,742] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:53:21,748] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:53:21,748] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:53:31,752] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:53:31,753] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:53:41,758] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:53:41,758] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:53:51,760] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:53:51,762] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:54:01,763] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:54:01,765] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:54:11,768] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:54:11,769] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:54:21,774] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:54:21,775] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:54:22,014] INFO [Worker clientId=connect-1, groupId=connect-cluster] Session key updated (org.apache.kafka.connect.runtime.distributed.DistributedHerder:1578)
+[2022-04-11 21:54:31,778] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:54:31,779] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:54:41,780] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:54:41,781] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:54:51,787] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:54:51,788] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:55:01,792] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:55:01,793] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:55:11,797] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:55:11,798] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:55:21,801] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:55:21,801] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:55:31,806] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:55:31,807] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:55:41,811] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:55:41,811] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:55:51,816] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:55:51,817] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:56:01,822] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:56:01,823] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:56:11,824] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:56:11,825] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:56:21,827] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:56:21,828] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:56:31,833] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:56:31,834] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:56:41,838] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:56:41,839] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:56:51,840] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:56:51,841] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:57:01,844] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:57:01,845] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:57:11,846] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:57:11,847] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:57:21,849] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:57:21,850] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:57:31,855] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:57:31,856] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:57:41,859] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:57:41,860] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:57:51,865] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:57:51,865] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:58:01,870] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:58:01,873] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:58:11,875] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:58:11,876] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:58:21,880] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:58:21,881] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:58:31,886] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:58:31,888] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:58:41,897] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:58:41,897] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:58:51,903] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:58:51,904] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:59:01,914] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:59:01,914] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:59:11,923] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:59:11,924] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:59:21,932] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:59:21,933] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:59:31,936] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:59:31,938] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:59:41,939] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:59:41,939] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
+[2022-04-11 21:59:51,949] INFO WorkerSourceTask{id=my-source-connect-0} Committing offsets (org.apache.kafka.connect.runtime.WorkerSourceTask:478)
+[2022-04-11 21:59:51,950] INFO WorkerSourceTask{id=my-source-connect-0} flushing 0 outstanding messages for offset commit (org.apache.kafka.connect.runtime.WorkerSourceTask:495)
