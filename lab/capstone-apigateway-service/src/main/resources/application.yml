@@ -39,7 +39,7 @@ spring:
           uri: lb://CAPSTONE-USER-SERVICE
           predicates:
             - Path=/capstone-user-service/**
-            - Method=GET, DELETE
+            - Method=GET, DELETE, PUT
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
