@@ -5,10 +5,10 @@ import com.example.capstoneuserservice.jpa.UserEntity;
 import com.example.capstoneuserservice.service.UserService;
 import com.example.capstoneuserservice.vo.RequestUser;
 import com.example.capstoneuserservice.vo.ResponseUser;
+import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -19,14 +19,14 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/")
+@RequiredArgsConstructor
 public class UserController {
 
     private Environment env;
     private UserService userService;
-    private CircuitBreakerFactory circuitBreakerFactory;
 
     @Autowired
-    public UserController(Environment env, UserService userService, CircuitBreakerFactory circuitBreakerFactory) {
+    public UserController(Environment env, UserService userService) {
         this.env = env;
         this.userService = userService;
     }
@@ -101,12 +101,10 @@ public class UserController {
     }
 
     // user 정보 변경
-    @PutMapping("/{userId}/update")
-    public ResponseEntity<ResponseUser> updateUser(@PathVariable("userId") String userId, @RequestBody RequestUser requestUser) {
+    @PutMapping("/update")
+    public ResponseEntity<ResponseUser> updateUser(@RequestBody RequestUser requestUser) {
         ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-
-        UserDto userDto = userService.updateUserInfo(userId, mapper.map(requestUser, UserDto.class));
+        UserDto userDto = userService.updateUserInfo(mapper.map(requestUser, UserDto.class));
 
         ResponseUser responseUser = mapper.map(userDto, ResponseUser.class);
 
