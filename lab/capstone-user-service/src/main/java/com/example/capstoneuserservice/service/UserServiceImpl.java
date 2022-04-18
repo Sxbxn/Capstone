@@ -115,10 +115,12 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto updateUserInfo(String userId, UserDto userDto) {
-        UserEntity userEntity = userRepository.findByUserId(userId);
+    public UserDto updateUserInfo(UserDto userDto) {
+        UserEntity userEntity = userRepository.findByEmail(userDto.getEmail());
 
+        userEntity.setEmail(userDto.getEmail());
         userEntity.setName(userDto.getName());
+        userDto.setUserId(userDto.getUserId());
         userEntity.setEncryptedPwd(passwordEncoder.encode(userDto.getPwd()));
 
         userRepository.save(userEntity);
