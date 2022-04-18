@@ -17,6 +17,8 @@ public interface UserService extends UserDetailsService {
 
     void deleteUserByUserId(String userId);
 
+    void deleteAllCellByUserId(String userId);
+
     void deleteCellByUserIdAndCellId(String userId, String cellId);
 
     UserDto updateUserInfo(UserDto userDto);
