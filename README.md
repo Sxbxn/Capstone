@@ -13,6 +13,7 @@
 - deleteUserByUserId(회원 탈퇴 기능 구현 완료)
 - deleteCellByUserIdAndCellId(특정 회원이 가지고있는 특정 cell 삭제 기능 구현 완료)
 - updateUserInfo(특정 회원의 email로 정보를 찾아와 회원의 정보를 update하는 기능 구현 완료)
+- deleteAllCellByUserId(특정 회원의 전체 cell 삭제 기능 구현 완료)
 
 ## cell-service(세포를 관리하는 프로젝트, 서버)
 - CreateCell(세포 생성 기능 구현 완료 - 테스트 용)
