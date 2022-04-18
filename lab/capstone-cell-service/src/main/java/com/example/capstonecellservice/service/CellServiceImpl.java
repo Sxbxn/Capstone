@@ -9,13 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.UUID;
 
 @Service
 @Transactional
-public class CellServiceImpl implements CellService{
+public class CellServiceImpl implements CellService {
+
     CellRepository cellRepository;
 
     @Autowired
@@ -29,27 +28,26 @@ public class CellServiceImpl implements CellService{
 
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-        CellEntity cellEntity = mapper.map(cellDto, CellEntity.class);
 
+        CellEntity cellEntity = mapper.map(cellDto, CellEntity.class);
         cellRepository.save(cellEntity);
 
-        CellDto returnValue = mapper.map(cellEntity, CellDto.class);
+        CellDto returnCellDto = mapper.map(cellEntity, CellDto.class);
 
-        return returnValue;
+        return returnCellDto;
     }
 
-    // cellId에 해당하는 정보만 퍼센테이지 계산해서 리턴
     @Override
-    public CellDto getOneCellByUserId(String cellId) {
+    public CellDto getOneCellByCellId(String cellId) {
         CellEntity cellEntity = cellRepository.findByCellId(cellId);
+
         CellDto cellDto = new ModelMapper().map(cellEntity, CellDto.class);
 
         return cellDto;
     }
 
-    // userId 에 해당하는 전체 cell 정보를 퍼센테이지 계산해서 설정해서 List 에 넣어 리턴
     @Override
-    public Iterable<CellEntity> getCellByUserId(String userId) {
+    public Iterable<CellEntity> getCellsByUserId(String userId) {
         return cellRepository.findCellsByUserId(userId);
     }
 
@@ -59,7 +57,7 @@ public class CellServiceImpl implements CellService{
     }
 
     @Override
-    public void deleteCellByUserIdAndCellId(String userId, String cellID) {
-        cellRepository.deleteOneCell(userId, cellID);
+    public void deleteCellByUserIdAndCellId(String userId, String cellId) {
+        cellRepository.deleteByUserIdAndCellId(userId, cellId);
     }
 }
