@@ -19,6 +19,5 @@ public interface UserService extends UserDetailsService {
 
     void deleteCellByUserIdAndCellId(String userId, String cellId);
 
-    @Transactional
-    UserDto updateUser(UserDto userDto);
+    UserDto updateUserInfo(String userId, UserDto userDto);
 }

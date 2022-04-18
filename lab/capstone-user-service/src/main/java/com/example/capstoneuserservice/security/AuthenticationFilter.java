@@ -39,7 +39,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     @Override
     public Authentication attemptAuthentication(HttpServletRequest request,
                                                 HttpServletResponse response) throws AuthenticationException {
-        // 사용자가 입력했던 정보를 Token으로 바꿔 인증 처리 매니저에 넘기면 아이디와 패스워드를 비교해주곘따는 뜻
+        // 사용자가 입력했던 정보를 Token으로 바꿔 인증 처리 매니저에 넘기면 아이디와 패스워드를 비교해주곘다는 뜻
         try {
             RequestLogin creds = new ObjectMapper().readValue(request.getInputStream(), RequestLogin.class);
 

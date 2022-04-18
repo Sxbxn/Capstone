@@ -115,18 +115,14 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDto updateUser(UserDto userDto) {
+    public UserDto updateUserInfo(String userId, UserDto userDto) {
+        UserEntity userEntity = userRepository.findByUserId(userId);
 
-        ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-
-        UserEntity userEntity = mapper.map(userDto, UserEntity.class);
+        userEntity.setName(userDto.getName());
         userEntity.setEncryptedPwd(passwordEncoder.encode(userDto.getPwd()));
 
         userRepository.save(userEntity);
 
-        UserDto returnUserDto = mapper.map(userEntity, UserDto.class);
-
-        return returnUserDto;
+        return userDto;
     }
 }

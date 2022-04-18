@@ -101,21 +101,14 @@ public class UserController {
     }
 
     // user 정보 변경
-    @PostMapping("/{userId}/subin")
-    public ResponseEntity<ResponseUser> updateUser(@PathVariable("userId") String userId, @RequestBody RequestUser user) {
-
-        UserDto findUser = userService.getUserByUserId(userId);
-
+    @PutMapping("/{userId}/update")
+    public ResponseEntity<ResponseUser> updateUser(@PathVariable("userId") String userId, @RequestBody RequestUser requestUser) {
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-        findUser.setEmail(user.getEmail());
-        findUser.setName(user.getName());
-        findUser.setName(user.getPwd());
+        UserDto userDto = userService.updateUserInfo(userId, mapper.map(requestUser, UserDto.class));
 
-        userService.updateUser(findUser);
-
-        ResponseUser responseUser = mapper.map(findUser, ResponseUser.class);
+        ResponseUser responseUser = mapper.map(userDto, ResponseUser.class);
 
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
