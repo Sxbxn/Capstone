@@ -94,6 +94,12 @@ public class UserController {
         userService.deleteUserByUserId(userId);
     }
 
+    // 특정 user의 모든 cell 삭제(cell 전체 삭제)
+    @DeleteMapping("/{userId}/all")
+    public void deleteAllCellByUserId(@PathVariable("userId") String userId) {
+        userService.deleteAllCellByUserId(userId);
+    }
+
     @DeleteMapping("/{userId}/{cellId}")
     public void deleteCellByUserId(@PathVariable("userId") String userId,
                                    @PathVariable("cellId") String cellId) {

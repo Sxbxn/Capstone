@@ -110,6 +110,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void deleteAllCellByUserId(String userId) {
+        cellServiceClient.deleteCells(userId);
+    }
+
+    @Override
     public void deleteCellByUserIdAndCellId(String userId, String cellId) {
         cellServiceClient.deleteCell(userId, cellId);
     }
