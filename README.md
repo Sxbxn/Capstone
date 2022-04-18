@@ -21,5 +21,5 @@
 - deleteCellByUserId(회원 탈퇴시 탈퇴한 회원이 가지고있는 모든 cell 삭제 기능 구현 완료)
 - deleteCellByUserIdAndCellId(특정한 회원이 가지고있는 특정한 cell 삭제 기능 구현 완료)
 
-# 내일 해야할 일
-- Docker
+# 앞으로 해야할 일
+- Docker, CD 기능 구현, Load Balancing, Database 서버 연결, Local에서 Image 관리, AI와 Local 서버연결, Android url 서버 
