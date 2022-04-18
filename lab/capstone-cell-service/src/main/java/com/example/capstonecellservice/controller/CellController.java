@@ -4,12 +4,13 @@ import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.service.CellService;
 import com.example.capstonecellservice.vo.RequestCell;
-
+import com.example.capstonecellservice.vo.ResponseCell;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/")
 public class CellController {
+
     CellService cellService;
 
     @Autowired
@@ -24,53 +26,62 @@ public class CellController {
         this.cellService = cellService;
     }
 
-    // cell 생성함
+    //Create
+    //cell 새로 생성
     @PostMapping("/{userId}/cells")
-    public CellDto createCell(@PathVariable("userId") String userId,
-                              @RequestBody RequestCell cell) {
+    public ResponseEntity<ResponseCell> createCell(@PathVariable("userId") String userId, @RequestBody RequestCell cell) {
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
         CellDto cellDto = mapper.map(cell, CellDto.class);
         cellDto.setUserId(userId);
-        Double sum = Double.valueOf(cellDto.getLiveCellCount() + cellDto.getDieCellCount());
-        cellDto.setLiveCellPercentage((Double.valueOf(cellDto.getLiveCellCount()) / sum)*100);
 
-        CellDto createCell = cellService.createCell(cellDto);
+        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
+        cellService.createCell(cellDto);
 
-        return createCell;
+        ResponseCell responseCell = mapper.map(cellDto, ResponseCell.class);
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(responseCell);
     }
 
-    // 전체 cell 을 불러옴
+    //Read
+    //user의 cell 리스트 조회
     @GetMapping("/{userId}/cells")
-    public List<CellDto> getCells(@PathVariable("userId") String userId) {
-        Iterable<CellEntity> cells = cellService.getCellByUserId(userId);
-        List<CellDto> result = new ArrayList<>();
-        cells.forEach(v ->{
-            result.add(new ModelMapper().map(v, CellDto.class));
+    public ResponseEntity<List<ResponseCell>> getCells(@PathVariable("userId") String userId) {
+        Iterable<CellEntity> findcells = cellService.getCellsByUserId(userId);
+
+        List<ResponseCell> result = new ArrayList<>();
+        findcells.forEach(v -> {
+            result.add(new ModelMapper().map(v, ResponseCell.class));
         });
 
-        return result;
+        return ResponseEntity.status(HttpStatus.OK).body(result);
     }
 
-    // cellId 에 해당하는 하나만 불러옴
-    @GetMapping("/{cellId}")
-    public CellDto getCell(@PathVariable("cellId") String cellId) {
-        CellDto cellDto = cellService.getOneCellByUserId(cellId);
+    //CellId를 통한 특정 cell 조회
+    @GetMapping("/cells/{cellId}")
+    public ResponseEntity<ResponseCell> getOneCell(@PathVariable("cellId") String cellId) {
+        CellDto cellDto = cellService.getOneCellByCellId(cellId);
 
-        return cellDto;
+        ResponseCell returnValue = new ModelMapper().map(cellDto, ResponseCell.class);
+
+        return ResponseEntity.status(HttpStatus.OK).body(returnValue);
     }
 
-    // 회원 탈퇴시 해당하는 userId 를 가지고있는 모든 cell 삭제
+    //Delete
+    //user의 전체 cell 삭제 (회원 탈퇴시)
     @DeleteMapping("/{userId}")
     public void deleteCells(@PathVariable("userId") String userId) {
         cellService.deleteCellByUserId(userId);
     }
 
-    // 회원이 가지고있는 특정한 cellId 하나 삭제
-    @DeleteMapping(value = {"/{userId}/{cellId}"})
-    public void deleteCell(@PathVariable("userId") String userId,
-                           @PathVariable("cellId") String cellId) {
+    //user의 특정 cell 삭제
+    @DeleteMapping("/{userId}/{cellId}")
+    public void deleteCell(@PathVariable("userId") String userId, @PathVariable("cellId") String cellId){
         cellService.deleteCellByUserIdAndCellId(userId, cellId);
     }
+
+
+
+
 }

@@ -11,18 +11,21 @@ import java.util.Date;
 @Entity
 @Table(name = "cell")
 public class CellEntity implements Serializable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false, unique = true)
     private String cellId;
+
     @Column(nullable = false)
-    private Integer liveCellCount;
+    private Integer totalCell; // 전체 세포 수
     @Column(nullable = false)
-    private Integer dieCellCount;
+    private Integer liveCell;  // 살아있는 세포 수
     @Column(nullable = false)
-    private Double liveCellPercentage;
+    private Integer deadCell;  // 죽은 세포 수
+    @Column(nullable = false)
+    private Double viability; // 몇 퍼센트의 세포가 생존해 있는지 나타내는 수치
 
     @Column(nullable = false)
     private String userId;
