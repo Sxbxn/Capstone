@@ -7,14 +7,14 @@ patch_x_size = 408
 patch_y_size = 306
 x_stride = 204
 y_stride = 153
-input_dir_image = 'data\\result_img\\'
-output_dir = 'preprocessing/patch_label\\'
+input_dir_image = '/home/dh/Project/Capstone/data/K562_Pointing_data/train/img/'
+output_dir = '/home/dh/Project/Capstone/data/patch_train/img/'
 
 img_list = glob.glob(input_dir_image+'*.jpg')
 
 for imname in img_list:
     img = cv2.imread(imname)
-    imname=imname.split("\\")[-1]
+    imname=imname.split('/')[-1]
     
     for i in range(0,(img_x_size-patch_x_size)//x_stride+1,1):
         for k in range(0,(img_y_size-patch_y_size)//y_stride+1,1):
