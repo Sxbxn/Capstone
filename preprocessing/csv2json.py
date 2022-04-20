@@ -18,7 +18,7 @@ for idx, csv in enumerate(csvs):
     df = pd.read_csv(csv)
     shapes = []
 
-    for idx, row in df.iterrows():
+    for idx2, row in df.iterrows():
         val = {'label': 'live' if row[2]==1 else 'dead', 'points':[[int(row[3]),int(row[4]) ],[int(row[5]),int(row[6])]], 'group_id': None, 'shape_type': 'rectangle', 'flags':  {}}
         shapes.append(val)
 
