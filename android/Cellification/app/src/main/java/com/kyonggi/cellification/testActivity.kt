@@ -12,7 +12,9 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.kyonggi.cellification.ui.cell.AnalysisDoneFragment
 import com.kyonggi.cellification.ui.cell.AnalysisFragment
+import com.kyonggi.cellification.ui.cell.ResultFragment
 import com.kyonggi.cellification.ui.cell.StorageFragment
 import com.kyonggi.cellification.ui.login.LogInActivity
 
@@ -84,6 +86,8 @@ import com.kyonggi.cellification.ui.login.LogInActivity
 class TestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
     private val fragmentManager: FragmentManager = supportFragmentManager
     private val fragmentAnalysis: AnalysisFragment = AnalysisFragment()
+    private val fragmentAnalysisDone: AnalysisDoneFragment = AnalysisDoneFragment()
+    private val fragmentResult: ResultFragment = ResultFragment()
     private val fragmentStorage: StorageFragment = StorageFragment()
     private var backpressedTime: Long = 0
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -118,7 +122,7 @@ class TestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.login -> {
+            R.id.nav_login -> {
                 startActivity(Intent(this@TestActivity, LogInActivity::class.java))
             }
         }
@@ -137,6 +141,17 @@ class TestActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             } else if (System.currentTimeMillis() <= backpressedTime + 2000) {
                 finish()
             }
+
+        }
+    }
+    fun changeFragment(index: Int){
+        when(index){
+            R.id.analysis ->
+                fragmentManager.beginTransaction().replace(R.id.fragmentContainerView,fragmentAnalysisDone).commit()
+            R.id.reselect ->
+                fragmentManager.beginTransaction().replace(R.id.fragmentContainerView,fragmentAnalysis).commit()
+            R.id.result ->
+                fragmentManager.beginTransaction().replace(R.id.fragmentContainerView,fragmentResult).commit()
 
         }
     }
