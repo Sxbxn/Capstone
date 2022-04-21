@@ -75,4 +75,5 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
     // Activity Ktx
     implementation "androidx.activity:activity-ktx:1.4.0"
+
 }

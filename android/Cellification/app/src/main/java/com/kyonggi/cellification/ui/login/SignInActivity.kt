@@ -6,17 +6,14 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.databinding.ActivitySignInBinding
 import com.kyonggi.cellification.ui.viewmodel.UserViewModel
-import com.kyonggi.cellification.ui.viewmodel.UserViewModelFactory
 import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.validateEmail
 import com.kyonggi.cellification.utils.validateName
 import com.kyonggi.cellification.utils.validateSigninPassword
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
