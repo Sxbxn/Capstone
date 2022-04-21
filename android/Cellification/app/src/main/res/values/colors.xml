@@ -11,7 +11,7 @@
     <color name="diecell_backgroundColor">#FF565E</color>
     <color name="livecell_backgroundColor">#17BD7A</color>
     <color name="backgroundColor">#22343C</color>
-    <color name="cardview_backgroundColor">#30444E</color>
+    <color name="cardview_backgroundColor">#C0C0C3</color>
     <color name="bottom_navColor">#30444E</color>
     <color name="menu_color">#999999</color>
     <color name="tab_backgroundColor">#30444E</color>

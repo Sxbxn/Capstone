@@ -1,69 +1,40 @@
-//package com.kyonggi.cellification.repository.user
-//
-//import android.util.Log
-//import com.kyonggi.cellification.data.model.user.User
-//import com.kyonggi.cellification.repository.user.datasource.UserLocalDataSource
-//import com.kyonggi.cellification.repository.user.datasource.UserRemoteDataSource
-//import java.lang.Exception
-//
-//class UserRepositoryImpl(
-//    private val userCacheDataSource: UserCacheDataSource,
-//    private val userLocalDataSource: UserLocalDataSource,
-//    private val userRemoteDataSource: UserRemoteDataSource
-//): UserRepository {
-//    override suspend fun getUser(): List<User> {
-//        return getUsersFromCache()
-//    }
-//
-//    override suspend fun updateUser(): List<User> {
-//        val newUserList = getUsersFromAPI()
-//        userLocalDataSource.clearAllUsers()
-//        userLocalDataSource.saveUsersToDB(newUserList)
-//        userCacheDataSource.saveUsersToCache(newUserList)
-//        return newUserList
-//    }
-//    suspend fun getUsersFromCache(): List<User> {
-//        lateinit var userList: List<User>
-//        try{
-//            userList = userCacheDataSource.getUsersFromCache()
-//        }catch (e:Exception){
-//            Log.e("TAG",e.message.toString())
-//        }
-//        if(userList.isNotEmpty()){
-//            return userList
-//        } else{
-//            userList = getUsersFromDB()
-//            userCacheDataSource.saveUsersToCache(userList)
-//        }
-//        return userList
-//    }
-//
-//    suspend fun getUsersFromDB(): List<User> {
-//        lateinit var userList: List<User>
-//        try{
-//            userList = userLocalDataSource.getUsersFromDB()
-//        }catch (e:Exception){
-//            Log.e("TAG",e.message.toString())
-//        }
-//        if(userList.isNotEmpty()){
-//            return userList
-//        } else{
-//            userList = getUsersFromAPI()
-//            userLocalDataSource.saveUsersToDB(userList)
-//        }
-//        return userList
-//    }
-//
-//    suspend fun getUsersFromAPI(): List<User> {
-//        lateinit var userList: List<User>
-//        try{
-//            //val reponse = userRemoteDataSource.getUsers()
-//            //val body = reponse.body()
-//            //if(body != null)
-//            //    userList = body.users
-//        }catch(e:Exception){
-//            Log.e("TAG",e.message.toString())
-//        }
-//        return userList
-//    }
-//}
+package com.kyonggi.cellification.repository.user
+
+import com.kyonggi.cellification.data.model.user.ResponseUser
+import com.kyonggi.cellification.data.model.user.User
+import com.kyonggi.cellification.data.model.user.UserLogin
+import com.kyonggi.cellification.repository.user.datasource.UserRemoteDataSource
+import com.kyonggi.cellification.utils.APIResponse
+import okhttp3.Headers
+
+class UserRepositoryImpl(
+    private val userRemoteDataSource: UserRemoteDataSource
+): UserRepository {
+    override suspend fun signInUser(user: User): APIResponse<ResponseUser> {
+        val response = userRemoteDataSource.signInUser(user)
+        if (response.isSuccessful) {
+            response.body()?.let { result ->
+                return APIResponse.Success(result)
+            }
+        }
+        return APIResponse.Error(response.message())
+    }
+
+    override suspend fun getAccessToken(login: UserLogin): APIResponse<Headers> {
+        val response = userRemoteDataSource.logInUser(login)
+        if (response.isSuccessful) {
+            response.headers().let { result ->
+                return APIResponse.Success(result)
+            }
+        }
+        return APIResponse.Error(response.message())
+    }
+
+    override suspend fun withdrawalUSer(userId: String): APIResponse<Void> {
+        val response = userRemoteDataSource.withdrawalUser(userId)
+        if (response.isSuccessful) {
+            return APIResponse.Success()
+        }
+        return APIResponse.Error(response.message())
+    }
+}

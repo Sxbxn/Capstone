@@ -1,62 +1,81 @@
 package com.kyonggi.cellification.ui.login
 
 import android.os.Bundle
-import android.util.Log
-import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.kyonggi.cellification.data.model.user.UserRegister
-import com.kyonggi.cellification.data.remote.api.UserServiceRequestFactory
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.databinding.ActivitySignInBinding
-import com.kyonggi.cellification.utils.getConnectivityStatus
+import com.kyonggi.cellification.ui.viewmodel.UserViewModel
+import com.kyonggi.cellification.ui.viewmodel.UserViewModelFactory
+import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.validateEmail
 import com.kyonggi.cellification.utils.validateName
 import com.kyonggi.cellification.utils.validateSigninPassword
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class SignInActivity : AppCompatActivity() {
+    private val userViewModel: UserViewModel by viewModels()
     private lateinit var binding: ActivitySignInBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val signinButton: Button = binding.buttonSignIn
-        val idEditText: EditText = binding.editTextSigninId
-        val pwdEditText: EditText = binding.editTextSigninPwd
-        val pwdChkEditText: EditText = binding.editTextSigninPwdChk
-        val nameEditText: EditText = binding.editTextSigninName
-
-        signinButton.setOnClickListener {
-            val networkStatus = getConnectivityStatus(applicationContext)
-            val register = UserRegister(
-                idEditText.text.toString(),
-                nameEditText.text.toString(),
-                pwdEditText.text.toString()
-            )
-
-            if (pwdEditText.text.toString() != pwdChkEditText.text.toString()) {
-                Toast.makeText(this, "비밀번호와 비밀번호확인이 일치하지 않습니다..", Toast.LENGTH_SHORT).show()
-            } else {
-                if (networkStatus) {
-                    val resultEmailValidation = validateEmail(idEditText, applicationContext)
-                    val resultPwdValidation = validateSigninPassword(pwdEditText, applicationContext)
-                    val resultNameValidation = validateName(nameEditText, applicationContext)
-
-                    if (resultEmailValidation && resultPwdValidation && resultNameValidation) {
-                        CoroutineScope(Dispatchers.IO).launch {
-                            val response = UserServiceRequestFactory.retrofit.registUser(register)
-                            if (response.isSuccessful) {
-                                Log.d("info", response.headers().toString())
-                                Log.d("info", response.body().toString())
-                            }
-                        }
+        with(binding) {
+            buttonSignIn.setOnClickListener {
+                if (checkValidation(editTextSigninId, editTextSigninPwd, editTextSigninName)) {
+                    if (editTextSigninPwd.text.toString() != editTextSigninPwdChk.text.toString()) {
+                        Toast.makeText(
+                            this@SignInActivity,
+                            "비밀번호와 비밀번호확인이 일치하지 않습니다..",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        val user = User(
+                            editTextSigninId.text.toString(),
+                            editTextSigninName.text.toString(),
+                            editTextSigninPwd.text.toString()
+                        )
+                        // 회원가입 요청
+                        requestSignIn(user)
                     }
                 }
             }
         }
+
+    }
+
+    // Validation 체크
+    private fun checkValidation(
+        email: EditText,
+        pwd: EditText,
+        name: EditText
+    ): Boolean {
+        return validateEmail(email, this) || validateSigninPassword(pwd, this) || validateName(name, this)
+    }
+
+    // 회원가입 요청
+    private fun requestSignIn(user: User) {
+        userViewModel.signInUser(user)
+        userViewModel.state.observe(this, Observer { response ->
+            when (response) {
+                is APIResponse.Success -> {
+                    // success code
+                }
+                is APIResponse.Error -> {
+                    // error code
+                }
+                is APIResponse.Loading -> {
+                    // loading code
+                }
+            }
+        })
     }
 }

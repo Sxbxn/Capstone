@@ -1,0 +1,32 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        app:title="@string/app_info_text">
+        <Preference
+            app:key="appName"
+            app:title="@string/app_name"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="데이터">
+        <Preference
+            app:key="deleteCloud"
+            app:title="Cloud 데이터 삭제" />
+    </PreferenceCategory>
+        <Preference
+            app:key="deleteLocal"
+            app:title="로컬 데이터 삭제" />
+    <PreferenceCategory
+        app:title="설정">
+        <Preference
+            app:key="logOut"
+            app:title="로그아웃"
+            app:useSimpleSummaryProvider="true" />
+
+        <Preference
+            app:key="signOut"
+            app:title="회원탈퇴"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -7,10 +7,9 @@ import androidx.room.PrimaryKey
 data class Cell(
     @PrimaryKey(autoGenerate = true)
     val id: Int,
-    val livingCell: Int,
-    val dieCell: Int,
+    val liveCell: Int,
+    val deadCell: Int,
     val imageUrl: String,
-    val livingCellPercent: Double,
-    val dieCellPercent: Double,
+    val viability: Double,
     val email: String,
 )
