@@ -50,20 +50,6 @@
             android:textSize="14dp" />
 
         <EditText
-            android:id="@+id/editText_signin_pwd_chk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/outline_lock_24"
-            android:drawableTint="@color/white"
-            android:hint="    비밀번호 확인"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14dp" />
-
-        <EditText
             android:id="@+id/editText_signin_pwd"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -72,6 +58,20 @@
             android:drawableLeft="@drawable/outline_lock_24"
             android:drawableTint="@color/white"
             android:hint="    비밀번호"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14dp" />
+
+        <EditText
+            android:id="@+id/editText_signin_pwd_chk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/white"
+            android:drawableLeft="@drawable/outline_lock_24"
+            android:drawableTint="@color/white"
+            android:hint="    비밀번호 확인"
             android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
