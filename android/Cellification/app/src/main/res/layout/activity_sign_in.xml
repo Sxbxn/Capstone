@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#22343C">
@@ -30,9 +29,9 @@
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:autoSizeTextType="uniform"
-            android:text="회원가입"
+            android:text="@string/sign_in_text"
             android:textColor="@color/white"
-            android:textSize="35dp"
+            android:textSize="35sp"
             android:textStyle="normal|bold" />
 
         <EditText
@@ -41,27 +40,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/outline_person_24"
+            android:drawableStart="@drawable/outline_person_24"
             android:drawableTint="@color/white"
-            android:hint="    아이디"
+            android:drawablePadding="10dp"
+            android:hint="@string/id_hint_text"
             android:inputType="textEmailAddress"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14dp" />
-
-        <EditText
-            android:id="@+id/editText_signin_pwd_chk"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/outline_lock_24"
-            android:drawableTint="@color/white"
-            android:hint="    비밀번호 확인"
-            android:inputType="textPassword"
-            android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14dp" />
+            android:textColorHint="@color/menu_color"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_signin_pwd"
@@ -69,13 +55,29 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/outline_lock_24"
+            android:drawableStart="@drawable/outline_lock_24"
             android:drawableTint="@color/white"
-            android:hint="    비밀번호"
+            android:drawablePadding="10dp"
+            android:hint="@string/pwd_hint_text"
             android:inputType="textPassword"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14dp" />
+            android:textColorHint="@color/menu_color"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editText_signin_pwd_chk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/white"
+            android:drawableStart="@drawable/outline_lock_24"
+            android:drawableTint="@color/white"
+            android:drawablePadding="10dp"
+            android:hint="@string/pwd_chk_hint_text"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/menu_color"
+            android:textSize="14sp" />
 
         <EditText
             android:id="@+id/editText_signin_name"
@@ -83,13 +85,14 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:backgroundTint="@color/white"
-            android:drawableLeft="@drawable/outline_badge_24"
+            android:drawableStart="@drawable/outline_badge_24"
             android:drawableTint="@color/white"
-            android:hint="    이름"
+            android:drawablePadding="10dp"
+            android:hint="@string/name_hint_text"
             android:inputType="text"
             android:textColor="@color/white"
-            android:textColorHint="@color/white"
-            android:textSize="14dp" />
+            android:textColorHint="@color/menu_color"
+            android:textSize="14sp" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_signIn"
@@ -97,7 +100,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:background="@drawable/button_style"
-            android:text="회원가입"
+            android:text="@string/sign_in_text"
             android:textColor="@color/white" />
     </LinearLayout>
 
