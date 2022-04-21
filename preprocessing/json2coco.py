@@ -26,7 +26,7 @@ for idx, csv in enumerate(csvs):
     df = pd.read_csv(csv)
 
     for idx2, row in df.iterrows():
-        val = {'id': count, 'image_id': idx, 'category_id': int(row[2]), 'bbox':[int(row[3]),int(row[4]),int(row[5]),int(row[6])]}
+        val = {'id': count, 'image_id': idx, 'category_id': int(row[2]), 'bbox':[int(row[3]+20), int(row[4]+20), 40, 40]}
         count += 1
         annotation.append(val)
 

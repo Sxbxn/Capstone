@@ -100,3 +100,9 @@ VOC format은 xml로 만들어야 하기 때문에 COCO format을 사용하기�
 }
 ```  
 
+## json to YOLO  
+
+YOLOX의 README 설명이 부실해서 데이터셋 정제를 하는데에 어려움을 겪었다.  
+여유가 있으면 좀더 코드를 뜯어보며 실행시켜보겠지만, 시간이 촉박하고 굳이 YOLOX를 써야 하는 이유가 없어서 다른 성능좋은 모델을 사용하기로 계획했다.  
+
+그중 YOLOR 모델이 Real-Time OD COCO 1st, COCO test-dev 15th SOTA를 달성하여 사용해보았다.  
