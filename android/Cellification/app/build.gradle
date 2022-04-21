@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -40,6 +41,7 @@ dependencies {
     def coroutines_version = "1.6.0"
     def retrofit_version = "2.9.0"
     def interceptor_version = "4.9.3"
+    def dagger_version = "2.41"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -63,5 +65,10 @@ dependencies {
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0' // DrawerLayout
     implementation 'androidx.preference:preference:1.2.0'
+    // Dagger - Hilt
+    implementation "com.google.dagger:hilt-android:$dagger_version"
+    kapt "com.google.dagger:hilt-android-compiler:$dagger_version"
+    // Activity Ktx
+    implementation "androidx.activity:activity-ktx:1.4.0"
 
 }
