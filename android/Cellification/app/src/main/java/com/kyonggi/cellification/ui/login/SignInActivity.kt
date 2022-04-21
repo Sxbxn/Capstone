@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.databinding.ActivitySignInBinding
+import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.UserViewModel
 import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.validateEmail
@@ -42,6 +43,8 @@ class SignInActivity : AppCompatActivity() {
                         )
                         // 회원가입 요청
                         requestSignIn(user)
+                        val userId = App.prefs.userId
+
                     }
                 }
             }
@@ -65,6 +68,7 @@ class SignInActivity : AppCompatActivity() {
             when (response) {
                 is APIResponse.Success -> {
                     // success code
+//                    response.data = ResponseCells
                 }
                 is APIResponse.Error -> {
                     // error code
