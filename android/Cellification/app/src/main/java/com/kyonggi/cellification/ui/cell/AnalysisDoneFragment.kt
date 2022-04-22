@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.TestActivity
+import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
 import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
 
 class AnalysisDoneFragment: Fragment() {
@@ -25,6 +26,7 @@ class AnalysisDoneFragment: Fragment() {
         mainActivity = context as TestActivity
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding = FragmentAnalysisDoneBinding.inflate(layoutInflater)
         super.onViewCreated(view, savedInstanceState)
         setOnReselectOnClickListener()
         setOnResultButtonClickListener()
