@@ -31,7 +31,7 @@ class NetModule {
     fun providesCellService(okHttpClient: OkHttpClient): CellService {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("")
+            .baseUrl("https://")
             .client(okHttpClient.also {
                 AuthInterceptor()
             })
