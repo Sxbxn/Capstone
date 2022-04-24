@@ -7,6 +7,9 @@ target/
 ##
 aws.yml
 
+# Mac
+.DS_Store
+
 ### STS ###
 .apt_generated
 .classpath
@@ -34,3 +37,4 @@ build/
 
 ### VS Code ###
 .vscode/
+

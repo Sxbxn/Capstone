@@ -23,4 +23,5 @@ public class UserEntity {
     @Column(nullable = false, unique = true)
     private String encryptedPwd;
 
+//    private String url;
 }

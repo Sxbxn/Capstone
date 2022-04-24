@@ -131,13 +131,13 @@ public class UserController {
         return awsS3Service.uploadImage(multipartFile);
     }
 
-    /**
-     * Amazon S3에 base64 이미지 업로드
-     */
-    @PostMapping("/url/images")
-    public String uploadImageUrl(String url) throws IOException {
-        return awsS3Service.upload(url);
-    }
+//    /**
+//     * Amazon S3에 base64 이미지 업로드
+//     */
+//    @PostMapping("/url/images")
+//    public String uploadImageUrl(String url) throws IOException {
+//        return awsS3Service.upload(url);
+//    }
 
     /**
      * Amazon S3에 이미지 업로드 된 파일을 삭제

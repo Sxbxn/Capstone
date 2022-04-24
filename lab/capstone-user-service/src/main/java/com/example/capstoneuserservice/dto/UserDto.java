@@ -15,6 +15,7 @@ public class UserDto {
     private Date createAt;
 
     private String encryptedPwd;
+//    private String url;
 
     private List<ResponseCell> cells;
 }
