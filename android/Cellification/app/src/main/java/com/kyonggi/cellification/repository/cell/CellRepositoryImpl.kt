@@ -55,8 +55,8 @@ class CellRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun sendCellImage(image: MultipartBody.Part): APIResponse<Void> {
-        val response = cellRemoteDataSource.sendCellImage(image)
+    override suspend fun sendCellImage(userid: String, image: MultipartBody.Part): APIResponse<Void> {
+        val response = cellRemoteDataSource.sendCellImage(userid, image)
         if(response.isSuccessful){
             return APIResponse.Success()
         }

@@ -11,5 +11,5 @@ interface CellRepository {
     suspend fun getCellInfoFromCellID(cellid: String): APIResponse<ResponseCell>
     suspend fun deleteAllCell(userid: String): APIResponse<Void>
     suspend fun deleteSpecificCell(userid: String, cellid: String): APIResponse<Void>
-    suspend fun sendCellImage(image: MultipartBody.Part): APIResponse<Void>
+    suspend fun sendCellImage(userid:String, image: MultipartBody.Part): APIResponse<Void>
 }

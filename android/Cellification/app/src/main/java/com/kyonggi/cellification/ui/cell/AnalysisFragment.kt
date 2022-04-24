@@ -10,23 +10,33 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.TestActivity
 import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
 import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
+import com.kyonggi.cellification.ui.viewmodel.CellViewModel
+import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.GlideApp
 import com.kyonggi.cellification.utils.getFullPathFromUri
+import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
-class AnalysisFragment:Fragment() {
-
+@AndroidEntryPoint
+class AnalysisFragment : Fragment() {
+    private val cellViewModel: CellViewModel by viewModels()
     private lateinit var binding: FragmentAnalysisBinding
-    private lateinit var mainActivity: TestActivity
+    private lateinit var mainActivity: MainActivity
     private lateinit var sendFile: File
     private val REQ_STORAGE_PERMISSION = 1
     private val permissionLauncher =
@@ -42,7 +52,7 @@ class AnalysisFragment:Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        mainActivity = context as TestActivity
+        mainActivity = context as MainActivity
     }
 
     override fun onCreateView(
@@ -93,11 +103,14 @@ class AnalysisFragment:Fragment() {
         }
     }
 
-    private fun setOnAnalysisButtonClickListener(){
+    private fun setOnAnalysisButtonClickListener() {
         binding.analysis.setOnClickListener {
-//            var fileName = sendFile.name
-//            val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
-//            val body = MultipartBody.Part.createFormData("CellImage", fileName, requestFile)
+            if (sendFile == null) {
+                Toast.makeText(requireContext(),"이미지를 불러와 주십시오.",Toast.LENGTH_SHORT).show()
+            } else {
+                var fileName = sendFile.name
+                val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
+                val body = MultipartBody.Part.createFormData("CellImage", fileName, requestFile)
 //            CoroutineScope(Dispatchers.IO).launch {
 //                val response = UserServiceRequestFactory.retrofit.sendCellImage(body)
 //                if (response.isSuccessful) {
@@ -105,7 +118,30 @@ class AnalysisFragment:Fragment() {
 //                    Log.d("info", response.body().toString())
 //                }
 //            }
-            mainActivity.changeFragment(R.id.analysis)
+//                mainActivity.changeFragment(ResultFragment())
+            makeCellTest("")
+//            cellViewModel.sendCellImage(body)
+            }
         }
+    }
+
+    private fun makeCellTest(userid: String) {
+        cellViewModel.makeCellTest(userid)
+        cellViewModel.state.observe(requireActivity(), Observer {
+            when (it) {
+                is APIResponse.Success -> {
+                    // success code
+//                    response.data = ResponseCells
+                    Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
+                }
+                is APIResponse.Error -> {
+                    // error code
+                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
+                }
+                is APIResponse.Loading -> {
+                    // loading code
+                }
+            }
+        })
     }
 }

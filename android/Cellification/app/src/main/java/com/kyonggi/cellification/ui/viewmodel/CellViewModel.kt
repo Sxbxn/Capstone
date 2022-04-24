@@ -17,10 +17,10 @@ import javax.inject.Inject
 class CellViewModel @Inject constructor(
     private val cellRepository: CellRepository
 ) : ViewModel() {
-    private val state: MutableLiveData<APIResponse<ResponseCell>> = MutableLiveData()
-    private val stateSpecificUserCell: MutableLiveData<APIResponse<ResponseSpecificUserCell>> =
+    val state: MutableLiveData<APIResponse<ResponseCell>> = MutableLiveData()
+    val stateSpecificUserCell: MutableLiveData<APIResponse<ResponseSpecificUserCell>> =
         MutableLiveData()
-    private val deleteAndSendCell: MutableLiveData<APIResponse<Void>> = MutableLiveData()
+    val deleteAndSendCell: MutableLiveData<APIResponse<Void>> = MutableLiveData()
 
     private fun <T> result(response: APIResponse<T>, livedata: MutableLiveData<APIResponse<T>>) {
         try {
@@ -74,11 +74,13 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun sendCellImage(body: MultipartBody.Part) {
+    fun sendCellImage(userid: String, body: MultipartBody.Part) {
         deleteAndSendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.sendCellImage(body)
+            val response = cellRepository.sendCellImage(userid, body)
             result(response, deleteAndSendCell)
         }
     }
+
+
 }

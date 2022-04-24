@@ -46,6 +46,7 @@ interface CellService {
     @Multipart
     @POST("")
     suspend fun sendCellImage(
+        @Part userId: String,
         @Part cellImage: MultipartBody.Part?
     ) :Response<Void>
 

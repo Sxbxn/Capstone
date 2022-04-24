@@ -33,8 +33,8 @@ class CellRemoteDataSourceImpl(
         return cellService.deleteSpecificCell(userid,cellid)
     }
 
-    override suspend fun sendCellImage(image: MultipartBody.Part): Response<Void> {
-        return cellService.sendCellImage(image)
+    override suspend fun sendCellImage(userid:String, image: MultipartBody.Part): Response<Void> {
+        return cellService.sendCellImage(userid, image)
     }
 
 

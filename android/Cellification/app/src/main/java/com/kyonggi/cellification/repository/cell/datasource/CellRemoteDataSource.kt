@@ -12,5 +12,5 @@ interface CellRemoteDataSource {
     suspend fun getCellInfoFromCellID(cellid: String): Response<ResponseCell>
     suspend fun deleteAllCell(userid: String): Response<Void>
     suspend fun deleteSpecificCell(userid: String, cellid: String): Response<Void>
-    suspend fun sendCellImage(image: MultipartBody.Part): Response<Void>
+    suspend fun sendCellImage(userid:String, image: MultipartBody.Part): Response<Void>
 }
