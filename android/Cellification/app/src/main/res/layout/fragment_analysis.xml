@@ -18,7 +18,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="24dp"
             android:autoSizeTextType="uniform"
             android:text="CELLIFICATION"
             android:textColor="@color/white"
@@ -28,8 +28,8 @@
         <ImageButton
             android:id="@+id/imageButton_image_select"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_marginTop="36dp"
+            android:layout_height="290dp"
+            android:layout_marginTop="24dp"
             android:background="@drawable/dash_line"
             android:contentDescription="uploadFile"
             app:srcCompat="@drawable/ic_baseline_add_circle_outline" />
@@ -38,7 +38,7 @@
             android:id="@+id/analysis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:background="@drawable/button_style"
             android:text="분석"
             android:textColor="@color/white" />
