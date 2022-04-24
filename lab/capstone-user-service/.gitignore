@@ -5,7 +5,7 @@ target/
 !**/src/test/**/target/
 
 ##
-aws.yml
+application.yml
 
 # Mac
 .DS_Store

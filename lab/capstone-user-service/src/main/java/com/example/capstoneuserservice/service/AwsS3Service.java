@@ -54,6 +54,7 @@ public class AwsS3Service {
     public String getS3(String bucket, String fileName) {
         return amazonS3Client.getUrl(bucket, fileName).toString();
     }
+
     public void deleteImage(String fileName) {
         amazonS3Client.deleteObject(new DeleteObjectRequest(bucket, fileName));
     }
