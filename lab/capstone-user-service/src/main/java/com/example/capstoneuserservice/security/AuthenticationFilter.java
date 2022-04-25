@@ -46,7 +46,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
             return getAuthenticationManager().authenticate(
                     new UsernamePasswordAuthenticationToken(
                             creds.getEmail(),
-                            creds.getPassword(),
+                            creds.getPwd(),
                             new ArrayList<>()
                     )
             );

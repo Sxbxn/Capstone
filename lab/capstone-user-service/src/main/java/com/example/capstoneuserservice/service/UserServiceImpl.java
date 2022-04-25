@@ -110,15 +110,22 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public void deleteAllCellByUserId(String userId) {
+        cellServiceClient.deleteCells(userId);
+    }
+
+    @Override
     public void deleteCellByUserIdAndCellId(String userId, String cellId) {
         cellServiceClient.deleteCell(userId, cellId);
     }
 
     @Override
-    public UserDto updateUserInfo(String userId, UserDto userDto) {
-        UserEntity userEntity = userRepository.findByUserId(userId);
+    public UserDto updateUserInfo(UserDto userDto) {
+        UserEntity userEntity = userRepository.findByEmail(userDto.getEmail());
 
-        userEntity.setName(userDto.getName());
+        userEntity.setEmail(userDto.getEmail()); //  putmapping 할 때 이메일은 똑같은거 사용
+        userEntity.setName(userDto.getName()); // RequestUser에서 변경하거나 바꾸려고 입력한 것 사용
+        userEntity.setUserId(userEntity.getUserId()); // userId는 userentity의 userId 그대로 사용
         userEntity.setEncryptedPwd(passwordEncoder.encode(userDto.getPwd()));
 
         userRepository.save(userEntity);

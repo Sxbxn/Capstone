@@ -4,6 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+##
+application.yml
+
+# Mac
+.DS_Store
+
 ### STS ###
 .apt_generated
 .classpath
@@ -31,3 +37,4 @@ build/
 
 ### VS Code ###
 .vscode/
+

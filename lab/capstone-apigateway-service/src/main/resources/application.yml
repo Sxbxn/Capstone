@@ -11,11 +11,11 @@ eureka:
 spring:
   application:
     name: capstone-apigateway-service
-  rabbitmq:
-    host: 127.0.0.1
-    port: 5672
-    username: guest
-    password: guest
+#  rabbitmq:
+#    host: 127.0.0.1
+#    port: 5672
+#    username: guest
+#    password: guest
   cloud:
     gateway:
       routes:
@@ -23,6 +23,22 @@ spring:
           uri: lb://CAPSTONE-USER-SERVICE
           predicates:
             - Path=/capstone-user-service/login
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
+        - id: capstone-user-service
+          uri: lb://CAPSTONE-USER-SERVICE
+          predicates:
+            - Path=/capstone-user-service/images
+            - Method=POST, DELETE
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
+        - id: capstone-user-service
+          uri: lb://CAPSTONE-USER-SERVICE
+          predicates:
+            - Path=/capstone-user-service/url/images
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
@@ -39,7 +55,7 @@ spring:
           uri: lb://CAPSTONE-USER-SERVICE
           predicates:
             - Path=/capstone-user-service/**
-            - Method=GET, DELETE
+            - Method=GET, DELETE, PUT
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-user-service/(?<segment>.*), /$\{segment}
