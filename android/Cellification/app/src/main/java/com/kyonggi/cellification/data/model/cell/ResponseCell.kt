@@ -1,6 +1,7 @@
 package com.kyonggi.cellification.data.model.cell
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
 
 // 로그인 안했을시 사용? 저장은 못하게..
 data class ResponseCell(
@@ -13,5 +14,9 @@ data class ResponseCell(
     @SerializedName("deadCell")
     val deadCell: Int,
     @SerializedName("viability")
-    val viability: Double
+    val viability: Double,
+    @SerializedName("createAt")
+    val createAt: Date,
+    @SerializedName("userid")
+    val userId: String
 )

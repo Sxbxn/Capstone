@@ -62,6 +62,8 @@ class LogInActivity : AppCompatActivity() {
                     // success code
                     Toast.makeText(applicationContext, response.data?.get("token"), Toast.LENGTH_SHORT).show()
                     Toast.makeText(applicationContext, response.data?.get("userid"), Toast.LENGTH_SHORT).show()
+                    App.prefs.token = response.data?.get("token")
+                    App.prefs.userId = response.data?.get("userId")
                 }
                 is APIResponse.Error -> {
                     // error code

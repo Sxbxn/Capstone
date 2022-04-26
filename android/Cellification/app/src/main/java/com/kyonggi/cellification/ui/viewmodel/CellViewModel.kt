@@ -3,6 +3,7 @@ package com.kyonggi.cellification.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import com.kyonggi.cellification.repository.cell.CellRepository
@@ -18,6 +19,7 @@ class CellViewModel @Inject constructor(
     private val cellRepository: CellRepository
 ) : ViewModel() {
     val state: MutableLiveData<APIResponse<ResponseCell>> = MutableLiveData()
+    val stateList:MutableLiveData<APIResponse<List<ResponseCell>>> = MutableLiveData()
     val stateSpecificUserCell: MutableLiveData<APIResponse<ResponseSpecificUserCell>> =
         MutableLiveData()
     val deleteAndSendCell: MutableLiveData<APIResponse<Void>> = MutableLiveData()
@@ -34,19 +36,27 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun makeCellTest(userid: String) {
+    fun makeCellTest(requestCell: RequestCell, userid: String) {
         state.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.makeCellTest(userid)
+            val response = cellRepository.makeCellTest(requestCell, userid)
             result(response, state)
         }
     }
 
     fun getCellListFromUser(userid: String) {
-        stateSpecificUserCell.value = APIResponse.Loading()
+        stateList.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             val response = cellRepository.getCellListFromUser(userid)
-            result(response, stateSpecificUserCell)
+            try {
+                if (response.data != null) {
+                    stateList.postValue(response)
+                } else {
+                    stateList.postValue(APIResponse.Error(response.message.toString()))
+                }
+            } catch (e: Exception) {
+                stateList.postValue(APIResponse.Error(e.message.toString()))
+            }
         }
     }
 
@@ -74,13 +84,6 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun sendCellImage(userid: String, body: MultipartBody.Part) {
-        deleteAndSendCell.value = APIResponse.Loading()
-        viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.sendCellImage(userid, body)
-            result(response, deleteAndSendCell)
-        }
-    }
 
 
 }

@@ -1,5 +1,6 @@
 package com.kyonggi.cellification.data.remote.service
 
+import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import okhttp3.MultipartBody
@@ -14,6 +15,7 @@ interface CellService {
     //cell 생성 testing
     @POST("/capstone-cell-service/{userId}/cells")
     suspend fun makeCell(
+        @Body requestCell: RequestCell,
         @Path("userId") userId: String
     ):Response<ResponseCell>
 
@@ -21,7 +23,7 @@ interface CellService {
     @GET("/capstone-cell-service/{userId}/cells")
     suspend fun getCellListFromUser(
         @Path("userId") userId: String
-    ): Response<ResponseSpecificUserCell>
+    ): Response<List<ResponseCell>>
 
     // cellid를 통한 특정 cell 조회
     @GET("/capstone-cell-service/cells/{cellId}")
@@ -42,12 +44,5 @@ interface CellService {
         @Path("cellId") cellId: String
     ): Response<Void>
 
-    // cell 이미지 보내기(분석)
-    @Multipart
-    @POST("")
-    suspend fun sendCellImage(
-        @Part userId: String,
-        @Part cellImage: MultipartBody.Part?
-    ) :Response<Void>
 
 }

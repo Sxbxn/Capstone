@@ -20,9 +20,12 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.TestActivity
+import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
 import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
+import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
+import com.kyonggi.cellification.ui.viewmodel.UserViewModel
 import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.GlideApp
 import com.kyonggi.cellification.utils.getFullPathFromUri
@@ -35,6 +38,7 @@ import java.io.File
 @AndroidEntryPoint
 class AnalysisFragment : Fragment() {
     private val cellViewModel: CellViewModel by viewModels()
+    private val userViewModel: UserViewModel by viewModels()
     private lateinit var binding: FragmentAnalysisBinding
     private lateinit var mainActivity: MainActivity
     private lateinit var sendFile: File
@@ -105,29 +109,46 @@ class AnalysisFragment : Fragment() {
 
     private fun setOnAnalysisButtonClickListener() {
         binding.analysis.setOnClickListener {
-            if (sendFile == null) {
-                Toast.makeText(requireContext(),"이미지를 불러와 주십시오.",Toast.LENGTH_SHORT).show()
+            if (!::sendFile.isInitialized) {
+                Toast.makeText(requireContext(),"이미지를 불러와 주십시오",Toast.LENGTH_SHORT).show()
             } else {
                 var fileName = sendFile.name
+                val userid = App.prefs.userId.toString()
                 val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
+
                 val body = MultipartBody.Part.createFormData("CellImage", fileName, requestFile)
-//            CoroutineScope(Dispatchers.IO).launch {
-//                val response = UserServiceRequestFactory.retrofit.sendCellImage(body)
-//                if (response.isSuccessful) {
-//                    Log.d("info", response.headers().toString())
-//                    Log.d("info", response.body().toString())
-//                }
-//            }
+                val id = MultipartBody.Part.createFormData("userId",userid)
 //                mainActivity.changeFragment(ResultFragment())
-            makeCellTest("")
-//            cellViewModel.sendCellImage(body)
+//            makeCellTest(App.prefs.userId.toString())
+            sendCellImage(body)
             }
         }
     }
-
+    //cell 생성 test
+    private val requestCell = RequestCell(10,7,3)
     private fun makeCellTest(userid: String) {
-        cellViewModel.makeCellTest(userid)
+        cellViewModel.makeCellTest(requestCell,userid)
         cellViewModel.state.observe(requireActivity(), Observer {
+            when (it) {
+                is APIResponse.Success -> {
+                    // success code
+//                    response.data = ResponseCells
+                    Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
+                }
+                is APIResponse.Error -> {
+                    // error code
+                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
+                }
+                is APIResponse.Loading -> {
+                    // loading code
+                }
+            }
+        })
+    }
+    //매개변수 바꿔야함
+    private fun sendCellImage(body:MultipartBody.Part){
+        userViewModel.sendCellImage(body)
+        userViewModel.sendCell.observe(requireActivity(),Observer{
             when (it) {
                 is APIResponse.Success -> {
                     // success code
