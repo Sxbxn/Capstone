@@ -13,6 +13,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Dispatcher
 import okhttp3.Headers
+import okhttp3.MultipartBody
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,7 +25,19 @@ class UserViewModel @Inject constructor(
     val state: MutableLiveData<APIResponse<ResponseUser>> = MutableLiveData()
     val isLogin: MutableLiveData<APIResponse<Headers>> = MutableLiveData()
     val withdrawal: MutableLiveData<APIResponse<Void>> = MutableLiveData()
+    val sendCell: MutableLiveData<APIResponse<String>> = MutableLiveData()
 
+    private fun <T> result(response: APIResponse<T>, livedata: MutableLiveData<APIResponse<T>>) {
+        try {
+            if (response.data != null) {
+                livedata.postValue(response)
+            } else {
+                livedata.postValue(APIResponse.Error(response.message.toString()))
+            }
+        } catch (e: Exception) {
+            livedata.postValue(APIResponse.Error(e.message.toString()))
+        }
+    }
    fun signInUser(user: User) {
        state.value = APIResponse.Loading()
        viewModelScope.launch(Dispatchers.IO)  {
@@ -58,6 +71,13 @@ class UserViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.withdrawalUSer(userId)
             withdrawal.postValue(response)
+        }
+    }
+    fun sendCellImage( body: MultipartBody.Part) {
+        sendCell.value = APIResponse.Loading()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.sendCellImage( body)
+            result(response, sendCell)
         }
     }
 }

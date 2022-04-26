@@ -6,6 +6,8 @@ import com.kyonggi.cellification.data.model.user.UserLogin
 import com.kyonggi.cellification.repository.user.datasource.UserRemoteDataSource
 import com.kyonggi.cellification.utils.APIResponse
 import okhttp3.Headers
+import okhttp3.MultipartBody
+import retrofit2.Response
 
 class UserRepositoryImpl(
     private val userRemoteDataSource: UserRemoteDataSource
@@ -34,6 +36,16 @@ class UserRepositoryImpl(
         val response = userRemoteDataSource.withdrawalUser(userId)
         if (response.isSuccessful) {
             return APIResponse.Success()
+        }
+        return APIResponse.Error(response.message())
+    }
+    override suspend fun sendCellImage( image: MultipartBody.Part): APIResponse<String>{
+        val response = userRemoteDataSource.sendCellImage(image)
+        if(response.isSuccessful){
+            response.body().let{
+                result->
+                    return APIResponse.Success(result)
+            }
         }
         return APIResponse.Error(response.message())
     }
