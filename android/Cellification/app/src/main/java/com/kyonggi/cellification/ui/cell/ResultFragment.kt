@@ -13,7 +13,7 @@ import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.FragmentResultBinding
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
-import com.kyonggi.cellification.utils.APIResponse
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -36,22 +36,23 @@ class ResultFragment : Fragment() {
 
     private fun setOnButtonClickListener() {
         binding.button.setOnClickListener {
-
+//            cellViewModel.insertCell(cell)
         }
     }
 
     @SuppressLint("SetTextI18n")
     private fun initViewModel() {
         cellViewModel.state.observe(viewLifecycleOwner, Observer {
-            if(it != null){
-                with(binding){
-                    totalCountText.text= "Total Count: " + (it.data!!.liveCell + it.data!!.deadCell).toString()
+            if (it != null) {
+                with(binding) {
+                    totalCountText.text =
+                        "Total Count: " + (it.data!!.liveCell + it.data!!.deadCell).toString()
                     viability.text = it.data.viability.toString() + "%"
                     liveCell.text = it.data.liveCell.toString()
                     dieCell.text = it.data.deadCell.toString()
-                    }
-            }else{
-                Toast.makeText(requireContext(),"error in getting data", Toast.LENGTH_SHORT).show()
+                }
+            } else {
+                Toast.makeText(requireContext(), "error in getting data", Toast.LENGTH_SHORT).show()
             }
         })
     }

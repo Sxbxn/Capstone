@@ -1,10 +1,12 @@
 package com.kyonggi.cellification.ui.cell
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -13,6 +15,7 @@ import com.google.android.material.tabs.TabLayout
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.databinding.FragmentStorageBinding
 import com.kyonggi.cellification.ui.cell.adapter.CellAdapter
+import com.kyonggi.cellification.ui.cell.adapter.ItemClickListener
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.utils.APIResponse
@@ -23,12 +26,17 @@ class StorageFragment : Fragment() {
     private val cellViewModel: CellViewModel by viewModels()
     private lateinit var binding: FragmentStorageBinding
     private lateinit var recyclerViewAdapter: CellAdapter
+    private lateinit var mainActivity: MainActivity
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentStorageBinding.inflate(layoutInflater)
         return binding.root
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mainActivity = context as MainActivity
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,9 +50,12 @@ class StorageFragment : Fragment() {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 when(tab?.position){
                     0->{
-                        getCellListFromUser()
+                        getRemoteCellListFromUser()
+                        setItemOnClickListener()
                     }
-                    1->{}
+                    1->{
+                        getLocalCellListFromUser()
+                    }
                 }
             }
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -72,7 +83,7 @@ class StorageFragment : Fragment() {
         })
     }
 
-    private fun getCellListFromUser(){
+    private fun getRemoteCellListFromUser(){
         //매개변수 바꿔야함
         cellViewModel.getCellListFromUser(App.prefs.userId.toString())
         cellViewModel.stateList.observe(requireActivity(), Observer {
@@ -92,5 +103,19 @@ class StorageFragment : Fragment() {
             }
         })
     }
+    private fun getLocalCellListFromUser(){
+        cellViewModel.getCellsQueryEmail(App.prefs.userId.toString())
+        cellViewModel.stateListLocal.observe(requireActivity(),Observer{
 
+        })
+    }
+    private fun setItemOnClickListener(){
+        recyclerViewAdapter.setItemOnClickListener(object : ItemClickListener {
+            override fun onItemClick(position: Int) {
+                // 프래그먼트 인자 바꿔야함... 개인 페이지로..
+                mainActivity.changeFragment(ResultFragment())
+            }
+        })
+
+    }
 }

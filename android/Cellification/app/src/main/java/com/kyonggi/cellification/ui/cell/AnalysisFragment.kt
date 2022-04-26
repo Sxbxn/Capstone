@@ -19,7 +19,6 @@ import androidx.lifecycle.Observer
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.kyonggi.cellification.R
-import com.kyonggi.cellification.TestActivity
 import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
 import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
@@ -110,24 +109,26 @@ class AnalysisFragment : Fragment() {
     private fun setOnAnalysisButtonClickListener() {
         binding.analysis.setOnClickListener {
             if (!::sendFile.isInitialized) {
-                Toast.makeText(requireContext(),"이미지를 불러와 주십시오",Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "이미지를 불러와 주십시오", Toast.LENGTH_SHORT).show()
             } else {
                 var fileName = sendFile.name
                 val userid = App.prefs.userId.toString()
                 val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
 
                 val body = MultipartBody.Part.createFormData("CellImage", fileName, requestFile)
-                val id = MultipartBody.Part.createFormData("userId",userid)
-//                mainActivity.changeFragment(ResultFragment())
+                val id = MultipartBody.Part.createFormData("userId", userid)
+
 //            makeCellTest(App.prefs.userId.toString())
             sendCellImage(body)
+//            mainActivity.changeFragment(ResultFragment())
             }
         }
     }
+
     //cell 생성 test
-    private val requestCell = RequestCell(10,7,3)
+    private val requestCell = RequestCell(10, 7, 3)
     private fun makeCellTest(userid: String) {
-        cellViewModel.makeCellTest(requestCell,userid)
+        cellViewModel.makeCellTest(requestCell, userid)
         cellViewModel.state.observe(requireActivity(), Observer {
             when (it) {
                 is APIResponse.Success -> {
@@ -145,10 +146,11 @@ class AnalysisFragment : Fragment() {
             }
         })
     }
+
     //매개변수 바꿔야함
-    private fun sendCellImage(body:MultipartBody.Part){
+    private fun sendCellImage(body: MultipartBody.Part) {
         userViewModel.sendCellImage(body)
-        userViewModel.sendCell.observe(requireActivity(),Observer{
+        userViewModel.sendCell.observe(requireActivity(), Observer {
             when (it) {
                 is APIResponse.Success -> {
                     // success code

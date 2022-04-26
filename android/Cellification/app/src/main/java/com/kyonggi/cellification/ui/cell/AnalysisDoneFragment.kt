@@ -39,6 +39,7 @@ class AnalysisDoneFragment: Fragment() {
     }
     private fun setOnResultButtonClickListener() {
         binding.result.setOnClickListener {
+            //cell 정보도 같이 넘겨주어야함
             mainActivity.changeFragment(R.id.result)
         }
     }

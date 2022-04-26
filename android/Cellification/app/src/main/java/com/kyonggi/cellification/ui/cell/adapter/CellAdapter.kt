@@ -16,7 +16,10 @@ class CellAdapter(
     private var cellList: List<ResponseCell>
 ) : RecyclerView.Adapter<CellAdapter.CellViewHolder>() {
 
-
+    private lateinit var myItemClickListener: ItemClickListener
+    fun setItemOnClickListener(listener:ItemClickListener){
+        myItemClickListener = listener
+    }
     //recyclerView 에 넘겨주기 위한 리스트
     fun setCellList(listData: APIResponse<List<ResponseCell>>) {
         this.cellList = listData.data!!
@@ -37,6 +40,12 @@ class CellAdapter(
 
     inner class CellViewHolder(private val binding: ItemListBinding) :
         RecyclerView.ViewHolder(binding.root) {
+        init{
+            binding.root.setOnClickListener{
+                myItemClickListener.onItemClick(adapterPosition)
+            }
+        }
+
         private val cellCnt = binding.cellCountText
         private val cellViability = binding.cellViabilityText
         private val cellImage = binding.cellImage
