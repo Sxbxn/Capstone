@@ -15,8 +15,8 @@ class CellLocalDataSourceImpl(
         return cellDao.getCellsQueryEmail(email)
     }
 
-    override suspend fun deleteAllCell(email: String) {
-        return cellDao.deleteAllCell(email)
+    override suspend fun deleteAllLocalCell(email: String) {
+        return cellDao.deleteAllLocalCell(email)
     }
 
     override suspend fun deleteCell(cell: Cell) {

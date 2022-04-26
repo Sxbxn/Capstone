@@ -3,6 +3,7 @@ package com.kyonggi.cellification.ui.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
@@ -18,12 +19,19 @@ import javax.inject.Inject
 class CellViewModel @Inject constructor(
     private val cellRepository: CellRepository
 ) : ViewModel() {
+
+    //Remote API variable
     val state: MutableLiveData<APIResponse<ResponseCell>> = MutableLiveData()
-    val stateList:MutableLiveData<APIResponse<List<ResponseCell>>> = MutableLiveData()
+    val stateList: MutableLiveData<APIResponse<List<ResponseCell>>> = MutableLiveData()
     val stateSpecificUserCell: MutableLiveData<APIResponse<ResponseSpecificUserCell>> =
         MutableLiveData()
     val deleteAndSendCell: MutableLiveData<APIResponse<Void>> = MutableLiveData()
 
+    //Local APi variable
+    val stateLocal: MutableLiveData<Cell> = MutableLiveData()
+    val stateListLocal: MutableLiveData<List<Cell>> = MutableLiveData()
+
+    // Remote API
     private fun <T> result(response: APIResponse<T>, livedata: MutableLiveData<APIResponse<T>>) {
         try {
             if (response.data != null) {
@@ -85,5 +93,45 @@ class CellViewModel @Inject constructor(
     }
 
 
+    // Local API
+    private fun result(response: List<Cell>, livedata: MutableLiveData<List<Cell>>) {
+        try {
+            if (response != null) {
+                livedata.postValue(response)
+            } else {
+                livedata.postValue(response)
+            }
+        } catch (e: Exception) {
+            livedata.postValue(response)
+        }
+    }
 
+    fun getAllCells() =
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = cellRepository.getAllCells()
+            result(response, stateListLocal)
+        }
+
+
+    fun getCellsQueryEmail(email: String) =
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = cellRepository.getCellsFromEmail(email)
+            result(response, stateListLocal)
+        }
+
+
+    fun deleteAllLocalCell(email: String) =
+        viewModelScope.launch(Dispatchers.IO) {
+            cellRepository.deleteAllLocalCell(email)
+        }
+
+    fun deleteCell(cell: Cell) =
+        viewModelScope.launch(Dispatchers.IO) {
+            cellRepository.deleteCell(cell)
+        }
+
+    fun insertCell(cell: Cell) =
+        viewModelScope.launch(Dispatchers.IO) {
+            cellRepository.insertCell(cell)
+        }
 }

@@ -1,15 +1,19 @@
 package com.kyonggi.cellification.repository.cell
 
+import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
+import com.kyonggi.cellification.repository.cell.datasource.CellLocalDataSource
 import com.kyonggi.cellification.repository.cell.datasource.CellRemoteDataSource
 import com.kyonggi.cellification.utils.APIResponse
 import okhttp3.MultipartBody
 
 class CellRepositoryImpl(
-    private val cellRemoteDataSource: CellRemoteDataSource
+    private val cellRemoteDataSource: CellRemoteDataSource,
+    private val cellLocalDataSource: CellLocalDataSource
 ):CellRepository {
+    //Remote API
     override suspend fun makeCellTest(requestCell: RequestCell, userid: String): APIResponse<ResponseCell> {
         val response = cellRemoteDataSource.makeCell(requestCell, userid)
         if(response.isSuccessful){
@@ -56,4 +60,28 @@ class CellRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
+    /***
+    -----------------------------------------------------------------------------------------------
+     ***/
+
+    //Local API
+    override suspend fun getAllCells(): List<Cell> {
+        return cellLocalDataSource.getAllCells()
+    }
+
+    override suspend fun getCellsFromEmail(email: String): List<Cell> {
+        return cellLocalDataSource.getCellsFromEmail(email)
+    }
+
+    override suspend fun deleteAllLocalCell(email: String) {
+        return cellLocalDataSource.deleteAllLocalCell(email)
+    }
+
+    override suspend fun deleteCell(cell: Cell) {
+        return cellLocalDataSource.deleteCell(cell)
+    }
+
+    override suspend fun insertCell(cell: Cell) {
+        return cellLocalDataSource.insertCell(cell)
+    }
 }
