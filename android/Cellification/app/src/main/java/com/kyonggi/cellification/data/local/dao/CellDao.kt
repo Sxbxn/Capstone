@@ -10,12 +10,12 @@ interface CellDao {
     suspend fun getAll(): List<Cell>
 
     // 해당 Email Cell 을 가져온다
-    @Query("SELECT * FROM cell_list WHERE email = :email")
+    @Query("SELECT * FROM cell_list WHERE id = :email")
     suspend fun getCellsQueryEmail(email: String): List<Cell>
 
     // 특정 user의 cell 전체 삭제
-    @Query("DELETE FROM cell_list WHERE email = :email")
-    suspend fun deleteAllCell(email: String)
+    @Query("DELETE FROM cell_list WHERE id = :email")
+    suspend fun deleteAllLocalCell(email: String)
 
     // 해당 Cell 을 삭제한다
     @Delete

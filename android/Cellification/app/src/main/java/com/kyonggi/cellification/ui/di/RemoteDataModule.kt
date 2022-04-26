@@ -23,7 +23,6 @@ class RemoteDataModule {
     ): UserRemoteDataSource {
         return UserRemoteDataSourceImpl(userService)
     }
-
     @Singleton
     @Provides
     fun providesCellRemoteDataSource(
@@ -31,4 +30,5 @@ class RemoteDataModule {
     ): CellRemoteDataSource {
         return CellRemoteDataSourceImpl(cellService)
     }
+
 }
