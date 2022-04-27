@@ -115,6 +115,10 @@ class StorageFragment : Fragment() {
                 // 프래그먼트 인자 바꿔야함... 개인 페이지로..
                 mainActivity.changeFragment(ResultFragment())
             }
+
+            override fun onLongClick(position: Int) {
+                // 삭제 다이얼로그 로직?
+            }
         })
 
     }

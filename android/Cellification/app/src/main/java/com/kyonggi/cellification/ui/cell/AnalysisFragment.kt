@@ -120,7 +120,7 @@ class AnalysisFragment : Fragment() {
 
 //            makeCellTest(App.prefs.userId.toString())
             sendCellImage(body)
-//            mainActivity.changeFragment(ResultFragment())
+//            mainActivity.changeFragment(ResultFragment(),response)
             }
         }
     }

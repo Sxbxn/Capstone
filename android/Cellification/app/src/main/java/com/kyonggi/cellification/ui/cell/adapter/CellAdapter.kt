@@ -44,6 +44,10 @@ class CellAdapter(
             binding.root.setOnClickListener{
                 myItemClickListener.onItemClick(adapterPosition)
             }
+            binding.root.setOnLongClickListener{
+                myItemClickListener.onLongClick(adapterPosition)
+                return@setOnLongClickListener true
+            }
         }
 
         private val cellCnt = binding.cellCountText
