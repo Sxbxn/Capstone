@@ -9,8 +9,8 @@ patch_x_size = 408
 patch_y_size = 306
 x_stride = 204
 y_stride = 153
-input_dir_image = '/home/dh/Project/Capstone/data/K562_Pointing_data/train/result/'
-output_dir = '/home/dh/Project/Capstone/data/patch_train/csv/'
+input_dir_image = '/home/dh/Project/Capstone/data/K562_Pointing_data/test/result/'
+output_dir = '/home/dh/Project/Capstone/data/patch_test/csv/'
 
 img_list = glob.glob(input_dir_image+'*.csv')
 
