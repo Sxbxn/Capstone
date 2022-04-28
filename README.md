@@ -19,3 +19,4 @@ ex)
 
 [01 모델 선정 및 데이터 전처리](./Development_log/01-모델%20선정%20및%20데이터%20전처리.md)  
 
+[02 YOLOX 모델 학습](./Development_log/02-YOLOX%20%EB%AA%A8%EB%8D%B8%20%ED%95%99%EC%8A%B5.md)  
