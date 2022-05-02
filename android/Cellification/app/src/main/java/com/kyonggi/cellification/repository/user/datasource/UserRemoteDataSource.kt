@@ -9,5 +9,5 @@ import retrofit2.Response
 interface UserRemoteDataSource {
     suspend fun signInUser(user: User): Response<ResponseUser>
     suspend fun logInUser(login: UserLogin): Response<Void>
-    suspend fun withdrawalUser(userId: String): Response<Void>
+    suspend fun withdrawalUser(token: String,userId: String): Response<Void>
 }

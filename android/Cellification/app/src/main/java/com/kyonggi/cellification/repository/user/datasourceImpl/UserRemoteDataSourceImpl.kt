@@ -18,7 +18,7 @@ class UserRemoteDataSourceImpl(
         return userService.logInUser(login)
     }
 
-    override suspend fun withdrawalUser(userId: String): Response<Void> {
-        return userService.withdrawalUser(userId)
+    override suspend fun withdrawalUser(token: String, userId: String): Response<Void> {
+        return userService.withdrawalUser(token, userId)
     }
 }

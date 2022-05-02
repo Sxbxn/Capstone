@@ -30,8 +30,8 @@ class UserRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun withdrawalUSer(userId: String): APIResponse<Void> {
-        val response = userRemoteDataSource.withdrawalUser(userId)
+    override suspend fun withdrawalUSer(token: String, userId: String): APIResponse<Void> {
+        val response = userRemoteDataSource.withdrawalUser(token, userId)
         if (response.isSuccessful) {
             return APIResponse.Success()
         }

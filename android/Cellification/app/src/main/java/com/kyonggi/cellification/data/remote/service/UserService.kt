@@ -4,10 +4,7 @@ import com.kyonggi.cellification.data.model.user.ResponseUser
 import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.data.model.user.UserLogin
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.DELETE
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface UserService {
     // 회원가입
@@ -25,6 +22,7 @@ interface UserService {
     // 회원탈퇴
     @DELETE("/capstone-user-service/{userId}")
     suspend fun withdrawalUser(
+        @Header("Authorization") token: String,
         @Path("userId") userId: String
     ): Response<Void>
 }

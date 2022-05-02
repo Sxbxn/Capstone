@@ -9,5 +9,5 @@ import okhttp3.Headers
 interface UserRepository {
     suspend fun signInUser(user: User): APIResponse<ResponseUser>
     suspend fun getAccessToken(login: UserLogin): APIResponse<Headers>
-    suspend fun withdrawalUSer(userId: String): APIResponse<Void>
+    suspend fun withdrawalUSer(token: String, userId: String): APIResponse<Void>
 }
