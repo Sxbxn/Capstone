@@ -21,7 +21,7 @@ class NetModule {
     fun providesUserService(okHttpClient: OkHttpClient): UserService {
         return Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://9281-1-229-120-3.ngrok.io")
+            .baseUrl("")
             .client(okHttpClient)
             .build().create(UserService::class.java)
     }
