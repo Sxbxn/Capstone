@@ -13,7 +13,7 @@ import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
 
 class AnalysisDoneFragment: Fragment() {
     private lateinit var binding: FragmentAnalysisDoneBinding
-    private lateinit var mainActivity: TestActivity
+    private lateinit var mainActivity: MainActivity
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -23,7 +23,7 @@ class AnalysisDoneFragment: Fragment() {
     }
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        mainActivity = context as TestActivity
+        mainActivity = context as MainActivity
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding = FragmentAnalysisDoneBinding.inflate(layoutInflater)
@@ -34,13 +34,13 @@ class AnalysisDoneFragment: Fragment() {
 
     private fun setOnReselectOnClickListener() {
         binding.reselect.setOnClickListener {
-            mainActivity.changeFragment(R.id.reselect)
+            mainActivity.changeFragment(AnalysisFragment())
         }
     }
     private fun setOnResultButtonClickListener() {
         binding.result.setOnClickListener {
             //cell 정보도 같이 넘겨주어야함
-            mainActivity.changeFragment(R.id.result)
+            mainActivity.changeFragment(ResultFragment())
         }
     }
 }

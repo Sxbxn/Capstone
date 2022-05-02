@@ -36,6 +36,7 @@ class ResultFragment : Fragment() {
 
     private fun setOnButtonClickListener() {
         binding.button.setOnClickListener {
+            //local db에 저장
 //            cellViewModel.insertCell(cell)
         }
     }
