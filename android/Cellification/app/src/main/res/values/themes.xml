@@ -36,4 +36,14 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="EditTextAppStyle" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="boxStrokeErrorColor">@color/white</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
 </resources>
