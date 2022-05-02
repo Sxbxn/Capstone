@@ -22,7 +22,7 @@ class UserRemoteDataSourceImpl(
     override suspend fun withdrawalUser(userId: String): Response<Void> {
         return userService.withdrawalUser(userId)
     }
-    override suspend fun sendCellImage( image: MultipartBody.Part): Response<String> {
-        return userService.sendCellImage(image)
+    override suspend fun sendCellImage(token:String, image: MultipartBody.Part): Response<String> {
+        return userService.sendCellImage(token, image)
     }
 }

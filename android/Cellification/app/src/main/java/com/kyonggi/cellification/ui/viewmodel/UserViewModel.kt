@@ -73,10 +73,10 @@ class UserViewModel @Inject constructor(
             withdrawal.postValue(response)
         }
     }
-    fun sendCellImage( body: MultipartBody.Part) {
+    fun sendCellImage(token:String, body: MultipartBody.Part) {
         sendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = repository.sendCellImage( body)
+            val response = repository.sendCellImage(token, body)
             result(response, sendCell)
         }
     }

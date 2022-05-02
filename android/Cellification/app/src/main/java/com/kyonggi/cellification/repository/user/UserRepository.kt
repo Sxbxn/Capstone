@@ -12,5 +12,5 @@ interface UserRepository {
     suspend fun signInUser(user: User): APIResponse<ResponseUser>
     suspend fun getAccessToken(login: UserLogin): APIResponse<Headers>
     suspend fun withdrawalUSer(userId: String): APIResponse<Void>
-    suspend fun sendCellImage( image: MultipartBody.Part): APIResponse<String>
+    suspend fun sendCellImage(token:String, image: MultipartBody.Part): APIResponse<String>
 }

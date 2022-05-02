@@ -30,7 +30,7 @@ interface UserService {
     @Multipart
     @POST("/capstone-user-service/images")
     suspend fun sendCellImage(
+        @Header ("Authorization") token :String,
         @Part cellImage: MultipartBody.Part?
     ) :Response<String>
-
 }
