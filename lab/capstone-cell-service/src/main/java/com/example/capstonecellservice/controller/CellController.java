@@ -1,6 +1,7 @@
 package com.example.capstonecellservice.controller;
 
 import com.example.capstonecellservice.dto.CellDto;
+import com.example.capstonecellservice.dto.UrlDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.service.AwsS3Service;
 import com.example.capstonecellservice.service.CellService;
@@ -89,8 +90,11 @@ public class CellController {
      * Amazon S3에 이미지 업로드
      */
     @PostMapping("/images")
-    public String uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile) {
-        return awsS3Service.uploadImage(multipartFile);
+    public UrlDto uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile) {
+        UrlDto urlDto = new UrlDto();
+        urlDto.setUrl(awsS3Service.uploadImage(multipartFile));
+
+        return urlDto;
     }
 
     /**
