@@ -5,6 +5,7 @@ import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.data.model.user.UserLogin
 import com.kyonggi.cellification.data.remote.service.UserService
 import com.kyonggi.cellification.repository.user.datasource.UserRemoteDataSource
+import okhttp3.MultipartBody
 import retrofit2.Response
 
 class UserRemoteDataSourceImpl(
@@ -20,5 +21,8 @@ class UserRemoteDataSourceImpl(
 
     override suspend fun withdrawalUser(token: String, userId: String): Response<Void> {
         return userService.withdrawalUser(token, userId)
+    }
+    override suspend fun sendCellImage(token:String, image: MultipartBody.Part): Response<String> {
+        return userService.sendCellImage(token, image)
     }
 }

@@ -4,16 +4,14 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.kyonggi.cellification.data.model.user.ResponseUser
-import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.data.model.user.UserLogin
 import com.kyonggi.cellification.repository.user.UserRepository
 import com.kyonggi.cellification.utils.APIResponse
-import com.kyonggi.cellification.utils.validateLoginEmail
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import okhttp3.Headers
+import okhttp3.MultipartBody
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,6 +22,7 @@ class UserViewModel @Inject constructor(
     // request state
     val isLogin: MutableLiveData<APIResponse<Headers>> = MutableLiveData()
     val withdrawal: MutableLiveData<APIResponse<Void>> = MutableLiveData()
+    val sendCell: MutableLiveData<APIResponse<String>> = MutableLiveData()
     val emailLiveData: MutableLiveData<String> = MutableLiveData()
     val pwdLiveData: MutableLiveData<String> = MutableLiveData()
     val isValidLiveData: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
@@ -63,6 +62,13 @@ class UserViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.withdrawalUSer(token, userId)
             withdrawal.postValue(response)
+        }
+    }
+    fun sendCellImage(token:String, body: MultipartBody.Part) {
+        sendCell.value = APIResponse.Loading()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.sendCellImage(token, body)
+            result(response, sendCell)
         }
     }
 }

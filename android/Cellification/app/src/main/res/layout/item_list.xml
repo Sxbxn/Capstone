@@ -6,6 +6,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
     android:orientation="vertical"
+    android:id="@+id/each_card_view"
     app:cardBackgroundColor="@color/item_backgroundColor"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
@@ -23,6 +24,7 @@
             app:cardElevation="0dp">
 
             <ImageView
+                android:id="@+id/cellImage"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"

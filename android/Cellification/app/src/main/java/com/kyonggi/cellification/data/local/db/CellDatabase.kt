@@ -14,24 +14,4 @@ import com.kyonggi.cellification.data.model.cell.Cell
 )
 abstract class CellDatabase : RoomDatabase() {
     abstract fun cellDao(): CellDao
-
-    companion object {
-        private var cellRoomInstance: CellDatabase? = null
-
-        @Synchronized
-        fun getInstance(context: Context): CellDatabase? {
-            if (cellRoomInstance == null) {
-                synchronized(CellDatabase::class) {
-                    cellRoomInstance = Room.databaseBuilder(
-                        context.applicationContext,
-                        CellDatabase::class.java,
-                        "cell_db"
-                    )
-                        .fallbackToDestructiveMigration()
-                        .build()
-                }
-            }
-            return cellRoomInstance
-        }
-    }
 }

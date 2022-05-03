@@ -3,6 +3,7 @@ package com.kyonggi.cellification.data.remote.service
 import com.kyonggi.cellification.data.model.user.ResponseUser
 import com.kyonggi.cellification.data.model.user.User
 import com.kyonggi.cellification.data.model.user.UserLogin
+import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
@@ -25,4 +26,12 @@ interface UserService {
         @Header("Authorization") token: String,
         @Path("userId") userId: String
     ): Response<Void>
+
+    // cell 이미지 보내기(분석)
+    @Multipart
+    @POST("/capstone-user-service/images")
+    suspend fun sendCellImage(
+        @Header ("Authorization") token :String,
+        @Part cellImage: MultipartBody.Part?
+    ) :Response<String>
 }

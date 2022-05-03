@@ -1,10 +1,17 @@
 package com.kyonggi.cellification.repository.cell.datasource
 
-import com.kyonggi.cellification.data.model.cell.Cell
+import com.kyonggi.cellification.data.model.cell.RequestCell
+import com.kyonggi.cellification.data.model.cell.ResponseCell
+import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
+import okhttp3.MultipartBody
 import retrofit2.Response
 
 interface CellRemoteDataSource {
-    suspend fun getAllCells(): Response<List<Cell>>
-    suspend fun getCell(cellid: Int): Response<Cell>
-    suspend fun deleteCell(cellid: Int): Response<Unit>
+//    suspend fun getAllCells(): Response<List<Cell>>
+    suspend fun makeCell(requestCell: RequestCell, userid: String): Response<ResponseCell>
+    suspend fun getCellListFromUser(userid: String): Response<List<ResponseCell>>
+    suspend fun getCellInfoFromCellID(cellid: String): Response<ResponseCell>
+    suspend fun deleteAllCell(userid: String): Response<Void>
+    suspend fun deleteSpecificCell(userid: String, cellid: String): Response<Void>
+
 }
