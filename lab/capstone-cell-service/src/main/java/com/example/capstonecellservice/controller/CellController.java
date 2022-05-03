@@ -2,6 +2,7 @@ package com.example.capstonecellservice.controller;
 
 import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.jpa.CellEntity;
+import com.example.capstonecellservice.service.AwsS3Service;
 import com.example.capstonecellservice.service.CellService;
 import com.example.capstonecellservice.vo.RequestCell;
 import com.example.capstonecellservice.vo.ResponseCell;
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +22,12 @@ import java.util.List;
 public class CellController {
 
     CellService cellService;
+    private AwsS3Service awsS3Service;
 
     @Autowired
-    public CellController(CellService cellService) {
+    public CellController(CellService cellService, AwsS3Service awsS3Service) {
         this.cellService = cellService;
+        this.awsS3Service = awsS3Service;
     }
 
     //Create
@@ -81,7 +85,19 @@ public class CellController {
         cellService.deleteCellByUserIdAndCellId(userId, cellId);
     }
 
+    /**
+     * Amazon S3에 이미지 업로드
+     */
+    @PostMapping("/images")
+    public String uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile) {
+        return awsS3Service.uploadImage(multipartFile);
+    }
 
-
-
+    /**
+     * Amazon S3에 이미지 업로드 된 파일을 삭제
+     */
+    @DeleteMapping("/images")
+    public void deleteImage(@RequestParam String fileName) {
+        awsS3Service.deleteImage(fileName);
+    }
 }
