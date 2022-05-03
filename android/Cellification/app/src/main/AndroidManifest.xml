@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.kyonggi.cellification">
     <!--갤러리 권한-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,10 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cellification"
         android:networkSecurityConfig="@xml/network_security_config">
-<!--        <activity android:name=".TestActivity"></activity>-->
-        <activity android:name=".ui.login.LogInActivity"></activity>
-        <activity android:name=".ui.login.SignInActivity"></activity>
-        <activity android:name=".ui.cell.MainActivity"></activity>
+        <activity android:name=".ui.login.LogInActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.login.SignInActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.cell.MainActivity" />
         <activity
             android:name=".ui.LoadingActivity"
             android:exported="true">

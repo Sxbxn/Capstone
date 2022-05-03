@@ -23,6 +23,7 @@ interface UserService {
     // 회원탈퇴
     @DELETE("/capstone-user-service/{userId}")
     suspend fun withdrawalUser(
+        @Header("Authorization") token: String,
         @Path("userId") userId: String
     ): Response<Void>
 

@@ -3,12 +3,10 @@ package com.kyonggi.cellification.ui.cell
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.google.android.material.navigation.NavigationView
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.ActivityMainBinding
 import com.kyonggi.cellification.ui.login.LogInActivity
@@ -61,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigationView.selectedItemId = R.id.home
     }
 
-    fun changeFragment(fragment: Fragment) {
+    private fun changeFragment(fragment: Fragment) {
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragmentContainerView, fragment)

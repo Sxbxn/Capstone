@@ -7,7 +7,6 @@ import com.kyonggi.cellification.repository.user.datasource.UserRemoteDataSource
 import com.kyonggi.cellification.utils.APIResponse
 import okhttp3.Headers
 import okhttp3.MultipartBody
-import retrofit2.Response
 
 class UserRepositoryImpl(
     private val userRemoteDataSource: UserRemoteDataSource
@@ -32,8 +31,8 @@ class UserRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun withdrawalUSer(userId: String): APIResponse<Void> {
-        val response = userRemoteDataSource.withdrawalUser(userId)
+    override suspend fun withdrawalUSer(token: String, userId: String): APIResponse<Void> {
+        val response = userRemoteDataSource.withdrawalUser(token, userId)
         if (response.isSuccessful) {
             return APIResponse.Success()
         }
