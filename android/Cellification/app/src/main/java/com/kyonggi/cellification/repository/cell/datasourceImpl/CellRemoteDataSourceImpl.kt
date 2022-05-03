@@ -14,12 +14,12 @@ import javax.inject.Inject
 class CellRemoteDataSourceImpl(
     private val cellService: CellService
 ): CellRemoteDataSource {
-    override suspend fun makeCell(requestCell: RequestCell, userid: String): Response<ResponseCell> {
-        return cellService.makeCell(requestCell, userid)
+    override suspend fun makeCell(token:String, requestCell: RequestCell, userid: String): Response<ResponseCell> {
+        return cellService.makeCell(token, requestCell, userid)
     }
 
-    override suspend fun getCellListFromUser(userid: String): Response<List<ResponseCell>>{
-        return cellService.getCellListFromUser(userid)
+    override suspend fun getCellListFromUser(token:String, userid: String): Response<List<ResponseCell>>{
+        return cellService.getCellListFromUser(token, userid)
     }
 
     override suspend fun getCellInfoFromCellID(cellid: String): Response<ResponseCell> {

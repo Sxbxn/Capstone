@@ -55,18 +55,18 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun makeCellTest(requestCell: RequestCell, userid: String) {
+    fun makeCellTest(token:String, requestCell: RequestCell, userid: String) {
         _state.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.makeCellTest(requestCell, userid)
+            val response = cellRepository.makeCellTest(token, requestCell, userid)
             result(response, _state)
         }
     }
 
-    fun getCellListFromUser(userid: String) {
+    fun getCellListFromUser(token:String, userid: String) {
         _stateList.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.getCellListFromUser(userid)
+            val response = cellRepository.getCellListFromUser(token, userid)
             try {
                 if (response.data != null) {
                     _stateList.postValue(response)

@@ -15,6 +15,7 @@ interface CellService {
     //cell 생성 testing
     @POST("/capstone-cell-service/{userId}/cells")
     suspend fun makeCell(
+        @Header ("Authorization") token :String,
         @Body requestCell: RequestCell,
         @Path("userId") userId: String
     ):Response<ResponseCell>
@@ -22,6 +23,7 @@ interface CellService {
     // 특정 user의 Cell List 리턴
     @GET("/capstone-cell-service/{userId}/cells")
     suspend fun getCellListFromUser(
+        @Header ("Authorization") token :String,
         @Path("userId") userId: String
     ): Response<List<ResponseCell>>
 

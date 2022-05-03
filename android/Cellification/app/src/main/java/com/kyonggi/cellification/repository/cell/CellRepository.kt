@@ -9,8 +9,8 @@ import okhttp3.MultipartBody
 
 interface CellRepository {
     //Remote API
-    suspend fun makeCellTest(requestCell: RequestCell, userid: String): APIResponse<ResponseCell>
-    suspend fun getCellListFromUser(userid: String): APIResponse<List<ResponseCell>>
+    suspend fun makeCellTest(token:String, requestCell: RequestCell, userid: String): APIResponse<ResponseCell>
+    suspend fun getCellListFromUser(token:String, userid: String): APIResponse<List<ResponseCell>>
     suspend fun getCellInfoFromCellID(cellid: String): APIResponse<ResponseCell>
     suspend fun deleteAllCell(userid: String): APIResponse<Void>
     suspend fun deleteSpecificCell(userid: String, cellid: String): APIResponse<Void>

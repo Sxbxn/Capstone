@@ -14,8 +14,8 @@ class CellRepositoryImpl(
     private val cellLocalDataSource: CellLocalDataSource
 ):CellRepository {
     //Remote API
-    override suspend fun makeCellTest(requestCell: RequestCell, userid: String): APIResponse<ResponseCell> {
-        val response = cellRemoteDataSource.makeCell(requestCell, userid)
+    override suspend fun makeCellTest(token:String, requestCell: RequestCell, userid: String): APIResponse<ResponseCell> {
+        val response = cellRemoteDataSource.makeCell(token, requestCell, userid)
         if(response.isSuccessful){
             response.body()?.let{
                 return APIResponse.Success(it)
@@ -24,8 +24,8 @@ class CellRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun getCellListFromUser(userid: String): APIResponse<List<ResponseCell>> {
-        val response = cellRemoteDataSource.getCellListFromUser(userid)
+    override suspend fun getCellListFromUser(token:String, userid: String): APIResponse<List<ResponseCell>> {
+        val response = cellRemoteDataSource.getCellListFromUser(token, userid)
         if(response.isSuccessful){
             response.body()?.let{
                 return APIResponse.Success(it)
