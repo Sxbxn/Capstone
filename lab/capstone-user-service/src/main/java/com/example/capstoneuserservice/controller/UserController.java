@@ -2,7 +2,6 @@ package com.example.capstoneuserservice.controller;
 
 import com.example.capstoneuserservice.dto.UserDto;
 import com.example.capstoneuserservice.jpa.UserEntity;
-import com.example.capstoneuserservice.service.AwsS3Service;
 import com.example.capstoneuserservice.service.UserService;
 import com.example.capstoneuserservice.vo.RequestUser;
 import com.example.capstoneuserservice.vo.ResponseUser;
@@ -16,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,13 +25,12 @@ public class UserController {
 
     private Environment env;
     private UserService userService;
-    private AwsS3Service awsS3Service;
+
 
     @Autowired
-    public UserController(Environment env, UserService userService, AwsS3Service awsS3Service) {
+    public UserController(Environment env, UserService userService) {
         this.env = env;
         this.userService = userService;
-        this.awsS3Service = awsS3Service;
     }
 
     // 현재 user-service 상태 확인
@@ -123,27 +120,4 @@ public class UserController {
         return ResponseEntity.status(HttpStatus.OK).body(responseUser);
     }
 
-    /**
-     * Amazon S3에 이미지 업로드
-     */
-    @PostMapping("/images")
-    public String uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile) {
-        return awsS3Service.uploadImage(multipartFile);
-    }
-
-//    /**
-//     * Amazon S3에 base64 이미지 업로드
-//     */
-//    @PostMapping("/url/images")
-//    public String uploadImageUrl(String url) throws IOException {
-//        return awsS3Service.upload(url);
-//    }
-
-    /**
-     * Amazon S3에 이미지 업로드 된 파일을 삭제
-     */
-    @DeleteMapping("/images")
-    public void deleteImage(@RequestParam String fileName) {
-        awsS3Service.deleteImage(fileName);
-    }
 }
