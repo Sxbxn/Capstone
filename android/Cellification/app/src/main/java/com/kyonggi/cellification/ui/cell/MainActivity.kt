@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.ActivityMainBinding
+import com.kyonggi.cellification.ui.login.LogInActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
