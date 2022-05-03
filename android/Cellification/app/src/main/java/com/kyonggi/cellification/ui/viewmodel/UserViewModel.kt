@@ -68,7 +68,6 @@ class UserViewModel @Inject constructor(
         sendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.sendCellImage(token, body)
-            result(response, sendCell)
         }
     }
 }
