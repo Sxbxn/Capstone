@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import com.kyonggi.cellification.R
-import com.kyonggi.cellification.ui.login.LogInActivity
+import com.kyonggi.cellification.ui.cell.MainActivity
 
 class LoadingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,13 +18,9 @@ class LoadingActivity : AppCompatActivity() {
     private fun goToMain() {
         val handler = Handler(Looper.getMainLooper())
         handler.postDelayed({
-            val intent = Intent(this, LogInActivity::class.java).apply {
-                this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-            }
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }, 2000)
-
-
     }
 }

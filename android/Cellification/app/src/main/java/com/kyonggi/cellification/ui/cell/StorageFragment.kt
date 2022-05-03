@@ -113,7 +113,7 @@ class StorageFragment : Fragment() {
                 }
                 is APIResponse.Error -> {
                     // error code
-                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireActivity(), "로딩 실패", Toast.LENGTH_SHORT).show()
                 }
                 is APIResponse.Loading -> {
                     // loading code
