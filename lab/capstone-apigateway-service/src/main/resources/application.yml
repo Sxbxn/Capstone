@@ -76,7 +76,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-cell-service/(?<segment>.*), /$\{segment}
-#            - AuthorizationHeaderFilter
+            - AuthorizationHeaderFilter
 
 management:
   endpoint:
