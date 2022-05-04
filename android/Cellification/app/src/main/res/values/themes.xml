@@ -46,4 +46,13 @@
         <item name="hintEnabled">false</item>
     </style>
 
+    <style name ="DeleteDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@drawable/dialog_style</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/ButtonStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/ButtonStyle</item>
+    </style>
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/dialog_button</item>
+    </style>
 </resources>
