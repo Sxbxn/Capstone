@@ -34,8 +34,8 @@ class CellRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun getCellInfoFromCellID(cellid: String): APIResponse<ResponseCell> {
-        val response = cellRemoteDataSource.getCellInfoFromCellID(cellid)
+    override suspend fun getCellInfoFromCellID(token:String, cellid: String): APIResponse<ResponseCell> {
+        val response = cellRemoteDataSource.getCellInfoFromCellID(token, cellid)
         if(response.isSuccessful){
             response.body()?.let{
                 return APIResponse.Success(it)
@@ -44,16 +44,16 @@ class CellRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun deleteAllCell(userid: String): APIResponse<Void> {
-        val response = cellRemoteDataSource.deleteAllCell(userid)
+    override suspend fun deleteAllCell(token:String, userid: String): APIResponse<Void> {
+        val response = cellRemoteDataSource.deleteAllCell(token, userid)
         if(response.isSuccessful){
             return APIResponse.Success()
         }
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun deleteSpecificCell(userid: String, cellid: String): APIResponse<Void> {
-        val response = cellRemoteDataSource.deleteSpecificCell(userid, cellid)
+    override suspend fun deleteSpecificCell(token:String, userid: String, cellid: String): APIResponse<Void> {
+        val response = cellRemoteDataSource.deleteSpecificCell(token, userid, cellid)
         if(response.isSuccessful){
             return APIResponse.Success()
         }

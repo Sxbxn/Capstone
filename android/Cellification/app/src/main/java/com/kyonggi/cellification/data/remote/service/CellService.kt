@@ -30,18 +30,21 @@ interface CellService {
     // cellid를 통한 특정 cell 조회
     @GET("/capstone-cell-service/cells/{cellId}")
     suspend fun getCellInfoFromCellID(
+        @Header ("Authorization") token :String,
         @Path("cellId") cellId: String
     ): Response<ResponseCell>
 
     //특정 user의 전체 cell 삭제
     @DELETE("/capstone-cell-service/{userId}")
     suspend fun deleteAllCell(
+        @Header ("Authorization") token :String,
         @Path("userId") userId: String
     ): Response<Void>
 
     // 특정 user의 특정 분석한 Cell 정보 삭제
     @DELETE("/capstone-cell-service/{userId}/{cellId}")
     suspend fun deleteSpecificCell(
+        @Header ("Authorization") token :String,
         @Path("userId") userId: String,
         @Path("cellId") cellId: String
     ): Response<Void>

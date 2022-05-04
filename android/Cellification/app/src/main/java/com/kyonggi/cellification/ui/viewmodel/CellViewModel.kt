@@ -79,26 +79,26 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun getCellInfoFromCellID(userid: String) {
+    fun getCellInfoFromCellID(token:String, userid: String) {
         _state.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.getCellInfoFromCellID(userid)
+            val response = cellRepository.getCellInfoFromCellID(token, userid)
             result(response, _state)
         }
     }
 
-    fun deleteAllCell(userid: String) {
+    fun deleteAllCell(token:String, userid: String) {
         _deleteAndSendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.deleteAllCell(userid)
+            val response = cellRepository.deleteAllCell(token, userid)
             result(response, _deleteAndSendCell)
         }
     }
 
-    fun deleteSpecificCell(userid: String, cellid: String) {
+    fun deleteSpecificCell(token:String, userid: String, cellid: String) {
         _deleteAndSendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.deleteSpecificCell(userid, cellid)
+            val response = cellRepository.deleteSpecificCell(token, userid, cellid)
             result(response, _deleteAndSendCell)
         }
     }
