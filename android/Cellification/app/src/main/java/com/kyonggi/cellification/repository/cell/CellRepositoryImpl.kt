@@ -24,7 +24,7 @@ class CellRepositoryImpl(
         return APIResponse.Error(response.message())
     }
 
-    override suspend fun getCellListFromUser(token:String, userid: String): APIResponse<List<ResponseCell>> {
+    override suspend fun getCellListFromUser(token:String, userid: String): APIResponse<MutableList<ResponseCell>> {
         val response = cellRemoteDataSource.getCellListFromUser(token, userid)
         if(response.isSuccessful){
             response.body()?.let{

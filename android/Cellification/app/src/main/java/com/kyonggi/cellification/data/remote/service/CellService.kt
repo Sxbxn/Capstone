@@ -25,7 +25,7 @@ interface CellService {
     suspend fun getCellListFromUser(
         @Header ("Authorization") token :String,
         @Path("userId") userId: String
-    ): Response<List<ResponseCell>>
+    ): Response<MutableList<ResponseCell>>
 
     // cellid를 통한 특정 cell 조회
     @GET("/capstone-cell-service/cells/{cellId}")

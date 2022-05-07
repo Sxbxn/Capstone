@@ -13,7 +13,7 @@ import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.GlideApp
 
 class CellAdapter(
-    private var cellList: List<ResponseCell>
+     var cellList: MutableList<ResponseCell>
 ) : RecyclerView.Adapter<CellAdapter.CellViewHolder>() {
 
     private lateinit var myItemClickListener: ItemClickListener
@@ -22,7 +22,7 @@ class CellAdapter(
     }
 
     //recyclerView 에 넘겨주기 위한 리스트
-    fun setCellList(listData: APIResponse<List<ResponseCell>>) {
+    fun setCellList(listData: APIResponse<MutableList<ResponseCell>>) {
         this.cellList = listData.data!!
     }
 

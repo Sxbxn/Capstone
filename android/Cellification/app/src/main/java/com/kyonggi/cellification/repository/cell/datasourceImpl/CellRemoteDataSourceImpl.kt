@@ -18,7 +18,7 @@ class CellRemoteDataSourceImpl(
         return cellService.makeCell(token, requestCell, userid)
     }
 
-    override suspend fun getCellListFromUser(token:String, userid: String): Response<List<ResponseCell>>{
+    override suspend fun getCellListFromUser(token:String, userid: String): Response<MutableList<ResponseCell>>{
         return cellService.getCellListFromUser(token, userid)
     }
 

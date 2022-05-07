@@ -25,11 +25,11 @@ class CellViewModel @Inject constructor(
     // 분석된 cell을 위한 것
     private val _state: MutableLiveData<APIResponse<ResponseCell>> = MutableLiveData()
     // 리사이클러 뷰에 표현하기 위한 cell list
-    private val _stateList: MutableLiveData<APIResponse<List<ResponseCell>>> = MutableLiveData()
+    private val _stateList: MutableLiveData<APIResponse<MutableList<ResponseCell>>> = MutableLiveData()
     private val _deleteAndSendCell: MutableLiveData<APIResponse<Void>> = MutableLiveData()
     val state: LiveData<APIResponse<ResponseCell>>
         get() = _state
-    val stateList: LiveData<APIResponse<List<ResponseCell>>>
+    val stateList: LiveData<APIResponse<MutableList<ResponseCell>>>
         get() = _stateList
     val deleteAndSendCell: LiveData<APIResponse<Void>>
         get() = _deleteAndSendCell
