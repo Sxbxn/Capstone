@@ -65,11 +65,11 @@ class CellRepositoryImpl(
      ***/
 
     //Local API
-    override suspend fun getAllCells(): List<Cell> {
+    override suspend fun getAllCells(): MutableList<Cell> {
         return cellLocalDataSource.getAllCells()
     }
 
-    override suspend fun getCellsFromEmail(email: String): List<Cell> {
+    override suspend fun getCellsFromEmail(email: String): MutableList<Cell> {
         return cellLocalDataSource.getCellsFromEmail(email)
     }
 

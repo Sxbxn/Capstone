@@ -7,11 +7,11 @@ import com.kyonggi.cellification.repository.cell.datasource.CellLocalDataSource
 class CellLocalDataSourceImpl(
     private val cellDao : CellDao
 ): CellLocalDataSource {
-    override suspend fun getAllCells(): List<Cell> {
+    override suspend fun getAllCells(): MutableList<Cell> {
         return cellDao.getAll()
     }
 
-    override suspend fun getCellsFromEmail(email: String): List<Cell> {
+    override suspend fun getCellsFromEmail(email: String): MutableList<Cell> {
         return cellDao.getCellsQueryEmail(email)
     }
 

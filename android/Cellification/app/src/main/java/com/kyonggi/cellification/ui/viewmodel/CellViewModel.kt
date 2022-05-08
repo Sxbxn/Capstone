@@ -35,11 +35,11 @@ class CellViewModel @Inject constructor(
         get() = _deleteAndSendCell
 
     //Local APi variable
-    val _stateLocal: MutableLiveData<Cell> = MutableLiveData()
-    val _stateListLocal: MutableLiveData<List<Cell>> = MutableLiveData()
+    private val _stateLocal: MutableLiveData<Cell> = MutableLiveData()
+    private val _stateListLocal: MutableLiveData<MutableList<Cell>> = MutableLiveData()
     val stateLocal: LiveData<Cell>
         get() = _stateLocal
-    val stateListLocal: LiveData<List<Cell>>
+    val stateListLocal: LiveData<MutableList<Cell>>
         get() = _stateListLocal
 
     // Remote API
@@ -105,7 +105,7 @@ class CellViewModel @Inject constructor(
 
 
     // Local API
-    private fun result(response: List<Cell>, livedata: MutableLiveData<List<Cell>>) {
+    private fun result(response: MutableList<Cell>, livedata: MutableLiveData<MutableList<Cell>>) {
         try {
             if (response != null) {
                 livedata.postValue(response)

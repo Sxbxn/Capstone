@@ -10,7 +10,7 @@ import com.kyonggi.cellification.databinding.ItemListBinding
 import com.kyonggi.cellification.utils.GlideApp
 
 class CellLocalAdapter(
-    private var cellList: List<Cell>
+    var cellList: MutableList<Cell>
 ) : RecyclerView.Adapter<CellLocalAdapter.CellViewHolder>() {
 
     private lateinit var myItemClickListener: ItemClickListener
@@ -53,8 +53,9 @@ class CellLocalAdapter(
             // cell 데이터와 바인드
             cellCnt.text = "Total: " + (cell.liveCell + cell.deadCell).toString()
             cellViability.text = "Viability:" + cell.viability.toString() + "%"
-            GlideApp.with(cellImage)
-                .load("any_url")
+            GlideApp.with(itemView.context)
+                .load("https://capstone-taekang-bucket.s3.ap-northeast-2.amazonaws.com/166443.jpg")
+                .placeholder(R.drawable.ic_baseline_settings_24)
                 .error(R.drawable.ic_baseline_settings_24)
                 .fallback(R.drawable.ic_baseline_settings_24)
                 .into(cellImage)
