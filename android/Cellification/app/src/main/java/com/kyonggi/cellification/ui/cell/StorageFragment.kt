@@ -37,6 +37,7 @@ class StorageFragment : Fragment() {
     private lateinit var recyclerLocalViewAdapter: CellLocalAdapter
     private lateinit var mainActivity: MainActivity
     private lateinit var currentData: List<ResponseCell>
+    private lateinit var currentLocalData: List<Cell>
     private val token = App.prefs.token.toString()
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,7 +54,6 @@ class StorageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         changeView(0)
         tabSelected()
     }
@@ -94,7 +94,7 @@ class StorageFragment : Fragment() {
     }
 
     // tab의 save
-    private fun initLocalRecyclerView(list: List<Cell>) {
+    private fun initLocalRecyclerView(list: MutableList<Cell>) {
         binding.cellRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerLocalViewAdapter = CellLocalAdapter(list)
         binding.cellRecyclerView.adapter = recyclerLocalViewAdapter
@@ -138,10 +138,8 @@ class StorageFragment : Fragment() {
         // 매개변수 바꿔줘야함
         cellViewModel.getCellsQueryEmail(App.prefs.userId.toString())
         cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer {
+            currentLocalData = it
             initLocalRecyclerView(it)
-            while (it.iterator().hasNext()) {
-                Log.i("result", it.iterator().next().toString())
-            }
         })
     }
 
@@ -154,7 +152,7 @@ class StorageFragment : Fragment() {
 
             override fun onLongClick(position: Int) {
                 val builder = AlertDialog.Builder(requireContext(), R.style.DeleteDialog)
-                deleteDialogProcess(position, builder)
+                deleteDialogProcess(position, builder, 0)
             }
         })
     }
@@ -163,33 +161,61 @@ class StorageFragment : Fragment() {
         recyclerLocalViewAdapter.setItemOnClickListener(object : ItemClickListener {
             override fun onItemClick(position: Int) {
                 // 프래그먼트 인자 바꿔야함... 개별 결과 페이지로..
-                mainActivity.changeFragment(ResultFragment())
+                mainActivity.changeFragment(ResultRecyclerFragment(), currentData[position])
             }
 
             override fun onLongClick(position: Int) {
                 // 삭제 다이얼로그 로직?
+                val builder = AlertDialog.Builder(requireContext(), R.style.DeleteDialog)
+                deleteDialogProcess(position, builder, 1)
             }
         })
     }
 
-    private fun deleteDialogProcess(position: Int, builder: AlertDialog.Builder) {
-        val dialog = builder.setMessage("삭제 하시겠습니까?")
-            .setPositiveButton("삭제") { dialog, _ ->
-                val deleteCellId = currentData[position].cellId
-                val deleteUserId = currentData[position].userId
-                cellViewModel.deleteSpecificCell(token, deleteUserId, deleteCellId)
-                dialog.dismiss()
-                recyclerViewAdapter.cellList.removeAt(position)
-                println(recyclerViewAdapter.cellList)
-                recyclerViewAdapter.notifyItemRemoved(position)
+    private fun deleteDialogProcess(position: Int, builder: AlertDialog.Builder, tabPos: Int) {
+        when (tabPos) {
+            0 -> {
+                val dialog = builder.setMessage("삭제 하시겠습니까?")
+                    .setPositiveButton("삭제") { dialog, _ ->
+                        val deleteCellId = currentData[position].cellId
+                        val deleteUserId = currentData[position].userId
+                        cellViewModel.deleteSpecificCell(token, deleteUserId, deleteCellId)
+                        dialog.dismiss()
+                        recyclerViewAdapter.cellList.removeAt(position)
+                        recyclerViewAdapter.notifyItemRemoved(position)
+                    }
+                    .setNegativeButton("취소") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .create()
+                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+                dialog.show()
             }
-            .setNegativeButton("취소") { dialog, _ ->
-                dialog.dismiss()
+            1 -> {
+                val cellData = currentLocalData[position]
+                val cell = Cell(
+                    cellData.id,
+                    cellData.liveCell,
+                    cellData.deadCell,
+                    cellData.imageUrl,
+                    cellData.viability,
+                    cellData.email
+                )
+                val dialog = builder.setMessage("삭제 하시겠습니까?")
+                    .setPositiveButton("삭제") { dialog, _ ->
+                        cellViewModel.deleteCell(cell)
+                        dialog.dismiss()
+                        recyclerLocalViewAdapter.cellList.removeAt(position)
+                        recyclerLocalViewAdapter.notifyItemRemoved(position)
+                    }
+                    .setNegativeButton("취소") { dialog, _ ->
+                        dialog.dismiss()
+                    }
+                    .create()
+                dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+                dialog.show()
             }
-            .create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-        dialog.show()
-
+        }
     }
 
 }
