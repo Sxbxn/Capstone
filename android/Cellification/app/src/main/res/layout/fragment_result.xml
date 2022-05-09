@@ -37,7 +37,6 @@
             android:gravity="center">
 
             <TextView
-                android:id="@+id/viability_"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Viability"
@@ -45,6 +44,7 @@
                 android:textSize="24sp"/>
 
             <TextView
+                android:id="@+id/viability"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="89%"

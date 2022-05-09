@@ -2,6 +2,7 @@ package com.kyonggi.cellification.ui.cell
 
 import android.app.AlertDialog
 import android.content.Context
+import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
@@ -39,6 +40,7 @@ class StorageFragment : Fragment() {
     private lateinit var currentData: List<ResponseCell>
     private lateinit var currentLocalData: List<Cell>
     private val token = App.prefs.token.toString()
+    private lateinit var res: Resources
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -50,6 +52,7 @@ class StorageFragment : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mainActivity = context as MainActivity
+        res  = resources
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -88,7 +91,7 @@ class StorageFragment : Fragment() {
     //tab의 cell drive
     private fun initRecyclerView(list: MutableList<ResponseCell>) {
         binding.cellRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        recyclerViewAdapter = CellAdapter(list)
+        recyclerViewAdapter = CellAdapter(list, res)
         binding.cellRecyclerView.adapter = recyclerViewAdapter
         setItemOnClickListener()
     }
@@ -96,21 +99,9 @@ class StorageFragment : Fragment() {
     // tab의 save
     private fun initLocalRecyclerView(list: MutableList<Cell>) {
         binding.cellRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
-        recyclerLocalViewAdapter = CellLocalAdapter(list)
+        recyclerLocalViewAdapter = CellLocalAdapter(list, res)
         binding.cellRecyclerView.adapter = recyclerLocalViewAdapter
         setLocalItemOnClickListener()
-    }
-
-
-    private fun initViewModel() {
-        cellViewModel.stateList.observe(viewLifecycleOwner, Observer {
-            if (it != null) {
-//                recyclerViewAdapter.setCellList(it)
-//                recyclerViewAdapter.notifyDataSetChanged()
-            } else {
-                Toast.makeText(requireContext(), "error in getting data", Toast.LENGTH_SHORT).show()
-            }
-        })
     }
 
     private fun getRemoteCellListFromUser() {
@@ -126,9 +117,6 @@ class StorageFragment : Fragment() {
                 is APIResponse.Error -> {
                     // error code
                     Toast.makeText(requireActivity(), "로딩 실패", Toast.LENGTH_SHORT).show()
-                }
-                is APIResponse.Loading -> {
-                    // loading code
                 }
             }
         })

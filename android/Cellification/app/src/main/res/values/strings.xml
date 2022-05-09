@@ -11,4 +11,7 @@
     <string name="name_hint_text">이름</string>
     <string name="forget_pwd_text">Forget Password?</string>
     <string name="log_in_text">로그인</string>
+    <string name="total_count">Total: %d</string>
+    <string name="percent">%.1f %%</string>
+    <string name="recycler_percent">viability: %.1f%%</string>
 </resources>
