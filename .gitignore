@@ -1,2 +1,7 @@
 data/
 capstone_env/
+
+yolor/runs/
+yolor/__pycache__/
+yolor/models/__pycache__/
+yolor/utils/__pycache__/

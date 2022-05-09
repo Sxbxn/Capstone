@@ -1,12 +1,12 @@
 weights: ''
 cfg: cfg/yolor_p6.cfg
-data: ./data/coco.yaml
+data: ./data/cell.yaml
 hyp: ./data/hyp.scratch.640.yaml
-epochs: 300
-batch_size: 8
+epochs: 200
+batch_size: 16
 img_size:
-- 408
-- 306
+- 512
+- 512
 rect: false
 resume: false
 nosave: false
@@ -27,7 +27,7 @@ workers: 8
 project: runs/train
 name: yolor_p6
 exist_ok: false
-total_batch_size: 8
+total_batch_size: 16
 world_size: 1
 global_rank: -1
 save_dir: runs/train/yolor_p6

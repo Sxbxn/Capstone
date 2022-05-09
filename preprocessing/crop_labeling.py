@@ -18,13 +18,13 @@ for imname in img_list:
     df = pd.read_csv(imname)
     df = df.iloc[:, :-1]
     imname=imname.split('/')[-1]
+    x_center = df['right']-20
+    y_center = df['bottom']-20
 
     for i in range(0,(img_x_size-patch_x_size)//x_stride+1,1):
+        x = i*x_stride
         for k in range(0,(img_y_size-patch_y_size)//y_stride+1,1):
-            x = i*x_stride
             y = k*y_stride
-            x_center = df['right']-20
-            y_center = df['bottom']-20
 
             result = df[(x_center >= x) & (x_center < (x+patch_x_size)) & (y_center >=y) & (y_center < (y+patch_y_size))]
 
@@ -35,3 +35,29 @@ for imname in img_list:
 
             print('save '+output_dir+'{}_{}_{}.csv'.format(imname.split('_')[0], x, y))
             result.to_csv(output_dir+'{}_{}_{}.csv'.format(imname.split('_')[0], x, y), sep=',')
+
+        y = img_y_size - patch_y_size
+
+        result = df[(x_center >= x) & (x_center < (x+patch_x_size)) & (y_center >=y) & (y_center < (y+patch_y_size))]
+
+        result.loc[:,'left'] = result.loc[:,'left'] - x
+        result.loc[:,'right'] = result.loc[:,'right'] - x
+        result.loc[:,'top'] = result.loc[:,'top'] - y
+        result.loc[:,'bottom'] = result.loc[:,'bottom'] - y
+
+        print('save '+output_dir+'{}_{}_{}.csv'.format(imname.split('_')[0], x, y))
+        result.to_csv(output_dir+'{}_{}_{}.csv'.format(imname.split('_')[0], x, y), sep=',')
+
+    for i in range(0,(img_y_size-patch_y_size)//y_stride+1,1):
+        x = img_x_size - patch_x_size
+        y = i*y_stride
+        
+        result = df[(x_center >= x) & (x_center < (x+patch_x_size)) & (y_center >=y) & (y_center < (y+patch_y_size))]
+
+        result.loc[:,'left'] = result.loc[:,'left'] - x
+        result.loc[:,'right'] = result.loc[:,'right'] - x
+        result.loc[:,'top'] = result.loc[:,'top'] - y
+        result.loc[:,'bottom'] = result.loc[:,'bottom'] - y
+
+        print('save '+output_dir+'{}_{}_{}.csv'.format(imname.split('_')[0], x, y))
+        result.to_csv(output_dir+'{}_{}_{}.csv'.format(imname.split('_')[0], x, y), sep=',')

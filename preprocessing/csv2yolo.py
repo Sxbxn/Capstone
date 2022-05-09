@@ -2,10 +2,10 @@ import pandas as pd
 import glob
 
 
-input_csv = '/home/dh/Project/Capstone/data/patch_train/csv/'
-output_yolo = '/home/dh/Project/Capstone/data/patch_train/data/'
-input_img =  '/home/dh/Project/Capstone/data/patch_train/data/'
-output_txt = '/home/dh/Project/Capstone/data/patch_train/'
+input_csv = '/home/dh/Project/Capstone/data/patch_val/csv/'
+output_yolo = '/home/dh/Project/Capstone/data/patch_val/data/'
+input_img =  '/home/dh/Project/Capstone/data/patch_val/data/'
+output_txt = '/home/dh/Project/Capstone/data/patch_val/'
 x_size = 408
 y_size = 306
 
@@ -28,10 +28,10 @@ for csv_name in csvs:
     f.close()
 
 imgs = glob.glob(input_img+'*.jpg')
-f = open(output_txt+'train.txt', 'w')
+f = open(output_txt+'val.txt', 'w')
 
 for img_name in imgs:
     f.write(img_name+'\n')
 
-print('save'+output_txt+'train.txt')
+print('save'+output_txt+'val.txt')
 f.close()
