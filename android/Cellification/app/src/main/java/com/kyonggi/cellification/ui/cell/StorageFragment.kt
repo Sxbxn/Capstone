@@ -179,7 +179,7 @@ class StorageFragment : Fragment() {
                             cellData.deadCell,
                             cellData.imageUrl,
                             cellData.viability,
-                            cellData.email
+                            cellData.userId
                         )
                         cellViewModel.deleteCell(cell)
                         dialog.dismiss()
