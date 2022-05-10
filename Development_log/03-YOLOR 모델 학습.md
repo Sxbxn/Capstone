@@ -1,4 +1,4 @@
-# 01-모델 선정 및 데이터 전처리  
+# 03-YOLOR 모델 학습
 > 22-04-21
 
 ## 개요  
@@ -44,8 +44,16 @@ nc: 2
 names: ['dead', 'live']
 ```
 
-train 코드는 다음과 같이 작성했다.  
+train/test/detection 코드는 다음과 같이 작성했다.  
 
 ```bash
-python train.py --batch-size 32 --img 408 306 --data cell.yaml --cfg cfg/yolor_p6.cfg --weights '' --device 0 --name yolor_p6 --hyp hyp.scratch.640.yaml --epochs 300
+python train.py --batch-size 16 --img 512 512 --data cell.yaml --cfg cfg/yolor_p6.cfg --weights '' --device 0 --name yolor_p6 --hyp hyp.scratch.640.yaml --epochs 200
+```
+
+```bash
+python test.py --data data/cell.yaml --img 512 --batch 16 --conf 0.001 --iou 0.65 --device 0 --cfg cfg/yolor_p6.cfg --weights runs/train/yolor_p6/weights/last.pt --name yolor_p6_val --names data/cell.names --save-txt --task test
+```
+
+```bash
+python detect.py --source /home/dh/Project/Capstone/data/patch_test/data/k025-2_204_1530.jpg --cfg cfg/yolor_p6.cfg --weights runs/train/yolor_p6/weights/last.pt --conf 0.25 --img-size 512 --device 0 --names data/cell.names
 ```
