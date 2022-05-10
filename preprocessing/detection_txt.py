@@ -1,15 +1,16 @@
 import cv2
 import pandas as pd
 
-predict_dir = '/home/dh/Project/Capstone/yolor/runs/test/yolor_p6_val/'
+#predict_dir = '/home/dh/Project/Capstone/yolor/runs/test/yolor_p6_val/labels/'
+predict_dir = '/home/dh/Project/Capstone/data/patch_test/data/'
 dir='/home/dh/Project/Capstone/data/patch_test/'
-img_name = 'k025-3_2856_2142'
+img_name = 'k025-2_0_306'
 grean = (0, 255, 0)
 red = (0, 0, 255)
 x_size = 408
 y_size = 306
 
-result = pd.read_csv(predict_dir+'labels/{}.txt'.format(img_name), header=None)[0]
+result = pd.read_csv(predict_dir+'{}.txt'.format(img_name), header=None)[0]
 img = cv2.imread(dir+'data/{}.jpg'.format(img_name))
 
 
@@ -26,5 +27,6 @@ for idx, row in enumerate(result):
     print((row[1]-20,row[2]-20), (row[1]+20,row[2]+20))
 
 cv2.imshow('img', img)
+cv2.imwrite('img.jpg', img)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

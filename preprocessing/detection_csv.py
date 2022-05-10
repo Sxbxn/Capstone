@@ -15,7 +15,8 @@ for idx, row in result.iloc[:, 1:].iterrows():
     if row[1] == 0:
         img = cv2.rectangle(img, (row[2],row[3]), (row[4], row[5]), red, 3)
 
+img = cv2.copyMakeBorder(img, 50, 50, 50, 50, cv2.BORDER_CONSTANT)
+ 
 
 cv2.imshow('img', img)
 cv2.waitKey(0)
-cv2.destroyAllWindows()
