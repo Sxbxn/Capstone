@@ -148,7 +148,7 @@ class StorageFragment : Fragment() {
         recyclerLocalViewAdapter.setItemOnClickListener(object : ItemClickListener {
             override fun onItemClick(position: Int) {
                 // 프래그먼트 인자 바꿔야함... 개별 결과 페이지로..
-                mainActivity.changeFragment(ResultRecyclerFragment(), currentData[position])
+                mainActivity.changeFragment(ResultRecyclerFragment(), currentLocalData[position])
             }
 
             override fun onLongClick(position: Int) {

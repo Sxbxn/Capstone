@@ -83,7 +83,13 @@ class LogInActivity : AppCompatActivity() {
                     }
                     startActivity(Intent(this, MainActivity::class.java).apply {
                         this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                        this.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        this.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                     })
+
+                    //finish 전에 dismiss 해야 에러 안남
+                    loading.dismiss()
+                    finish()
                 }
                 is APIResponse.Error -> {
                     // error code

@@ -16,6 +16,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import com.kyonggi.cellification.R
+import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.databinding.ActivityMainBinding
 import com.kyonggi.cellification.ui.di.App
@@ -96,6 +97,18 @@ class MainActivity : AppCompatActivity() {
     fun changeFragment(fragment: Fragment, data: ResponseCell) {
         val bundle = Bundle()
         bundle.putInt("totalCell",data.totalCell)
+        bundle.putInt("liveCell",data.liveCell)
+        bundle.putInt("deadCell",data.deadCell)
+        bundle.putDouble("viability",data.viability)
+        fragment.arguments = bundle
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.fragmentContainerView, fragment)
+            .commit()
+    }
+    fun changeFragment(fragment: Fragment, data: Cell) {
+        val bundle = Bundle()
+        bundle.putInt("totalCell",(data.liveCell+data.deadCell))
         bundle.putInt("liveCell",data.liveCell)
         bundle.putInt("deadCell",data.deadCell)
         bundle.putDouble("viability",data.viability)
