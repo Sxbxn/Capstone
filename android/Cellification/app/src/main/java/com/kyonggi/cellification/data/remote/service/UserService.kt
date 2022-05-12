@@ -29,7 +29,7 @@ interface UserService {
 
     // cell 이미지 보내기(분석)
     @Multipart
-    @POST("/capstone-user-service/images")
+    @POST("/capstone-cell-service/images")
     suspend fun sendCellImage(
         @Header ("Authorization") token :String,
         @Part cellImage: MultipartBody.Part?

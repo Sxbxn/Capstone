@@ -42,6 +42,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initNavigationView() {
+        if (token != null) {
+            binding.mainNavigationView.menu[0].title = "LOG OUT"
+            binding.mainNavigationView.menu[0].icon =
+                getDrawable(R.drawable.ic_baseline_logout_48)
+
+        } else {
+            binding.mainNavigationView.menu[0].title = "LOG IN"
+            binding.mainNavigationView.menu[0].icon = getDrawable(R.drawable.ic_baseline_login)
+            binding.mainNavigationView.getHeaderView(0).findViewById<TextView>(R.id.name).text = "Guest"
+            binding.mainNavigationView.getHeaderView(0).findViewById<TextView>(R.id.description).text = "I`m Guest"
+        }
         binding.mainNavigationView.setNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_login -> {
