@@ -29,7 +29,7 @@ value error가 뜨는데 아무리봐도 코드가 그냥 오류가 있는게 �
 
 ## YOLOR config
 
-이제 전반적인 준비가 완료되었다. Yolo-R에 들어가서 requirements.txt의 항목들을 다 다운받고, ```yolor/data/cel.yaml```을 만들어 경로 설정을 해주었다.
+이제 전반적인 준비가 완료되었다. Yolo-R에 들어가서 requirements.txt의 항목들을 다 다운받고, ```yolor/data/cell.yaml```을 만들어 경로 설정을 해주었다.
 
 ```yaml
 # train and val datasets (image directory or *.txt file with image paths)
