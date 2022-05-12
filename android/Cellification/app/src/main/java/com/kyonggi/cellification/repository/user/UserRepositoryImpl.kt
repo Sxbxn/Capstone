@@ -38,6 +38,15 @@ class UserRepositoryImpl(
         }
         return APIResponse.Error(response.message())
     }
+
+    override suspend fun getInfo(token: String, userId: String): APIResponse<ResponseUser> {
+        val response = userRemoteDataSource.getInfo(token, userId)
+        if (response.isSuccessful) {
+            return APIResponse.Success(response.body())
+        }
+        return APIResponse.Error(response.message())
+    }
+
     override suspend fun sendCellImage(token:String, image: MultipartBody.Part): APIResponse<String>{
         val response = userRemoteDataSource.sendCellImage(token, image)
         if(response.isSuccessful){

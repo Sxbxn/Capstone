@@ -4,6 +4,7 @@ import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.kyonggi.cellification.data.model.user.ResponseUser
 import com.kyonggi.cellification.data.model.user.UserLogin
 import com.kyonggi.cellification.repository.user.UserRepository
 import com.kyonggi.cellification.utils.APIResponse
@@ -25,6 +26,7 @@ class UserViewModel @Inject constructor(
     val emailLiveData: MutableLiveData<String> = MutableLiveData()
     val pwdLiveData: MutableLiveData<String> = MutableLiveData()
     val sendCell: MutableLiveData<APIResponse<String>> = MutableLiveData()
+    val getInfo: MutableLiveData<APIResponse<ResponseUser>> = MutableLiveData()
     val isValidLiveData: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
         // 입력이 valid 하지않으면 버튼 disabled
         this.value = false
@@ -70,6 +72,14 @@ class UserViewModel @Inject constructor(
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.sendCellImage(token, body)
             sendCell.postValue(response)
+        }
+    }
+
+    fun getInfo(token: String, userId: String) {
+        getInfo.value = APIResponse.Loading()
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = repository.getInfo(token, userId)
+            getInfo.postValue(response)
         }
     }
 }

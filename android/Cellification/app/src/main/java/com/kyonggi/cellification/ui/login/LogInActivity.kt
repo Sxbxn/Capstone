@@ -2,6 +2,7 @@ package com.kyonggi.cellification.ui.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.doOnTextChanged
@@ -71,6 +72,36 @@ class LogInActivity : AppCompatActivity() {
         }
     }
 
+    private fun getInfo(token: String, userId: String) {
+        userViewModel.getInfo(token, userId)
+        userViewModel.getInfo.observe(this@LogInActivity) { response ->
+            when (response) {
+                is APIResponse.Success -> {
+                    // success code
+                    App.prefs.apply {
+                        this.email = response.data?.email
+                        this.name = response.data?.name
+                    }
+                    startActivity(Intent(this, MainActivity::class.java).apply {
+                        this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                    })
+
+//                    finish 전에 dismiss 해야 에러 안남
+                    loading.dismiss()
+                    finish()
+                }
+                is APIResponse.Error -> {
+                    // error code
+                    loading.setError()
+                }
+                is APIResponse.Loading -> {
+                    // loading code
+                    loading.setVisible()
+                }
+            }
+        }
+    }
+
     private fun requestLogin(userLogin: UserLogin) {
         userViewModel.getTokenRequest(userLogin)
         userViewModel.isLogin.observe(this@LogInActivity) { response ->
@@ -81,15 +112,7 @@ class LogInActivity : AppCompatActivity() {
                         token = response.data?.get("token")
                         userId = response.data?.get("userId")
                     }
-                    startActivity(Intent(this, MainActivity::class.java).apply {
-                        this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-                        this.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        this.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    })
-
-                    //finish 전에 dismiss 해야 에러 안남
-                    loading.dismiss()
-                    finish()
+                    App.prefs.token?.let { App.prefs.userId?.let { it1 -> getInfo(it, it1) } }
                 }
                 is APIResponse.Error -> {
                     // error code

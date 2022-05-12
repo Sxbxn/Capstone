@@ -34,4 +34,10 @@ interface UserService {
         @Header ("Authorization") token :String,
         @Part cellImage: MultipartBody.Part?
     ) :Response<String>
+
+    @GET("/capstone-user-service/users/{userId}")
+    suspend fun getInfo(
+        @Header ("Authorization") token :String,
+        @Path("userId") userId: String
+    ): Response<ResponseUser>
 }

@@ -18,6 +18,17 @@ class PreferenceUtils(context: Context) {
         set(value) {
             prefs.edit().putString("userId", value).apply()
         }
+    var email:String?
+        get() = prefs.getString("email", null)
+        set(value) {
+            prefs.edit().putString("email", value).apply()
+        }
+    var name:String?
+        get() = prefs.getString("name", null)
+        set(value) {
+            prefs.edit().putString("name", value).apply()
+        }
+
 
     fun clear() {
         prefs.edit().clear().apply()

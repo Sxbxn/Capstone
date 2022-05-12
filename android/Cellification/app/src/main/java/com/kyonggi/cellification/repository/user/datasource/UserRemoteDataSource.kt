@@ -11,4 +11,5 @@ interface UserRemoteDataSource {
     suspend fun logInUser(login: UserLogin): Response<Void>
     suspend fun withdrawalUser(token: String,userId: String): Response<Void>
     suspend fun sendCellImage(token:String, image: MultipartBody.Part): Response<String>
+    suspend fun getInfo(token: String, userId: String): Response<ResponseUser>
 }
