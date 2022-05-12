@@ -17,12 +17,13 @@ for csv_name in csvs:
     f = open(output_yolo+name, 'w')
 
     for line in csv.itertuples():
+        print(line)
         classes = line[3]
         x = (line[4]+20) / x_size
         y = (line[5]+20) / y_size
         w = 40 / x_size
         h = 40 / y_size
-        f.write('{} {} {} {} {}\n'.format(classes, x, y, w, h))
+        #f.write('{} {} {} {} {}\n'.format(classes, x, y, w, h))
 
     print('save '+output_yolo+name)
     f.close()
@@ -30,8 +31,8 @@ for csv_name in csvs:
 imgs = glob.glob(input_img+'*.jpg')
 f = open(output_txt+'val.txt', 'w')
 
-for img_name in imgs:
-    f.write(img_name+'\n')
+#for img_name in imgs:
+    #f.write(img_name+'\n')
 
 print('save'+output_txt+'val.txt')
 f.close()

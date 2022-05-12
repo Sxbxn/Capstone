@@ -26,8 +26,8 @@ for img_name in img_list:
         for k in range(0,img_y_size//patch_y_size,1):
             y = k*patch_y_size
             patch = cv2.imread(patch_input + '{}_{}_{}.jpg'.format(name, x, y), cv2.IMREAD_GRAYSCALE)
-            patch = cv2.copyMakeBorder(patch, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
-            patch = cv2.resize(patch, (408, 306))
+            patch = patch[1:-1, 1:-1]
+            patch = cv2.copyMakeBorder(patch, 1, 1, 1, 1, cv2.BORDER_CONSTANT)
             img[y:y+patch_y_size, x:x+patch_x_size] = patch
 
     # 2. 좌우 중간 patch 덮어쓰기
@@ -37,8 +37,8 @@ for img_name in img_list:
             y = k*patch_y_size
             patch = cv2.imread(patch_input + '{}_{}_{}.jpg'.format(name, x, y), cv2.IMREAD_GRAYSCALE)
             patch = patch[:,patch_x_size//2 - 40: -patch_x_size//2 + 40]
-            patch = cv2.copyMakeBorder(patch, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
-            patch = cv2.resize(patch, (80, 306))
+            patch = patch[1:-1, 1:-1]
+            patch = cv2.copyMakeBorder(patch, 1, 1, 1, 1, cv2.BORDER_CONSTANT)
             img[y:y+patch_y_size, x+patch_x_size//2 - 40:x+patch_x_size//2 + 40] = patch
     
     # 3. 상하 중간 patch 덮어쓰기
@@ -48,8 +48,8 @@ for img_name in img_list:
             y = k*patch_y_size + y_stride
             patch = cv2.imread(patch_input + '{}_{}_{}.jpg'.format(name, x, y), cv2.IMREAD_GRAYSCALE)
             patch = patch[patch_y_size//2 - 40: -patch_y_size//2 + 40, :]
-            patch = cv2.copyMakeBorder(patch, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
-            patch = cv2.resize(patch, (408, 80))
+            patch = patch[1:-1, 1:-1]
+            patch = cv2.copyMakeBorder(patch, 1, 1, 1, 1, cv2.BORDER_CONSTANT)
             img[y+patch_y_size//2 - 40:y+patch_y_size//2 + 40, x:x+patch_x_size] = patch
 
     for i in range(0,img_x_size//patch_x_size-1,1):
@@ -58,8 +58,8 @@ for img_name in img_list:
             y = k*patch_y_size + y_stride
             patch = cv2.imread(patch_input + '{}_{}_{}.jpg'.format(name, x, y), cv2.IMREAD_GRAYSCALE)
             patch = patch[patch_y_size//2 - 40: -patch_y_size//2 + 40, patch_x_size//2 - 40: -patch_x_size//2 + 40]
-            patch = cv2.copyMakeBorder(patch, 5, 5, 5, 5, cv2.BORDER_CONSTANT)
-            patch = cv2.resize(patch, (80, 80))
+            patch = patch[1:-1, 1:-1]
+            patch = cv2.copyMakeBorder(patch, 1, 1, 1, 1, cv2.BORDER_CONSTANT)
             img[y+patch_y_size//2 - 40:y+patch_y_size//2 + 40, x+patch_x_size//2 - 40:x+patch_x_size//2 + 40] = patch
 
     cv2.imwrite(merge_output+'{}.jpg'.format(name), img)

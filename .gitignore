@@ -5,3 +5,6 @@ yolor/runs/
 yolor/__pycache__/
 yolor/models/__pycache__/
 yolor/utils/__pycache__/
+
+run/data/
+run/result/
