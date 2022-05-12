@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
             binding.mainNavigationView.menu[0].title = "LOG OUT"
             binding.mainNavigationView.menu[0].icon =
                 getDrawable(R.drawable.ic_baseline_logout_48)
-
+            binding.mainNavigationView.getHeaderView(0).findViewById<TextView>(R.id.name).text = App.prefs.name.toString()
+            binding.mainNavigationView.getHeaderView(0).findViewById<TextView>(R.id.description).text = App.prefs.email.toString()
         } else {
             binding.mainNavigationView.menu[0].title = "LOG IN"
             binding.mainNavigationView.menu[0].icon = getDrawable(R.drawable.ic_baseline_login)
