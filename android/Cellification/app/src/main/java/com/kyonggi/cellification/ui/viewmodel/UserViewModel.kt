@@ -22,12 +22,13 @@ class UserViewModel @Inject constructor(
     // request state
     val isLogin: MutableLiveData<APIResponse<Headers>> = MutableLiveData()
     val withdrawal: MutableLiveData<APIResponse<Void>> = MutableLiveData()
-    val sendCell: MutableLiveData<APIResponse<String>> = MutableLiveData()
     val emailLiveData: MutableLiveData<String> = MutableLiveData()
     val pwdLiveData: MutableLiveData<String> = MutableLiveData()
+    val sendCell: MutableLiveData<APIResponse<String>> = MutableLiveData()
     val isValidLiveData: MediatorLiveData<Boolean> = MediatorLiveData<Boolean>().apply {
         // 입력이 valid 하지않으면 버튼 disabled
         this.value = false
+
 
         addSource(emailLiveData) {
             this.value = validateForm()
@@ -68,6 +69,7 @@ class UserViewModel @Inject constructor(
         sendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
             val response = repository.sendCellImage(token, body)
+            sendCell.postValue(response)
         }
     }
 }

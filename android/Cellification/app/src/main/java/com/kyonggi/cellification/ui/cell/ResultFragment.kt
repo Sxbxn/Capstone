@@ -1,6 +1,5 @@
 package com.kyonggi.cellification.ui.cell
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.FragmentResultBinding
-import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 
 import dagger.hilt.android.AndroidEntryPoint
@@ -41,14 +39,13 @@ class ResultFragment : Fragment() {
         }
     }
 
-    @SuppressLint("SetTextI18n")
     private fun initViewModel() {
         cellViewModel.state.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 with(binding) {
                     totalCountText.text =
-                        "Total Count: " + (it.data!!.liveCell + it.data!!.deadCell).toString()
-                    viability.text = it.data.viability.toString() + "%"
+                       getString(R.string.total_count, it.data!!.totalCell)
+                    viability.text = getString(R.string.percent, it.data.viability)
                     liveCell.text = it.data.liveCell.toString()
                     dieCell.text = it.data.deadCell.toString()
                 }

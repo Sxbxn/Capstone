@@ -14,24 +14,24 @@ import javax.inject.Inject
 class CellRemoteDataSourceImpl(
     private val cellService: CellService
 ): CellRemoteDataSource {
-    override suspend fun makeCell(requestCell: RequestCell, userid: String): Response<ResponseCell> {
-        return cellService.makeCell(requestCell, userid)
+    override suspend fun makeCell(token:String, requestCell: RequestCell, userid: String): Response<ResponseCell> {
+        return cellService.makeCell(token, requestCell, userid)
     }
 
-    override suspend fun getCellListFromUser(userid: String): Response<List<ResponseCell>>{
-        return cellService.getCellListFromUser(userid)
+    override suspend fun getCellListFromUser(token:String, userid: String): Response<MutableList<ResponseCell>>{
+        return cellService.getCellListFromUser(token, userid)
     }
 
-    override suspend fun getCellInfoFromCellID(cellid: String): Response<ResponseCell> {
-       return cellService.getCellInfoFromCellID(cellid)
+    override suspend fun getCellInfoFromCellID(token:String, cellid: String): Response<ResponseCell> {
+       return cellService.getCellInfoFromCellID(token, cellid)
     }
 
-    override suspend fun deleteAllCell(userid: String): Response<Void> {
-        return cellService.deleteAllCell(userid)
+    override suspend fun deleteAllCell(token:String, userid: String): Response<Void> {
+        return cellService.deleteAllCell(token, userid)
     }
 
-    override suspend fun deleteSpecificCell(userid: String, cellid: String): Response<Void> {
-        return cellService.deleteSpecificCell(userid,cellid)
+    override suspend fun deleteSpecificCell(token:String, userid: String, cellid: String): Response<Void> {
+        return cellService.deleteSpecificCell(token,userid,cellid)
     }
 
 

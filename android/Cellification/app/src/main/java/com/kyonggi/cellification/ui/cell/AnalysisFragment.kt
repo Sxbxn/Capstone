@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -17,18 +18,24 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.kyonggi.cellification.R
+import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
+import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.ui.viewmodel.UserViewModel
 import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.GlideApp
+import com.kyonggi.cellification.utils.LoadingDialog
 import com.kyonggi.cellification.utils.getFullPathFromUri
 import dagger.hilt.android.AndroidEntryPoint
+import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
+import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
@@ -40,7 +47,8 @@ class AnalysisFragment : Fragment() {
     private lateinit var mainActivity: MainActivity
     private lateinit var sendFile: File
     private val REQ_STORAGE_PERMISSION = 1
-    lateinit var responseData: ResponseCell
+    private lateinit var loading: LoadingDialog
+    private lateinit var analysisData: ResponseCell
     private val permissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) {
             if (it) {
@@ -68,6 +76,7 @@ class AnalysisFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        loading = LoadingDialog(requireContext())
         setOnImageButtonClickListener()
         setOnAnalysisButtonClickListener()
     }
@@ -113,25 +122,55 @@ class AnalysisFragment : Fragment() {
                 var fileName = sendFile.name
                 val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
 
-                val token = "Bearer "+ App.prefs.token.toString()
+                val token = "Bearer " + App.prefs.token.toString()
                 val body = MultipartBody.Part.createFormData("file", fileName, requestFile)
+                // test 공간 ------------------
+                //--------------
+                val cell = Cell(0,9,1,"",90.0,App.prefs.userId.toString())
+                makeLocalCellTest(cell)
+                // --------------
+//                makeCellTest(token, App.prefs.userId.toString())
+                // --------------
+//                sendCellImage(token, body)
+                // --------------
+                //실제 쓸거
+//                analysisCell(token,body)
 
-//            makeCellTest(App.prefs.userId.toString())
-                sendCellImage(token,body)
-//            mainActivity.changeFragment(ResultFragment(),response)
+                // test 공간 ------------------
             }
         }
     }
-
+    private fun analysisCell(token:String, body:MultipartBody.Part){
+        /***
+            private lateinit var analysisData: ResponseCell   -- 전역변수 선역
+            cellViewModel.함수(body)
+            cellViewModel.state.observe(viewLifecycleOwner, Observer {
+                loading.setInvisible()
+                when (it) {
+                    is APIResponse.Success -> {
+                           analysisData = it.data -- 이 데이터를 AnalysisDoneFragment 에 전달   --- 이미지 정보는 현재 프래그먼트에서 사용
+                            mainActivity.changeFragment(AnalysisDoneFragment(),analysisData)
+                    }
+                    is APIResponse.Error -> {
+                            //분석 실패
+                            loading.setError()
+                    }
+                    is APIResponse.loading -> {
+                        loading.setVisible()
+                    }
+                }
+            })
+         ***/
+        mainActivity.changeFragment(AnalysisDoneFragment())
+    }
     //cell 생성 test
     private val requestCell = RequestCell(10, 7, 3)
-    private fun makeCellTest(userid: String) {
-        cellViewModel.makeCellTest(requestCell, userid)
+    private fun makeCellTest(token: String, userid: String) {
+        cellViewModel.makeCellTest(token, requestCell, userid)
         cellViewModel.state.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is APIResponse.Success -> {
                     // success code
-//                    responseData = response.data
                     Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
                 }
                 is APIResponse.Error -> {
@@ -146,7 +185,7 @@ class AnalysisFragment : Fragment() {
     }
 
     //매개변수 바꿔야함
-    private fun sendCellImage(token:String, body: MultipartBody.Part) {
+    private fun sendCellImage(token: String, body: MultipartBody.Part) {
         userViewModel.sendCellImage(token, body)
         userViewModel.sendCell.observe(requireActivity(), Observer {
             when (it) {
@@ -163,6 +202,13 @@ class AnalysisFragment : Fragment() {
                     // loading code
                 }
             }
+        })
+    }
+
+    private fun makeLocalCellTest(cell: Cell) {
+        cellViewModel.insertCell(cell)
+        cellViewModel.stateLocal.observe(requireActivity(), Observer {
+            println(it.toString())
         })
     }
 }

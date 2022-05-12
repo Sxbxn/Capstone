@@ -7,7 +7,6 @@ import android.os.Handler
 import android.os.Looper
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.ui.cell.MainActivity
-import com.kyonggi.cellification.ui.login.LogInActivity
 
 class LoadingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +22,5 @@ class LoadingActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }, 2000)
-
-
     }
 }

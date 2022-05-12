@@ -8,7 +8,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AnalysisDoneFragment: Fragment() {
     private lateinit var binding: FragmentAnalysisDoneBinding
     private lateinit var mainActivity: MainActivity
@@ -17,14 +19,15 @@ class AnalysisDoneFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_analysis_done, container, false)
+        binding = FragmentAnalysisDoneBinding.inflate(layoutInflater)
+        return binding.root
     }
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mainActivity = context as MainActivity
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding = FragmentAnalysisDoneBinding.inflate(layoutInflater)
         super.onViewCreated(view, savedInstanceState)
         setOnReselectOnClickListener()
         setOnResultButtonClickListener()

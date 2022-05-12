@@ -25,21 +25,21 @@ class CellViewModel @Inject constructor(
     // 분석된 cell을 위한 것
     private val _state: MutableLiveData<APIResponse<ResponseCell>> = MutableLiveData()
     // 리사이클러 뷰에 표현하기 위한 cell list
-    private val _stateList: MutableLiveData<APIResponse<List<ResponseCell>>> = MutableLiveData()
+    private val _stateList: MutableLiveData<APIResponse<MutableList<ResponseCell>>> = MutableLiveData()
     private val _deleteAndSendCell: MutableLiveData<APIResponse<Void>> = MutableLiveData()
     val state: LiveData<APIResponse<ResponseCell>>
         get() = _state
-    val stateList: LiveData<APIResponse<List<ResponseCell>>>
+    val stateList: LiveData<APIResponse<MutableList<ResponseCell>>>
         get() = _stateList
     val deleteAndSendCell: LiveData<APIResponse<Void>>
         get() = _deleteAndSendCell
 
     //Local APi variable
-    val _stateLocal: MutableLiveData<Cell> = MutableLiveData()
-    val _stateListLocal: MutableLiveData<List<Cell>> = MutableLiveData()
+    private val _stateLocal: MutableLiveData<Cell> = MutableLiveData()
+    private val _stateListLocal: MutableLiveData<MutableList<Cell>> = MutableLiveData()
     val stateLocal: LiveData<Cell>
         get() = _stateLocal
-    val stateListLocal: LiveData<List<Cell>>
+    val stateListLocal: LiveData<MutableList<Cell>>
         get() = _stateListLocal
 
     // Remote API
@@ -55,18 +55,18 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun makeCellTest(requestCell: RequestCell, userid: String) {
+    fun makeCellTest(token:String, requestCell: RequestCell, userid: String) {
         _state.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.makeCellTest(requestCell, userid)
+            val response = cellRepository.makeCellTest(token, requestCell, userid)
             result(response, _state)
         }
     }
 
-    fun getCellListFromUser(userid: String) {
+    fun getCellListFromUser(token:String, userid: String) {
         _stateList.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.getCellListFromUser(userid)
+            val response = cellRepository.getCellListFromUser(token, userid)
             try {
                 if (response.data != null) {
                     _stateList.postValue(response)
@@ -79,33 +79,33 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun getCellInfoFromCellID(userid: String) {
+    fun getCellInfoFromCellID(token:String, userid: String) {
         _state.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.getCellInfoFromCellID(userid)
+            val response = cellRepository.getCellInfoFromCellID(token, userid)
             result(response, _state)
         }
     }
 
-    fun deleteAllCell(userid: String) {
+    fun deleteAllCell(token:String, userid: String) {
         _deleteAndSendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.deleteAllCell(userid)
+            val response = cellRepository.deleteAllCell(token, userid)
             result(response, _deleteAndSendCell)
         }
     }
 
-    fun deleteSpecificCell(userid: String, cellid: String) {
+    fun deleteSpecificCell(token:String, userid: String, cellid: String) {
         _deleteAndSendCell.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.deleteSpecificCell(userid, cellid)
+            val response = cellRepository.deleteSpecificCell(token, userid, cellid)
             result(response, _deleteAndSendCell)
         }
     }
 
 
     // Local API
-    private fun result(response: List<Cell>, livedata: MutableLiveData<List<Cell>>) {
+    private fun result(response: MutableList<Cell>, livedata: MutableLiveData<MutableList<Cell>>) {
         try {
             if (response != null) {
                 livedata.postValue(response)

@@ -11,5 +11,5 @@ data class Cell(
     val deadCell: Int,
     val imageUrl: String,
     val viability: Double,
-    val email: String,
+    val userId: String,
 )

@@ -7,15 +7,15 @@ import com.kyonggi.cellification.data.model.cell.Cell
 interface CellDao {
     //전체 cell 가져오기
     @Query("SELECT * FROM cell_list")
-    suspend fun getAll(): List<Cell>
+    suspend fun getAll(): MutableList<Cell>
 
     // 해당 Email Cell 을 가져온다
-    @Query("SELECT * FROM cell_list WHERE id = :email")
-    suspend fun getCellsQueryEmail(email: String): List<Cell>
+    @Query("SELECT * FROM cell_list WHERE userId = :userid")
+    suspend fun getCellsQueryEmail(userid: String): MutableList<Cell>
 
     // 특정 user의 cell 전체 삭제
-    @Query("DELETE FROM cell_list WHERE id = :email")
-    suspend fun deleteAllLocalCell(email: String)
+    @Query("DELETE FROM cell_list WHERE userId = :userid")
+    suspend fun deleteAllLocalCell(userid: String)
 
     // 해당 Cell 을 삭제한다
     @Delete

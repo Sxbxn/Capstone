@@ -1,6 +1,7 @@
 package com.kyonggi.cellification.ui.cell.adapter
 
 import android.annotation.SuppressLint
+import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -13,17 +14,13 @@ import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.GlideApp
 
 class CellAdapter(
-    private var cellList: List<ResponseCell>
+    var cellList: MutableList<ResponseCell>,
+    val res: Resources,
 ) : RecyclerView.Adapter<CellAdapter.CellViewHolder>() {
 
     private lateinit var myItemClickListener: ItemClickListener
     fun setItemOnClickListener(listener: ItemClickListener) {
         myItemClickListener = listener
-    }
-
-    //recyclerView 에 넘겨주기 위한 리스트
-    fun setCellList(listData: APIResponse<List<ResponseCell>>) {
-        this.cellList = listData.data!!
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CellViewHolder {
@@ -54,14 +51,13 @@ class CellAdapter(
         private val cellCnt = binding.cellCountText
         private val cellViability = binding.cellViabilityText
         private val cellImage = binding.cellImage
-
-        @SuppressLint("SetTextI18n")
         fun bind(cell: ResponseCell) {
             // cell 데이터와 바인드
-            cellCnt.text = "Total: " + (cell.liveCell + cell.deadCell).toString()
-            cellViability.text = "Viability:" + cell.viability.toString() + "%"
-            GlideApp.with(cellImage)
-                .load("any_url")
+            cellCnt.text = res.getString(R.string.total_count, cell.totalCell)
+            cellViability.text = res.getString(R.string.recycler_percent, cell.viability)
+            GlideApp.with(itemView.context)
+                .load("https://capstone-taekang-bucket.s3.ap-northeast-2.amazonaws.com/166443.jpg")
+                .placeholder(R.drawable.ic_baseline_settings_24)
                 .error(R.drawable.ic_baseline_settings_24)
                 .fallback(R.drawable.ic_baseline_settings_24)
                 .into(cellImage)

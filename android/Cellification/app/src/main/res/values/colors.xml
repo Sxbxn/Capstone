@@ -20,6 +20,6 @@
     <color name="tab_unselected_color">#C5C5C5</color>
     <color name="searchview_backgroundColor">#1A282F</color>
     <color name="transparency_color">#00FF0000</color>
-
+    <color name="dialog_button">#40DF9F</color>
 
 </resources>
