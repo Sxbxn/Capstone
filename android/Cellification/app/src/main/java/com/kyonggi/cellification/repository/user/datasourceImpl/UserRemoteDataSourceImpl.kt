@@ -25,4 +25,8 @@ class UserRemoteDataSourceImpl(
     override suspend fun sendCellImage(token:String, image: MultipartBody.Part): Response<String> {
         return userService.sendCellImage(token, image)
     }
+
+    override suspend fun getInfo(token: String, userId: String): Response<ResponseUser> {
+        return userService.getInfo(token, userId)
+    }
 }
