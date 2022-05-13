@@ -84,4 +84,8 @@ class CellRepositoryImpl(
     override suspend fun insertCell(cell: Cell) {
         return cellLocalDataSource.insertCell(cell)
     }
+
+    override suspend fun getCellFromViability(viability: Double): MutableList<Cell> {
+        return cellLocalDataSource.getCellFromViability(viability)
+    }
 }

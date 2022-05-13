@@ -26,4 +26,8 @@ class CellLocalDataSourceImpl(
     override suspend fun insertCell(cell: Cell) {
         return cellDao.insertCell(cell)
     }
+
+    override suspend fun getCellFromViability(viability: Double): MutableList<Cell> {
+        return cellDao.getCellFromViability(viability)
+    }
 }

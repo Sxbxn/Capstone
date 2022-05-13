@@ -130,6 +130,11 @@ class CellViewModel @Inject constructor(
             result(response, _stateListLocal)
         }
 
+    fun getCellFromViability(viability:Double) =
+        viewModelScope.launch(Dispatchers.IO) {
+            val response = cellRepository.getCellFromViability(viability)
+            result(response, _stateListLocal)
+        }
 
     fun deleteAllLocalCell(email: String) =
         viewModelScope.launch(Dispatchers.IO) {

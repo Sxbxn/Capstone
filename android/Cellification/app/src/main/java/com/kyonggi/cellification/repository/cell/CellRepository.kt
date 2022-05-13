@@ -21,4 +21,5 @@ interface CellRepository {
     suspend fun deleteAllLocalCell(email: String)
     suspend fun deleteCell(cell: Cell)
     suspend fun insertCell(cell: Cell)
+    suspend fun getCellFromViability(viability:Double): MutableList<Cell>
 }
