@@ -6,6 +6,8 @@ import android.content.res.Resources
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -40,6 +42,7 @@ class StorageFragment : Fragment() {
     private lateinit var currentLocalData: List<Cell>
     private val token = App.prefs.token.toString()
     private lateinit var res: Resources
+    private val handler = Handler(Looper.getMainLooper())
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
@@ -161,13 +164,18 @@ class StorageFragment : Fragment() {
 
     private fun deleteDialogProcess(position: Int, builder: AlertDialog.Builder, tabPos: Int) {
         val dialog = builder.setMessage("삭제 하시겠습니까?")
-            .setPositiveButton("삭제") { dialog, _ ->
+            .setPositiveButton("삭제") { _,_ ->}
+            .setNegativeButton("취소") { _,_ ->}
+            .create()
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+        dialog.show()
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+            handler.postDelayed({
                 when (tabPos) {
                     0 -> {
                         val deleteCellId = currentData[position].cellId
                         val deleteUserId = currentData[position].userId
                         cellViewModel.deleteSpecificCell(token, deleteUserId, deleteCellId)
-                        dialog.dismiss()
                         recyclerViewAdapter.cellList.removeAt(position)
                         recyclerViewAdapter.notifyItemRemoved(position)
                     }
@@ -182,17 +190,17 @@ class StorageFragment : Fragment() {
                             cellData.userId
                         )
                         cellViewModel.deleteCell(cell)
-                        dialog.dismiss()
                         recyclerLocalViewAdapter.cellList.removeAt(position)
                         recyclerLocalViewAdapter.notifyItemRemoved(position)
                     }
                 }
-            }
-            .setNegativeButton("취소") { dialog, _ ->
                 dialog.dismiss()
-            }
-            .create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-        dialog.show()
+            },400)
+        }
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener {
+            handler.postDelayed({
+                dialog.dismiss()
+            },400)
+        }
     }
 }

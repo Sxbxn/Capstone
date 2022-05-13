@@ -54,5 +54,7 @@
     </style>
     <style name="ButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
         <item name="android:textColor">@color/dialog_button</item>
+        <item name="android:background">@drawable/btn_ripple_effect</item>
+        <item name="android:clickable">true</item>
     </style>
 </resources>

@@ -5,6 +5,8 @@ import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.preference.Preference
@@ -14,7 +16,6 @@ import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.UserViewModel
 import com.kyonggi.cellification.utils.APIResponse
 import androidx.lifecycle.Observer
-import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.ui.login.LogInActivity
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.utils.LoadingDialog
@@ -24,7 +25,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private val cellViewModel: CellViewModel by activityViewModels()
     private val userViewModel: UserViewModel by activityViewModels()
     private lateinit var loading: LoadingDialog
-
+    private val handler = Handler(Looper.getMainLooper())
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.root_preferences, rootKey)
         loading = LoadingDialog(requireContext())
@@ -43,19 +44,26 @@ class SettingsFragment : PreferenceFragmentCompat() {
     private fun deleteDialogProcess(key: String) {
         val builder = AlertDialog.Builder(requireContext(), R.style.DeleteDialog)
         val dialog = builder.setMessage("삭제 하시겠습니까?")
-            .setPositiveButton("삭제") { dialog, _ ->
-                if (key == "deleteCloud")
-                    deleteCloud(key)
-                else if(key == "deleteLocal")
-                    deleteLocal(key)
-                dialog.dismiss()
-            }
-            .setNegativeButton("취소") { dialog, _ ->
-                dialog.dismiss()
-            }
+            .setPositiveButton("삭제") { _, _ -> }
+            .setNegativeButton("취소") { _, _ -> }
             .create()
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+        dialog.setCancelable(false)
         dialog.show()
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+            if (key == "deleteCloud")
+                deleteCloud()
+            else if (key == "deleteLocal")
+                deleteLocal()
+            handler.postDelayed({
+                dialog.dismiss()
+            },400)
+        }
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener {
+            handler.postDelayed({
+                dialog.dismiss()
+            },400)
+        }
     }
 
     override fun onPreferenceTreeClick(preference: Preference): Boolean {
@@ -76,7 +84,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         return super.onPreferenceTreeClick(preference)
     }
 
-    private fun deleteCloud(key: String) {
+    private fun deleteCloud() {
         val token = "Bearer " + App.prefs.token
         cellViewModel.deleteAllCell(token, App.prefs.userId.toString())
         cellViewModel.deleteAndSendCell.observe(this, Observer {
@@ -95,7 +103,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
         })
     }
 
-    private fun deleteLocal(key: String) {
+    private fun deleteLocal() {
         cellViewModel.deleteAllLocalCell(App.prefs.userId.toString())
         cellViewModel.stateListLocal.observe(this, Observer {
             Toast.makeText(requireContext(), "현 계정 Local 전체 Cell 삭제 성공", Toast.LENGTH_SHORT).show()
