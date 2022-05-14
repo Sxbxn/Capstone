@@ -21,7 +21,8 @@
             android:theme="@style/AppSearchView"
             android:queryHint="@string/search_hint"
             android:background="@drawable/searchview_style"
-            android:paddingStart="10dp" />
+            android:paddingStart="10dp"
+            android:inputType="numberDecimal"/>
 
     </FrameLayout>
 

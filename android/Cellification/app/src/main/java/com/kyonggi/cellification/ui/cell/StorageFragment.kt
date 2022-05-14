@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -60,6 +61,7 @@ class StorageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         changeView(0)
+        searchQuery(0)
         tabSelected()
     }
 
@@ -68,7 +70,10 @@ class StorageFragment : Fragment() {
         tabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val pos = tab?.position
+                binding.searchView.setQuery("", false)
+                binding.searchView.clearFocus()
                 changeView(pos!!)
+                searchQuery(pos!!)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -164,8 +169,8 @@ class StorageFragment : Fragment() {
 
     private fun deleteDialogProcess(position: Int, builder: AlertDialog.Builder, tabPos: Int) {
         val dialog = builder.setMessage("삭제 하시겠습니까?")
-            .setPositiveButton("삭제") { _,_ ->}
-            .setNegativeButton("취소") { _,_ ->}
+            .setPositiveButton("삭제") { _, _ -> }
+            .setNegativeButton("취소") { _, _ -> }
             .create()
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
         dialog.show()
@@ -195,12 +200,52 @@ class StorageFragment : Fragment() {
                     }
                 }
                 dialog.dismiss()
-            },400)
+            }, 400)
         }
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener {
             handler.postDelayed({
                 dialog.dismiss()
-            },400)
+            }, 400)
+        }
+    }
+
+    private fun searchQuery(position: Int) {
+        binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                searchEachTab(position, query!!)
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    if (newText.isNotEmpty()) {
+                        searchEachTab(position, newText)
+                    } else {
+                        getRemoteCellListFromUser()
+                    }
+                }
+                return true
+            }
+        })
+    }
+
+    private fun searchEachTab(position: Int, viability: String) {
+        val filteredCellList: MutableList<ResponseCell> = mutableListOf()
+        when (position) {
+            0 -> {
+                for (cell in currentData) {
+                    if (cell.viability >= viability.toDouble()) {
+                        filteredCellList.add(cell)
+                    }
+                }
+                initRecyclerView(filteredCellList)
+            }
+            1 -> {
+                cellViewModel.getCellFromViability(viability.toDouble())
+                cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer {
+                    initLocalRecyclerView(it)
+                })
+            }
         }
     }
 }
