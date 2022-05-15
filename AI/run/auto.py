@@ -3,6 +3,7 @@ import cv2
 import os
 import shutil
 import pandas as pd
+import json
 
 dir = '/home/dh/Project/Capstone/AI/'
 test_input = dir + 'run/data/original/'
@@ -239,11 +240,13 @@ for img_name in img_list:
 
     live = len(df[df['LiveOrDead']==1])
     dead = len(df[df['LiveOrDead']==0])
-    ratio = live / (live + dead)
 
-    print('ratio: ', ratio*100, 'live: ', live, 'dead: ', dead)
+    js = {'total': live+dead, 'live': live, 'dead': dead}
+    textJSON = json.dumps(js, indent=4)
+    with open(merge_output+name+'.json', 'w') as f:
+        f.write(textJSON)
 
-    df.to_csv(merge_output+name+'.csv', sep=',')
+    #df.to_csv(merge_output+name+'.csv', sep=',')
     img = cv2.imread(img_name)
     grean = (0, 255, 0)
     red = (0, 0, 255)
