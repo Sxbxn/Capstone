@@ -241,7 +241,7 @@ for img_name in img_list:
     live = len(df[df['LiveOrDead']==1])
     dead = len(df[df['LiveOrDead']==0])
 
-    js = {'total': live+dead, 'live': live, 'dead': dead}
+    js = {'totalCell': live+dead, 'liveCell': live, 'deadCell': dead}
     textJSON = json.dumps(js, indent=4)
     with open(merge_output+name+'.json', 'w') as f:
         f.write(textJSON)
