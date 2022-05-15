@@ -4,7 +4,7 @@ import os
 import shutil
 import pandas as pd
 
-dir = '/home/dh/Project/Capstone/'
+dir = '/home/dh/Project/Capstone/AI/'
 test_input = dir + 'run/data/original/'
 patch_input = dir + 'run/data/patch/'
 test_location = dir + 'yolor/'
@@ -21,7 +21,7 @@ patch_y_size = 306
 x_stride = 204
 y_stride = 153
 
-os.system('source capstone_env/bin/activate')
+os.system('source venv/bin/activate')
 if os.path.isdir(test_location+'runs/test/yolor_p6_val'):
     shutil.rmtree(test_location+'runs/test/yolor_p6_val')
 
@@ -110,7 +110,7 @@ f.close()
 print('============================<< detection >>============================')
 
 os.chdir(test_location)
-os.system('python test.py --data data/cell.yaml --img 512 --batch 16 --conf 0.001 --iou 0.65 --device 0 --cfg cfg/yolor_p6.cfg --weights runs/train/yolor_p6/weights/last.pt --name yolor_p6_val --names data/cell.names --save-txt --task test')
+os.system('python test.py --data data/test.yaml --img 512 --batch 16 --conf 0.001 --iou 0.65 --device 0 --cfg cfg/yolor_p6.cfg --weights runs/train/yolor_p6/weights/last.pt --name yolor_p6_val --names data/cell.names --save-txt --task test')
 if os.path.isdir(result_output + '/labels'):
     shutil.rmtree(result_output + '/labels')
 
@@ -236,6 +236,13 @@ for img_name in img_list:
                 pass
 
     df = df.reset_index(drop=True)
+
+    live = len(df[df['LiveOrDead']==1])
+    dead = len(df[df['LiveOrDead']==0])
+    ratio = live / (live + dead)
+
+    print('ratio: ', ratio*100, 'live: ', live, 'dead: ', dead)
+
     df.to_csv(merge_output+name+'.csv', sep=',')
     img = cv2.imread(img_name)
     grean = (0, 255, 0)
@@ -247,4 +254,4 @@ for img_name in img_list:
         if row[0] == 0:
             img = cv2.rectangle(img, (int(row[1]-20), int(row[2]-20)), (int(row[1]+20), int(row[2]+20)), red, 3)
     cv2.imwrite(merge_output+name+'.jpg', img)
-    print('detect complete '+merge_output+name+'.csv')
+    print('detect complete '+merge_output+name+'.jpg')

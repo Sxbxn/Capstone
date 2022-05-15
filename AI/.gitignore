@@ -1,7 +1,6 @@
-data/
-capstone_env/
+venv/
 
-yolor/runs/
+yolor/runs/train/yolor_p6/weights/
 yolor/__pycache__/
 yolor/models/__pycache__/
 yolor/utils/__pycache__/
