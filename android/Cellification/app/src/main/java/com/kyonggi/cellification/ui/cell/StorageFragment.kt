@@ -27,14 +27,12 @@ import com.kyonggi.cellification.ui.cell.adapter.CellLocalAdapter
 import com.kyonggi.cellification.ui.cell.adapter.ItemClickListener
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
-import com.kyonggi.cellification.ui.viewmodel.UserViewModel
 import com.kyonggi.cellification.utils.APIResponse
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class StorageFragment : Fragment() {
     private val cellViewModel: CellViewModel by viewModels()
-    private val userViewModel: UserViewModel by viewModels()
     private lateinit var binding: FragmentStorageBinding
     private lateinit var recyclerViewAdapter: CellAdapter
     private lateinit var recyclerLocalViewAdapter: CellLocalAdapter
@@ -73,7 +71,7 @@ class StorageFragment : Fragment() {
                 binding.searchView.setQuery("", false)
                 binding.searchView.clearFocus()
                 changeView(pos!!)
-                searchQuery(pos!!)
+                searchQuery(pos)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {
@@ -95,7 +93,7 @@ class StorageFragment : Fragment() {
         }
     }
 
-    //tab의 cell drive
+    //tab 의 cell drive
     private fun initRecyclerView(list: MutableList<ResponseCell>) {
         binding.cellRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerViewAdapter = CellAdapter(list, res)
@@ -103,7 +101,7 @@ class StorageFragment : Fragment() {
         setItemOnClickListener()
     }
 
-    // tab의 save
+    // tab 의 save
     private fun initLocalRecyclerView(list: MutableList<Cell>) {
         binding.cellRecyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         recyclerLocalViewAdapter = CellLocalAdapter(list, res)
@@ -125,6 +123,7 @@ class StorageFragment : Fragment() {
                     // error code
                     Toast.makeText(requireActivity(), "로딩 실패", Toast.LENGTH_SHORT).show()
                 }
+                is APIResponse.Loading -> {}
             }
         })
     }
@@ -172,7 +171,7 @@ class StorageFragment : Fragment() {
             .setPositiveButton("삭제") { _, _ -> }
             .setNegativeButton("취소") { _, _ -> }
             .create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         dialog.show()
         dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
             handler.postDelayed({
@@ -220,32 +219,51 @@ class StorageFragment : Fragment() {
                 if (newText != null) {
                     if (newText.isNotEmpty()) {
                         searchEachTab(position, newText)
-                    } else {
-                        getRemoteCellListFromUser()
                     }
                 }
                 return true
             }
         })
+        binding.searchView.setOnCloseListener {
+            when (position) {
+                0 -> getRemoteCellListFromUser()
+                1 -> getLocalCellListFromUser()
+            }
+            false
+        }
     }
 
     private fun searchEachTab(position: Int, viability: String) {
         val filteredCellList: MutableList<ResponseCell> = mutableListOf()
         when (position) {
             0 -> {
-                for (cell in currentData) {
-                    if (cell.viability >= viability.toDouble()) {
-                        filteredCellList.add(cell)
+                if (verifyViability(viability)) {
+                    for (cell in currentData) {
+                        if (cell.viability >= viability.toDouble()) {
+                            filteredCellList.add(cell)
+                        }
                     }
+                    initRecyclerView(filteredCellList)
                 }
-                initRecyclerView(filteredCellList)
             }
             1 -> {
-                cellViewModel.getCellFromViability(viability.toDouble())
-                cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer {
-                    initLocalRecyclerView(it)
-                })
+                if (verifyViability(viability)) {
+                    cellViewModel.getCellFromViability(viability.toDouble())
+                    cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer {
+                        initLocalRecyclerView(it)
+                    })
+                }
             }
         }
+    }
+
+    private fun verifyViability(viability: String): Boolean {
+        try {
+            viability.toDouble()
+        } catch (e: NumberFormatException) {
+            Toast.makeText(requireContext(), "다시 입력해주십시오", Toast.LENGTH_SHORT).show()
+            return false
+        }
+        return true
     }
 }
