@@ -2,12 +2,16 @@ package com.example.capstonecellservice.service;
 
 import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.jpa.CellEntity;
+import org.json.simple.parser.ParseException;
 import org.springframework.stereotype.Service;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 @Service
 public interface CellService {
 
-    CellDto createCell(CellDto cellDto);
+    CellDto createCell(CellDto cellDto) throws IOException, ParseException;
 
     CellDto getOneCellByCellId(String cellId); // cellId 통해 cell 정보 get
 

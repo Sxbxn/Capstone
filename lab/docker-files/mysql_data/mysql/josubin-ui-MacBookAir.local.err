@@ -1,0 +1,83 @@
+220427 16:05:53 mysqld_safe Starting mariadbd daemon with databases from /opt/homebrew/var/mysql
+2022-04-27 16:05:53 0 [Note] /opt/homebrew/Cellar/mariadb/10.7.3/bin/mariadbd (server 10.7.3-MariaDB) starting as process 11346 ...
+2022-04-27 16:05:53 0 [Warning] Setting lower_case_table_names=2 because file system for /opt/homebrew/var/mysql/ is case insensitive
+2022-04-27 16:05:53 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2022-04-27 16:05:53 0 [Note] InnoDB: Number of transaction pools: 1
+2022-04-27 16:05:53 0 [Note] InnoDB: Using generic crc32 instructions
+2022-04-27 16:05:53 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+2022-04-27 16:05:53 0 [Note] InnoDB: Completed initialization of buffer pool
+2022-04-27 16:05:53 0 [Note] InnoDB: 128 rollback segments are active.
+2022-04-27 16:05:53 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2022-04-27 16:05:53 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2022-04-27 16:05:53 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2022-04-27 16:05:53 0 [Note] InnoDB: 10.7.3 started; log sequence number 42185; transaction id 14
+2022-04-27 16:05:53 0 [Note] InnoDB: Loading buffer pool(s) from /opt/homebrew/var/mysql/ib_buffer_pool
+2022-04-27 16:05:53 0 [Note] Plugin 'FEEDBACK' is disabled.
+2022-04-27 16:05:53 0 [Note] InnoDB: Buffer pool(s) load completed at 220427 16:05:53
+2022-04-27 16:05:53 0 [Note] Server socket created on IP: '::'.
+2022-04-27 16:05:53 0 [Note] Server socket created on IP: '0.0.0.0'.
+2022-04-27 16:05:53 0 [Note] /opt/homebrew/Cellar/mariadb/10.7.3/bin/mariadbd: ready for connections.
+Version: '10.7.3-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  Homebrew
+220427 16:06:15 mysqld_safe A mysqld process already exists
+220427 16:06:43 mysqld_safe A mysqld process already exists
+2022-04-27 16:07:16 6 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 16:08:58 7 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 16:11:56 8 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 16:12:04 9 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 16:14:28 10 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 16:14:48 11 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 16:14:58 12 [Warning] Access denied for user 'root'@'localhost'
+220427 16:17:03 mysqld_safe A mysqld process already exists
+220427 16:23:30 mysqld_safe A mysqld process already exists
+2022-04-27 17:15:24 38 [Warning] Access denied for user 'root'@'localhost'
+2022-04-27 17:25:02 60 [Warning] Access denied for user 'root'@'localhost'
+220502 20:51:55 mysqld_safe Starting mariadbd daemon with databases from /opt/homebrew/var/mysql
+2022-05-02 20:51:55 0 [Note] /opt/homebrew/Cellar/mariadb/10.7.3/bin/mariadbd (server 10.7.3-MariaDB) starting as process 2727 ...
+2022-05-02 20:51:55 0 [Warning] Setting lower_case_table_names=2 because file system for /opt/homebrew/var/mysql/ is case insensitive
+2022-05-02 20:51:55 0 [Note] mariadbd: Aria engine: starting recovery
+recovered pages: 0% 100% (0.0 seconds); tables to flush: 1 0
+ (0.0 seconds); 
+2022-05-02 20:51:55 0 [Note] mariadbd: Aria engine: recovery done
+2022-05-02 20:51:55 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2022-05-02 20:51:55 0 [Note] InnoDB: Number of transaction pools: 1
+2022-05-02 20:51:55 0 [Note] InnoDB: Using generic crc32 instructions
+2022-05-02 20:51:55 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+2022-05-02 20:51:55 0 [Note] InnoDB: Completed initialization of buffer pool
+2022-05-02 20:51:55 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=42185,42185
+2022-05-02 20:51:55 0 [Note] InnoDB: Starting final batch to recover  16 pages from redo log.
+2022-05-02 20:51:55 0 [Note] InnoDB: 128 rollback segments are active.
+2022-05-02 20:51:55 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2022-05-02 20:51:55 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2022-05-02 20:51:55 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2022-05-02 20:51:55 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2022-05-02 20:51:55 0 [Note] InnoDB: 10.7.3 started; log sequence number 67452; transaction id 75
+2022-05-02 20:51:55 0 [Note] Plugin 'FEEDBACK' is disabled.
+2022-05-02 20:51:55 0 [Note] InnoDB: Loading buffer pool(s) from /opt/homebrew/var/mysql/ib_buffer_pool
+2022-05-02 20:51:55 0 [Note] InnoDB: Buffer pool(s) load completed at 220502 20:51:55
+2022-05-02 20:51:55 0 [Note] Server socket created on IP: '::'.
+2022-05-02 20:51:55 0 [Note] Server socket created on IP: '0.0.0.0'.
+2022-05-02 20:51:55 0 [Note] /opt/homebrew/Cellar/mariadb/10.7.3/bin/mariadbd: ready for connections.
+Version: '10.7.3-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  Homebrew
+220503 22:45:30 mysqld_safe Starting mariadbd daemon with databases from /opt/homebrew/var/mysql
+2022-05-03 22:45:30 0 [Note] /opt/homebrew/Cellar/mariadb/10.7.3/bin/mariadbd (server 10.7.3-MariaDB) starting as process 54224 ...
+2022-05-03 22:45:30 0 [Warning] Setting lower_case_table_names=2 because file system for /opt/homebrew/var/mysql/ is case insensitive
+2022-05-03 22:45:30 0 [Note] InnoDB: Compressed tables use zlib 1.2.11
+2022-05-03 22:45:30 0 [Note] InnoDB: Number of transaction pools: 1
+2022-05-03 22:45:30 0 [Note] InnoDB: Using generic crc32 instructions
+2022-05-03 22:45:30 0 [Note] InnoDB: Initializing buffer pool, total size = 134217728, chunk size = 134217728
+2022-05-03 22:45:30 0 [Note] InnoDB: Completed initialization of buffer pool
+2022-05-03 22:45:30 0 [Note] InnoDB: Starting crash recovery from checkpoint LSN=42185,42185
+2022-05-03 22:45:30 0 [Note] InnoDB: Starting final batch to recover  16 pages from redo log.
+2022-05-03 22:45:30 0 [Note] InnoDB: 128 rollback segments are active.
+2022-05-03 22:45:30 0 [Note] InnoDB: Removed temporary tablespace data file: "./ibtmp1"
+2022-05-03 22:45:30 0 [Note] InnoDB: Creating shared tablespace for temporary tables
+2022-05-03 22:45:30 0 [Note] InnoDB: Setting file './ibtmp1' size to 12 MB. Physically writing the file full; Please wait ...
+2022-05-03 22:45:30 0 [Note] InnoDB: File './ibtmp1' size is now 12 MB.
+2022-05-03 22:45:30 0 [Note] InnoDB: 10.7.3 started; log sequence number 67532; transaction id 75
+2022-05-03 22:45:30 0 [Note] Plugin 'FEEDBACK' is disabled.
+2022-05-03 22:45:30 0 [Note] InnoDB: Loading buffer pool(s) from /opt/homebrew/var/mysql/ib_buffer_pool
+2022-05-03 22:45:30 0 [Note] InnoDB: Buffer pool(s) load completed at 220503 22:45:30
+2022-05-03 22:45:30 0 [Note] Server socket created on IP: '::'.
+2022-05-03 22:45:30 0 [Note] Server socket created on IP: '0.0.0.0'.
+2022-05-03 22:45:30 0 [Note] /opt/homebrew/Cellar/mariadb/10.7.3/bin/mariadbd: ready for connections.
+Version: '10.7.3-MariaDB'  socket: '/tmp/mysql.sock'  port: 3306  Homebrew

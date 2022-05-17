@@ -27,6 +27,9 @@ public class CellEntity implements Serializable {
     @Column(nullable = false)
     private Double viability; // 몇 퍼센트의 세포가 생존해 있는지 나타내는 수치
 
+//    @Column(nullable = false)
+//    private String url; // 이미지 url
+
     @Column(nullable = false)
     private String userId;
 

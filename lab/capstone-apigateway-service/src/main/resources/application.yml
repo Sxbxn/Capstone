@@ -6,7 +6,7 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://127.0.0.1:8761/eureka
+      defaultZone: http://localhost:8761/eureka
 
 spring:
   application:
@@ -76,10 +76,14 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-cell-service/(?<segment>.*), /$\{segment}
-#            - AuthorizationHeaderFilter
+            - AuthorizationHeaderFilter
 
 management:
   endpoint:
     web:
       exposure:
         include: refresh, httptrace, busrefresh
+
+token:
+  expiration_time: 86400000
+  secret: user_token
