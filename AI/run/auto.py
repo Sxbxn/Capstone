@@ -126,7 +126,10 @@ if os.path.isdir(test_location+'runs/test/yolor_p6_val'):
 print('============================<< merging >>============================')
 
 img_list = glob.glob(test_input+'*.jpg')
-
+if os.path.isdir(merge_output):
+    shutil.rmtree(merge_output)
+    os.system('mkdir {}'.format(merge_output))
+    
 for img_name in img_list:
     df = pd.DataFrame(columns=['LiveOrDead','center_x','center_y','width','height'])
     name = img_name.split('/')[-1][:-4]
