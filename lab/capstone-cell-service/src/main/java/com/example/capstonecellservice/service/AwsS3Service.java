@@ -7,14 +7,18 @@ import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.fileupload.disk.DiskFileItem;
+import org.apache.tomcat.util.http.fileupload.IOUtils;
+import org.json.simple.parser.ParseException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.file.Files;
 
 @Service
 @RequiredArgsConstructor
@@ -25,13 +29,45 @@ public class AwsS3Service {
 
     private final AmazonS3 amazonS3Client;
 
-    public String uploadImage(MultipartFile file) {
-        String fileName = file.getOriginalFilename();
-        ObjectMetadata objectMetadata = new ObjectMetadata();
-        objectMetadata.setContentLength(file.getSize());
-        objectMetadata.setContentType(file.getContentType());
+    public String uploadImage() throws IOException, ParseException {
 
-        try (InputStream inputStream = file.getInputStream()) {
+        File dir = new File("/Users/subin/Desktop/predict/");
+
+        FilenameFilter filter= new FilenameFilter() {
+            @Override
+            public boolean accept(File dir, String name) {
+                return name.endsWith(".jpg");
+            }
+        };
+
+        File[] files = dir.listFiles(filter);
+
+        long lastModifiedTime = Long.MIN_VALUE;
+        File chosenFile = null;
+
+        if (files != null) {
+            for (File file: files) {
+                if (file.lastModified() > lastModifiedTime) {
+                    chosenFile = file;
+                    lastModifiedTime = file.lastModified();
+                }
+            }
+        }
+
+        DiskFileItem fileItem = new DiskFileItem("chosenFile", Files.probeContentType(chosenFile.toPath()), false, chosenFile.getName(), (int) chosenFile.length(), chosenFile.getParentFile());
+
+        InputStream input = new FileInputStream(chosenFile);
+        OutputStream os = fileItem.getOutputStream();
+        IOUtils.copy(input, os);
+
+        MultipartFile multipartFile = new CommonsMultipartFile(fileItem);
+
+        String fileName = multipartFile.getOriginalFilename();
+        ObjectMetadata objectMetadata = new ObjectMetadata();
+        objectMetadata.setContentLength(multipartFile.getSize());
+        objectMetadata.setContentType(multipartFile.getContentType());
+
+        try (InputStream inputStream = multipartFile.getInputStream()) {
             amazonS3Client.putObject(new PutObjectRequest(bucket, fileName, inputStream, objectMetadata)
                     .withCannedAcl(CannedAccessControlList.PublicRead));
         } catch (IOException e) {
@@ -51,45 +87,4 @@ public class AwsS3Service {
         amazonS3Client.deleteObject(new DeleteObjectRequest(bucket, fileName));
     }
 
-//    public String upload(String url) throws IOException {
-//        String key = createFileNameUrl(url);
-//        URL requestUrl = new URL(url);
-//
-//        if (ImageIO.read(requestUrl) == null) {
-//            throw new IllegalArgumentException("Invalid File format : NON-IMAGE FILE");
-//        }
-//
-//        File uploadFile = new File("temp.jpg");
-//
-//        if (uploadFile.createNewFile()) {
-//            FileUtils.copyURLToFile(requestUrl, uploadFile);
-//        } else {
-//            throw new IOException("Could not create new File, internal server error");
-//        }
-//
-//        PutObjectRequest request = new PutObjectRequest(AwsS3Config.s3Bucket, key, uploadFile)
-//                .withCannedAcl(CannedAccessControlList.PublicRead);
-//
-//        amazonS3Client.putObject(request);
-//
-//        uploadFile.delete();
-//
-//        return amazonS3Client.getUrl(AwsS3Config.s3Bucket, key).toString();
-//    }
-
-//    private String createFileNameUrl(String url) {
-//        return UUID.randomUUID().toString().concat(url);
-//    }
-//
-//    private String createFileName(String fileName) {
-//        return UUID.randomUUID().toString().concat(getFileExtension(fileName));
-//    }
-//
-//    private String getFileExtension(String fileName) {
-//        try {
-//            return fileName.substring(fileName.lastIndexOf("."));
-//        } catch (StringIndexOutOfBoundsException e) {
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "잘못된 형식의 파일(" + fileName + ") 입니다.");
-//        }
-//    }
 }

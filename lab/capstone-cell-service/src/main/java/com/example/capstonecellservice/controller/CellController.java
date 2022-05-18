@@ -92,9 +92,9 @@ public class CellController {
      * Amazon S3에 이미지 업로드
      */
     @PostMapping("/images")
-    public UrlDto uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile) {
+    public UrlDto uploadImage() throws IOException, ParseException {
         UrlDto urlDto = new UrlDto();
-        urlDto.setUrl(awsS3Service.uploadImage(multipartFile));
+        urlDto.setUrl(awsS3Service.uploadImage());
 
         return urlDto;
     }

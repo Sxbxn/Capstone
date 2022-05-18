@@ -40,8 +40,6 @@ public class CellServiceImpl implements CellService {
             }
         };
 
-//        File[] files = directory.listFiles(File::isFile);
-
         File[] files = dir.listFiles(filter);
 
         long lastModifiedTime = Long.MIN_VALUE;

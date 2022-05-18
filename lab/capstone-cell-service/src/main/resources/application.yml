@@ -33,8 +33,8 @@ cloud:
     s3:
       bucket: capstone-taekang-bucket
     credentials:
-      access-key: 123
-      secret-key: 123
+      access-key:
+      secret-key:
     region:
       static: ap-northeast-2
     stack:
