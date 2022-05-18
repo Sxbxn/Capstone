@@ -1,6 +1,5 @@
 package com.example.capstonecellservice.service;
 
-
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
@@ -50,46 +49,4 @@ public class AwsS3Service {
     public void deleteImage(String fileName) {
         amazonS3Client.deleteObject(new DeleteObjectRequest(bucket, fileName));
     }
-
-//    public String upload(String url) throws IOException {
-//        String key = createFileNameUrl(url);
-//        URL requestUrl = new URL(url);
-//
-//        if (ImageIO.read(requestUrl) == null) {
-//            throw new IllegalArgumentException("Invalid File format : NON-IMAGE FILE");
-//        }
-//
-//        File uploadFile = new File("temp.jpg");
-//
-//        if (uploadFile.createNewFile()) {
-//            FileUtils.copyURLToFile(requestUrl, uploadFile);
-//        } else {
-//            throw new IOException("Could not create new File, internal server error");
-//        }
-//
-//        PutObjectRequest request = new PutObjectRequest(AwsS3Config.s3Bucket, key, uploadFile)
-//                .withCannedAcl(CannedAccessControlList.PublicRead);
-//
-//        amazonS3Client.putObject(request);
-//
-//        uploadFile.delete();
-//
-//        return amazonS3Client.getUrl(AwsS3Config.s3Bucket, key).toString();
-//    }
-
-//    private String createFileNameUrl(String url) {
-//        return UUID.randomUUID().toString().concat(url);
-//    }
-//
-//    private String createFileName(String fileName) {
-//        return UUID.randomUUID().toString().concat(getFileExtension(fileName));
-//    }
-//
-//    private String getFileExtension(String fileName) {
-//        try {
-//            return fileName.substring(fileName.lastIndexOf("."));
-//        } catch (StringIndexOutOfBoundsException e) {
-//            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "잘못된 형식의 파일(" + fileName + ") 입니다.");
-//        }
-//    }
 }

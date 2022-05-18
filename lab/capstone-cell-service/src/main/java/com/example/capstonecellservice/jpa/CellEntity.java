@@ -30,7 +30,7 @@ public class CellEntity implements Serializable {
     @Column(nullable = false)
     private String userId;
 
-    @Column(nullable = false, updatable = false, insertable = false)
-    @ColumnDefault(value = "CURRENT_TIMESTAMP")
-    private Date createAt;
+//    @Column(nullable = false, updatable = false, insertable = false)
+//    @ColumnDefault(value = "CURRENT_TIMESTAMP")
+//    private Date createAt;
 }
