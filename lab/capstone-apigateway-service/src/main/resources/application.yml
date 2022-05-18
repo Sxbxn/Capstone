@@ -11,11 +11,11 @@ eureka:
 spring:
   application:
     name: capstone-apigateway-service
-#  rabbitmq:
-#    host: 127.0.0.1
-#    port: 5672
-#    username: guest
-#    password: guest
+  #  rabbitmq:
+  #    host: 127.0.0.1
+  #    port: 5672
+  #    username: guest
+  #    password: guest
   cloud:
     gateway:
       routes:
@@ -76,7 +76,17 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-cell-service/(?<segment>.*), /$\{segment}
-            - AuthorizationHeaderFilter
+#            - AuthorizationHeaderFilter
+        - id: capstone-detection-service
+          uri: lb://CAPSTONE-DETECTION-SERVICE
+          predicates:
+            - Path=/capstone-detection-service/**
+            - Method=GET, POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/capstone-detection-service/(?<segment>.*), /$\{segment}
+#            - AuthorizationHeaderFilter
+
 
 management:
   endpoint:
