@@ -1,7 +1,6 @@
 package com.example.capstonecellservice.controller;
 
 import com.example.capstonecellservice.dto.CellDto;
-import com.example.capstonecellservice.dto.UrlDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.service.AwsS3Service;
 import com.example.capstonecellservice.service.CellService;
@@ -14,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -43,6 +41,8 @@ public class CellController {
         CellDto cellDto = new CellDto();
 
         cellDto.setUserId(userId);
+
+        cellDto.setUrl(awsS3Service.uploadImage());
 
         cellService.createCell(cellDto);
 
@@ -91,13 +91,13 @@ public class CellController {
     /**
      * Amazon S3에 이미지 업로드
      */
-    @PostMapping("/images")
-    public UrlDto uploadImage() throws IOException, ParseException {
-        UrlDto urlDto = new UrlDto();
-        urlDto.setUrl(awsS3Service.uploadImage());
-
-        return urlDto;
-    }
+//    @PostMapping("/images")
+//    public UrlDto uploadImage() throws IOException, ParseException {
+//        UrlDto urlDto = new UrlDto();
+//        urlDto.setUrl(awsS3Service.uploadImage());
+//
+//        return urlDto;
+//    }
 
     /**
      * Amazon S3에 이미지 업로드 된 파일을 삭제

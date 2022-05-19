@@ -11,7 +11,7 @@ public class CellDto {
     private Integer liveCell;
     private Integer deadCell;
     private Double viability;
-    // private String url;
+    private String url;
 
     private String userId;
 }
