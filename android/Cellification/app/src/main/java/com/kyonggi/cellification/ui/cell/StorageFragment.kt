@@ -59,8 +59,9 @@ class StorageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         changeView(0)
-        searchQuery(0)
         tabSelected()
+        if(App.prefs.userId != null)
+            searchQuery(0)
     }
 
     private fun tabSelected() {
@@ -71,7 +72,8 @@ class StorageFragment : Fragment() {
                 binding.searchView.setQuery("", false)
                 binding.searchView.clearFocus()
                 changeView(pos!!)
-                searchQuery(pos)
+                if(App.prefs.userId != null)
+                    searchQuery(pos)
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {

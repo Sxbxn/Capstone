@@ -108,10 +108,14 @@ class MainActivity : AppCompatActivity() {
     }
     fun changeFragment(fragment: Fragment, data: ResponseCell) {
         val bundle = Bundle()
+        bundle.putString("cellId", data.cellId)
         bundle.putInt("totalCell",data.totalCell)
         bundle.putInt("liveCell",data.liveCell)
         bundle.putInt("deadCell",data.deadCell)
         bundle.putDouble("viability",data.viability)
+        bundle.putString("createAt", data.createAt.toString())
+        bundle.putString("userId",data.userId)
+//        bundle.putString("url",data.url)
         fragment.arguments = bundle
         supportFragmentManager
             .beginTransaction()
@@ -124,12 +128,14 @@ class MainActivity : AppCompatActivity() {
         bundle.putInt("liveCell",data.liveCell)
         bundle.putInt("deadCell",data.deadCell)
         bundle.putDouble("viability",data.viability)
+//        bundle.putString("url",data.url)
         fragment.arguments = bundle
         supportFragmentManager
             .beginTransaction()
             .replace(R.id.fragmentContainerView, fragment)
             .commit()
     }
+
     override fun onBackPressed() {
         if (mainDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mainDrawerLayout.closeDrawers()

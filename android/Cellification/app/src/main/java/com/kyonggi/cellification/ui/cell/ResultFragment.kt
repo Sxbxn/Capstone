@@ -1,5 +1,6 @@
 package com.kyonggi.cellification.ui.cell
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -28,7 +29,14 @@ class ResultFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        initViewModel()
+        if(arguments != null){
+            val totalCell = requireArguments().getInt("totalCell")
+            val liveCell = requireArguments().getInt("liveCell")
+            val deadCell = requireArguments().getInt("deadCell")
+            val viability = requireArguments().getDouble("viability")
+
+            initView(totalCell,liveCell,deadCell,viability)
+        }
         setOnButtonClickListener()
     }
 
@@ -38,20 +46,14 @@ class ResultFragment : Fragment() {
 //            cellViewModel.insertCell(cell)
         }
     }
-
-    private fun initViewModel() {
-        cellViewModel.state.observe(viewLifecycleOwner, Observer {
-            if (it != null) {
-                with(binding) {
-                    totalCountText.text =
-                       getString(R.string.total_count, it.data!!.totalCell)
-                    viability.text = getString(R.string.percent, it.data.viability)
-                    liveCell.text = it.data.liveCell.toString()
-                    dieCell.text = it.data.deadCell.toString()
-                }
-            } else {
-                Toast.makeText(requireContext(), "error in getting data", Toast.LENGTH_SHORT).show()
-            }
-        })
+    @SuppressLint("SetTextI18n")
+    private fun initView(total: Int, live: Int, dead: Int, Viability:Double) {
+        with(binding) {
+            totalCountText.text =
+                "Total Count: $total"
+            viability.text = "$Viability%"
+            liveCell.text = live.toString()
+            dieCell.text = dead.toString()
+        }
     }
 }
