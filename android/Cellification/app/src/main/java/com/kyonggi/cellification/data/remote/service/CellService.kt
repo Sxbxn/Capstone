@@ -12,11 +12,12 @@ interface CellService {
 //    @GET("/capstone-cell-service/cells/")
 //    suspend fun getAllCells(): Response<List<Cell>>
 
-    //cell 생성 testing
+    //cell 생성 testing     이제 멀티파트 추가해서 ㄱ이미지 보내기
+    @Multipart
     @POST("/capstone-cell-service/{userId}/cells")
     suspend fun makeCell(
         @Header ("Authorization") token :String,
-        @Body requestCell: RequestCell,
+        @Part cellImage: MultipartBody.Part?,
         @Path("userId") userId: String
     ):Response<ResponseCell>
 

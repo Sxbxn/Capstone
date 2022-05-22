@@ -55,10 +55,10 @@ class CellViewModel @Inject constructor(
         }
     }
 
-    fun makeCellTest(token:String, requestCell: RequestCell, userid: String) {
+    fun makeCell(token:String, body: MultipartBody.Part?, userid: String) {
         _state.value = APIResponse.Loading()
         viewModelScope.launch(Dispatchers.IO) {
-            val response = cellRepository.makeCellTest(token, requestCell, userid)
+            val response = cellRepository.makeCell(token, body, userid)
             result(response, _state)
         }
     }

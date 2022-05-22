@@ -15,8 +15,8 @@ data class ResponseCell(
     val deadCell: Int,
     @SerializedName("viability")
     val viability: Double,
-    @SerializedName("createAt")
-    val createAt: Date,
+    @SerializedName("url")
+    val url: String,
     @SerializedName("userid")
     val userId: String
 )
