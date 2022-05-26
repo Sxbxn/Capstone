@@ -1,9 +1,6 @@
 package com.kyonggi.cellification.ui.cell
 
-import android.app.AlertDialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -18,6 +15,7 @@ import com.kyonggi.cellification.utils.APIResponse
 import androidx.lifecycle.Observer
 import com.kyonggi.cellification.ui.login.LogInActivity
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
+import com.kyonggi.cellification.utils.CustomAlertDialog
 import com.kyonggi.cellification.utils.LoadingDialog
 
 class SettingsFragment : PreferenceFragmentCompat() {
@@ -42,27 +40,21 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun deleteDialogProcess(key: String) {
-        val builder = AlertDialog.Builder(requireContext(), R.style.DeleteDialog)
-        val dialog = builder.setMessage("삭제 하시겠습니까?")
-            .setPositiveButton("삭제") { _, _ -> }
-            .setNegativeButton("취소") { _, _ -> }
-            .create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-        dialog.setCancelable(false)
-        dialog.show()
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+        val dialog = CustomAlertDialog(requireContext())
+        dialog.init("삭제 하시겠습니까?")
+        dialog.getPositive().setOnClickListener {
             if (key == "deleteCloud")
                 deleteCloud()
             else if (key == "deleteLocal")
                 deleteLocal()
             handler.postDelayed({
-                dialog.dismiss()
-            },400)
+                dialog.exit()
+            }, 400)
         }
-        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener {
+        dialog.getNegative().setOnClickListener {
             handler.postDelayed({
-                dialog.dismiss()
-            },400)
+                dialog.exit()
+            }, 400)
         }
     }
 
@@ -111,29 +103,48 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun logOut() {
-        App.prefs.clear()
-        startActivity(Intent(requireContext(), LogInActivity::class.java))
+        val dialog = CustomAlertDialog(requireContext())
+        dialog.init("로그아웃 하시겠습니까?")
+        dialog.getPositive().setOnClickListener {
+            App.prefs.clear()
+            Toast.makeText(requireContext(), "로그아웃 되었습니다.", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(requireContext(), LogInActivity::class.java))
+        }
+        dialog.getNegative().setOnClickListener {
+            handler.postDelayed({
+                dialog.exit()
+            }, 400)
+        }
     }
 
     private fun signOut(userId: String) {
-        val token = "Bearer " + App.prefs.token
-        userViewModel.withdrawalUser(token, userId)
-        userViewModel.withdrawal.observe(this, Observer { response ->
-            when (response) {
-                is APIResponse.Success -> {
-                    App.prefs.clear()
-                    startActivity(Intent(requireContext(), LogInActivity::class.java).apply {
-                        this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-                    })
+        val dialog = CustomAlertDialog(requireContext())
+        dialog.init("회원탈퇴 하시겠습니까?")
+        dialog.getPositive().setOnClickListener {
+            val token = "Bearer " + App.prefs.token
+            userViewModel.withdrawalUser(token, userId)
+            userViewModel.withdrawal.observe(this, Observer { response ->
+                when (response) {
+                    is APIResponse.Success -> {
+                        App.prefs.clear()
+                        Toast.makeText(requireContext(), "회원탈퇴 되었습니다.", Toast.LENGTH_SHORT).show()
+                        startActivity(Intent(requireContext(), LogInActivity::class.java).apply {
+                            this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                        })
+                    }
+                    is APIResponse.Error -> {
+                        loading.setError()
+                    }
+                    is APIResponse.Loading -> {
+                        loading.setVisible()
+                    }
                 }
-                is APIResponse.Error -> {
-                    loading.setError()
-                }
-                is APIResponse.Loading -> {
-                    loading.setVisible()
-                }
-
-            }
-        })
+            })
+        }
+        dialog.getNegative().setOnClickListener {
+            handler.postDelayed({
+                dialog.exit()
+            }, 400)
+        }
     }
 }
