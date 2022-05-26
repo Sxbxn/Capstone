@@ -1,17 +1,11 @@
 package com.kyonggi.cellification.data.remote.service
 
-import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
-import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import okhttp3.MultipartBody
 import retrofit2.Response
 import retrofit2.http.*
 
 interface CellService {
-
-//    @GET("/capstone-cell-service/cells/")
-//    suspend fun getAllCells(): Response<List<Cell>>
-
     //cell 생성 testing     이제 멀티파트 추가해서 ㄱ이미지 보내기
     @Multipart
     @POST("/capstone-cell-service/{userId}/cells")

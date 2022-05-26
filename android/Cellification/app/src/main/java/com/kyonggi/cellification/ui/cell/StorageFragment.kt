@@ -169,12 +169,6 @@ class StorageFragment : Fragment() {
     private fun deleteDialogProcess(position: Int, builder: AlertDialog.Builder, tabPos: Int) {
         val dialog = CustomAlertDialog(requireContext())
         dialog.init("삭제하시겠습니까?")
-//        val dialog = builder.setMessage("삭제 하시겠습니까?")
-//            .setPositiveButton("삭제") { _, _ -> }
-//            .setNegativeButton("취소") { _, _ -> }
-//            .create()
-//        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-//        dialog.show()
         dialog.getPositive().setOnClickListener {
             handler.postDelayed({
                 when (tabPos) {

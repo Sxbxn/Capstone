@@ -1,8 +1,6 @@
 package com.kyonggi.cellification.repository.cell.datasource
 
-import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
-import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import okhttp3.MultipartBody
 import retrofit2.Response
 
