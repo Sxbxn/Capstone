@@ -1,17 +1,13 @@
 package com.kyonggi.cellification.ui.cell
 
-import android.app.AlertDialog
+import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.view.Gravity
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
@@ -22,7 +18,7 @@ import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.databinding.ActivityMainBinding
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.login.LogInActivity
-import com.kyonggi.cellification.ui.viewmodel.UserViewModel
+import com.kyonggi.cellification.utils.CustomAlertDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,7 +26,6 @@ class MainActivity : AppCompatActivity() {
     private var backPressedTime: Long = 0
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainDrawerLayout: DrawerLayout
-    private val userViewModel: UserViewModel by viewModels()
     private val token = App.prefs.token
     private val handler = Handler(Looper.getMainLooper())
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         initNavigationView()
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables", "SetTextI18n")
     private fun initNavigationView() {
         if (token != null) {
             binding.mainNavigationView.menu[0].title = "LOG OUT"
@@ -76,14 +72,9 @@ class MainActivity : AppCompatActivity() {
                     changeFragment(SettingsFragment())
                 }
                 R.id.nav_credit -> {
-                    val builder = AlertDialog.Builder(this, R.style.DeleteDialog)
-                    val dialog = builder.setTitle("만든 사람들")
-                        .setView(R.layout.people)
-                        .setPositiveButton("확인") { _, _ -> }
-                        .create()
-                    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
-                    dialog.setCancelable(false)
-                    dialog.show()
+                    val view = layoutInflater.inflate(R.layout.people,null)
+                    val dialog = CustomAlertDialog(this)
+                    dialog.initWithView("만든 사람들", view)
                 }
             }
             true

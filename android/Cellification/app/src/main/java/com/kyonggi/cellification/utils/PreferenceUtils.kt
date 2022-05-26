@@ -2,7 +2,6 @@ package com.kyonggi.cellification.utils
 
 import android.app.Activity
 import android.content.Context
-import android.content.SharedPreferences
 
 class PreferenceUtils(context: Context) {
     private val prefName="prefs"

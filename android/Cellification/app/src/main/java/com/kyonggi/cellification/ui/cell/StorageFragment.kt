@@ -3,8 +3,6 @@ package com.kyonggi.cellification.ui.cell
 import android.app.AlertDialog
 import android.content.Context
 import android.content.res.Resources
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -28,6 +26,7 @@ import com.kyonggi.cellification.ui.cell.adapter.ItemClickListener
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.utils.APIResponse
+import com.kyonggi.cellification.utils.CustomAlertDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -131,7 +130,6 @@ class StorageFragment : Fragment() {
     }
 
     private fun getLocalCellListFromUser() {
-        // 매개변수 바꿔줘야함
         cellViewModel.getCellsQueryEmail(App.prefs.userId.toString())
         cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer {
             currentLocalData = it
@@ -169,13 +167,15 @@ class StorageFragment : Fragment() {
     }
 
     private fun deleteDialogProcess(position: Int, builder: AlertDialog.Builder, tabPos: Int) {
-        val dialog = builder.setMessage("삭제 하시겠습니까?")
-            .setPositiveButton("삭제") { _, _ -> }
-            .setNegativeButton("취소") { _, _ -> }
-            .create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.show()
-        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener {
+        val dialog = CustomAlertDialog(requireContext())
+        dialog.init("삭제하시겠습니까?")
+//        val dialog = builder.setMessage("삭제 하시겠습니까?")
+//            .setPositiveButton("삭제") { _, _ -> }
+//            .setNegativeButton("취소") { _, _ -> }
+//            .create()
+//        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+//        dialog.show()
+        dialog.getPositive().setOnClickListener {
             handler.postDelayed({
                 when (tabPos) {
                     0 -> {
@@ -200,12 +200,12 @@ class StorageFragment : Fragment() {
                         recyclerLocalViewAdapter.notifyItemRemoved(position)
                     }
                 }
-                dialog.dismiss()
+                dialog.exit()
             }, 400)
         }
-        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setOnClickListener {
+        dialog.getNegative().setOnClickListener {
             handler.postDelayed({
-                dialog.dismiss()
+                dialog.exit()
             }, 400)
         }
     }

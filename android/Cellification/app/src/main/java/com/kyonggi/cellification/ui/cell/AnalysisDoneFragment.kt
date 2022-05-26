@@ -1,7 +1,6 @@
 package com.kyonggi.cellification.ui.cell
 
 import android.content.Context
-import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -49,6 +48,7 @@ class AnalysisDoneFragment: Fragment() {
 
             GlideApp.with(binding.root)
                 .load(url)
+                .transform(CenterCrop(), RoundedCorners(15))
                 .placeholder(R.drawable.ic_baseline_settings_24)
                 .error(R.drawable.ic_baseline_settings_24)
                 .fallback(R.drawable.ic_baseline_settings_24)

@@ -1,7 +1,5 @@
 package com.kyonggi.cellification.ui.di
 
-import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import com.kyonggi.cellification.data.remote.service.CellService
 import com.kyonggi.cellification.data.remote.service.UserService
 import com.kyonggi.cellification.utils.AuthInterceptor

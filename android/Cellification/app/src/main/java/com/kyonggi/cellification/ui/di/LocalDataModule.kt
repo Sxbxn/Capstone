@@ -1,6 +1,5 @@
 package com.kyonggi.cellification.ui.di
 
-import androidx.room.RoomDatabase
 import com.kyonggi.cellification.data.local.dao.CellDao
 import com.kyonggi.cellification.repository.cell.datasource.CellLocalDataSource
 import com.kyonggi.cellification.repository.cell.datasourceImpl.CellLocalDataSourceImpl

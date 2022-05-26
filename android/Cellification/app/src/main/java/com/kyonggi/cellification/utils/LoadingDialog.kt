@@ -6,7 +6,6 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.view.View
 import android.widget.Button
-import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.DialogLoadingBinding
 
 class LoadingDialog (context: Context) : Dialog(context){

@@ -1,9 +1,6 @@
 package com.kyonggi.cellification.ui.cell
 
 import android.annotation.SuppressLint
-import android.app.AlertDialog
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.databinding.FragmentResultRecyclerBinding
+import com.kyonggi.cellification.utils.CustomAlertDialog
 import com.kyonggi.cellification.utils.GlideApp
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -53,8 +51,8 @@ class ResultRecyclerFragment : Fragment() {
         }
     }
     private fun showImage(){
-        val builder = AlertDialog.Builder(requireContext(), R.style.DeleteDialog)
         val imgView = layoutInflater.inflate(R.layout.result_image,null)
+        val dialog = CustomAlertDialog(requireContext())
         GlideApp.with(binding.root)
             .load(url)
             .placeholder(R.drawable.ic_baseline_settings_24)
@@ -63,11 +61,6 @@ class ResultRecyclerFragment : Fragment() {
             .override(1000,1000) // 추후조정
             .into(imgView.findViewById(R.id.result_image))
 
-        val dialog = builder.setTitle("결과 이미지")
-            .setView(imgView)
-            .setPositiveButton("확인"){_,_->}
-            .create()
-        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        dialog.show()
+        dialog.initWithView("결과 이미지", imgView)
     }
 }

@@ -2,6 +2,8 @@ package com.kyonggi.cellification.ui.cell
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,12 +15,14 @@ import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.databinding.FragmentResultBinding
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
+import com.kyonggi.cellification.utils.CustomAlertDialog
 
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class ResultFragment : Fragment() {
     private val cellViewModel: CellViewModel by viewModels()
+    private val handler = Handler(Looper.getMainLooper())
     private lateinit var cell: Cell
     private lateinit var binding: FragmentResultBinding
     override fun onCreateView(
@@ -47,10 +51,22 @@ class ResultFragment : Fragment() {
     private fun setOnButtonClickListener() {
         binding.button.setOnClickListener {
             //local db에 저장
-            cellViewModel.insertCell(cell)
-            cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer{
-                Toast.makeText(requireContext(),"저장 성공", Toast.LENGTH_SHORT).show()
-            })
+            val dialog = CustomAlertDialog(requireContext())
+            dialog.init("로컬 DB에 저장하시겠습니까?")
+            dialog.getPositive().setOnClickListener {
+                cellViewModel.insertCell(cell)
+                cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer{
+                    Toast.makeText(requireContext(),"저장 성공", Toast.LENGTH_SHORT).show()
+                })
+                handler.postDelayed({
+                    dialog.exit()
+                }, 400)
+            }
+            dialog.getNegative().setOnClickListener {
+                handler.postDelayed({
+                    dialog.exit()
+                }, 400)
+            }
         }
     }
     @SuppressLint("SetTextI18n")

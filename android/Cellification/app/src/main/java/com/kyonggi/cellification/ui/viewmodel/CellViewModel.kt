@@ -5,9 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.kyonggi.cellification.data.model.cell.Cell
-import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
-import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import com.kyonggi.cellification.repository.cell.CellRepository
 import com.kyonggi.cellification.utils.APIResponse
 import dagger.hilt.android.lifecycle.HiltViewModel

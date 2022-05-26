@@ -1,9 +1,7 @@
 package com.kyonggi.cellification.repository.cell
 
 import com.kyonggi.cellification.data.model.cell.Cell
-import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
-import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import com.kyonggi.cellification.repository.cell.datasource.CellLocalDataSource
 import com.kyonggi.cellification.repository.cell.datasource.CellRemoteDataSource
 import com.kyonggi.cellification.utils.APIResponse

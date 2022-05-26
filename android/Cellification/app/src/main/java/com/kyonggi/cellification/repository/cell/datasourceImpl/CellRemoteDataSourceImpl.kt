@@ -1,16 +1,11 @@
 package com.kyonggi.cellification.repository.cell.datasourceImpl
 
-import com.kyonggi.cellification.data.model.cell.Cell
-import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
-import com.kyonggi.cellification.data.model.cell.ResponseSpecificUserCell
 import com.kyonggi.cellification.data.remote.service.CellService
-
 import com.kyonggi.cellification.repository.cell.datasource.CellRemoteDataSource
 import okhttp3.MultipartBody
 import retrofit2.Response
-import retrofit2.http.Multipart
-import javax.inject.Inject
+
 
 class CellRemoteDataSourceImpl(
     private val cellService: CellService
