@@ -17,6 +17,7 @@
 
         <ProgressBar
             style="?android:attr/progressBarStyleSmall"
+            android:id="@+id/pgbar"
             android:indeterminateTint="@color/livecell_backgroundColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>

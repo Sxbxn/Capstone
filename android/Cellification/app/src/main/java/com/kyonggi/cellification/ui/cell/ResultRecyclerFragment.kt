@@ -18,6 +18,7 @@ import dagger.hilt.android.AndroidEntryPoint
 class ResultRecyclerFragment : Fragment() {
 
     private lateinit var binding: FragmentResultRecyclerBinding
+    private lateinit var url: String
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -33,7 +34,7 @@ class ResultRecyclerFragment : Fragment() {
             val liveCell = requireArguments().getInt("liveCell")
             val deadCell = requireArguments().getInt("deadCell")
             val viability = requireArguments().getDouble("viability")
-
+            url = requireArguments().getString("url")!!
             initView(totalCell,liveCell,deadCell,viability)
         }
         binding.showImage.setOnClickListener{
@@ -55,7 +56,7 @@ class ResultRecyclerFragment : Fragment() {
         val builder = AlertDialog.Builder(requireContext(), R.style.DeleteDialog)
         val imgView = layoutInflater.inflate(R.layout.result_image,null)
         GlideApp.with(binding.root)
-            .load("https://capstone-taekang-bucket.s3.ap-northeast-2.amazonaws.com/166443.jpg")
+            .load(url)
             .placeholder(R.drawable.ic_baseline_settings_24)
             .error(R.drawable.ic_baseline_settings_24)
             .fallback(R.drawable.ic_baseline_settings_24)

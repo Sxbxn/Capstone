@@ -9,7 +9,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageButton
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
@@ -18,12 +17,8 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.kyonggi.cellification.R
-import com.kyonggi.cellification.data.model.cell.Cell
-import com.kyonggi.cellification.data.model.cell.RequestCell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
-import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.ui.viewmodel.UserViewModel
@@ -32,10 +27,8 @@ import com.kyonggi.cellification.utils.GlideApp
 import com.kyonggi.cellification.utils.LoadingDialog
 import com.kyonggi.cellification.utils.getFullPathFromUri
 import dagger.hilt.android.AndroidEntryPoint
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import java.io.File
 
@@ -68,7 +61,7 @@ class AnalysisFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         binding = FragmentAnalysisBinding.inflate(layoutInflater)
         return binding.root
@@ -93,9 +86,7 @@ class AnalysisFragment : Fragment() {
                         .transform(CenterCrop(), RoundedCorners(15))
                         .into(binding.imageButtonImageSelect)
 
-                    println(uri.toString())
                     sendFile = File(absoluteUri!!)
-                    println(sendFile.absolutePath.toString())
                 }
             }
 
@@ -120,95 +111,94 @@ class AnalysisFragment : Fragment() {
                 Toast.makeText(requireContext(), "이미지를 불러와 주십시오", Toast.LENGTH_SHORT).show()
             } else {
                 var fileName = sendFile.name
-                val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
+                val requestFile = sendFile.asRequestBody("image/jpeg".toMediaTypeOrNull())
 
                 val token = "Bearer " + App.prefs.token.toString()
                 val body = MultipartBody.Part.createFormData("file", fileName, requestFile)
+                val userId = App.prefs.userId.toString()
                 // test 공간 ------------------
                 //--------------
-                val cell = Cell(0,9,1,"",90.0,App.prefs.userId.toString())
-                makeLocalCellTest(cell)
+//                val cell = Cell(0,9,1,"",90.0,App.prefs.userId.toString())
+//                makeLocalCellTest(cell)
                 // --------------
 //                makeCellTest(token, App.prefs.userId.toString())
                 // --------------
 //                sendCellImage(token, body)
                 // --------------
                 //실제 쓸거
-//                analysisCell(token,body)
+                analysisCell(token, body, userId)
 
                 // test 공간 ------------------
             }
         }
     }
-    private fun analysisCell(token:String, body:MultipartBody.Part){
-        /***
-            private lateinit var analysisData: ResponseCell   -- 전역변수 선역
-            cellViewModel.함수(body)
-            cellViewModel.state.observe(viewLifecycleOwner, Observer {
-                loading.setInvisible()
-                when (it) {
-                    is APIResponse.Success -> {
-                           analysisData = it.data -- 이 데이터를 AnalysisDoneFragment 에 전달   --- 이미지 정보는 현재 프래그먼트에서 사용
-                            mainActivity.changeFragment(AnalysisDoneFragment(),analysisData)
-                    }
-                    is APIResponse.Error -> {
-                            //분석 실패
-                            loading.setError()
-                    }
-                    is APIResponse.loading -> {
-                        loading.setVisible()
-                    }
-                }
-            })
-         ***/
-        mainActivity.changeFragment(AnalysisDoneFragment())
-    }
-    //cell 생성 test
-    private val requestCell = RequestCell(10, 7, 3)
-    private fun makeCellTest(token: String, userid: String) {
-        cellViewModel.makeCellTest(token, requestCell, userid)
+
+    private fun analysisCell(token: String, body: MultipartBody.Part, userId: String) {
+        cellViewModel.makeCell(token, body, userId)
         cellViewModel.state.observe(viewLifecycleOwner, Observer {
             when (it) {
                 is APIResponse.Success -> {
-                    // success code
                     Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
+                    analysisData =
+                        it.data!! // 이 데이터를 AnalysisDoneFragment 에 전달   --- 이미지 정보는 현재 프래그먼트에서 사용
+                    mainActivity.changeFragment(AnalysisDoneFragment(), analysisData)
                 }
                 is APIResponse.Error -> {
-                    // error code
-                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
+                    //분석 실패
+                    loading.setError()
                 }
                 is APIResponse.Loading -> {
-                    // loading code
+                    loading.setVisible()
                 }
             }
         })
     }
+    //cell 생성 test
+//    private val requestCell = RequestCell(10, 7, 3)
+//    private fun makeCellTest(token: String, userid: String) {
+//        cellViewModel.makeCellTest(token, requestCell, userid)
+//        cellViewModel.state.observe(viewLifecycleOwner, Observer {
+//            when (it) {
+//                is APIResponse.Success -> {
+//                    // success code
+//                    Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
+//                }
+//                is APIResponse.Error -> {
+//                    // error code
+//                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
+//                }
+//                is APIResponse.Loading -> {
+//                    // loading code
+//                }
+//            }
+//        })
+//    }
 
     //매개변수 바꿔야함
-    private fun sendCellImage(token: String, body: MultipartBody.Part) {
-        userViewModel.sendCellImage(token, body)
-        userViewModel.sendCell.observe(requireActivity(), Observer {
-            when (it) {
-                is APIResponse.Success -> {
-                    // success code
-//                    response.data = ResponseCells
-                    Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
-                }
-                is APIResponse.Error -> {
-                    // error code
-                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
-                }
-                is APIResponse.Loading -> {
-                    // loading code
-                }
-            }
-        })
-    }
+//    private fun sendCellImage(token: String, body: MultipartBody.Part) {
+//        userViewModel.sendCellImage(token, body)
+//        userViewModel.sendCell.observe(requireActivity(), Observer {
+//            when (it) {
+//                is APIResponse.Success -> {
+//                    // success code
+////                    response.data = ResponseCells
+//                    Toast.makeText(requireActivity(), "생성 성공", Toast.LENGTH_SHORT).show()
+//                }
+//                is APIResponse.Error -> {
+//                    // error code
+//                    Toast.makeText(requireActivity(), "생성 실패", Toast.LENGTH_SHORT).show()
+//                }
+//                is APIResponse.Loading -> {
+//                    // loading code
+//                }
+//            }
+//        })
+//    }
 
-    private fun makeLocalCellTest(cell: Cell) {
-        cellViewModel.insertCell(cell)
-        cellViewModel.stateLocal.observe(requireActivity(), Observer {
-            println(it.toString())
-        })
-    }
+//    private fun makeLocalCellTest(cell: Cell) {
+//        cellViewModel.insertCell(cell)
+//        cellViewModel.stateLocal.observe(requireActivity(), Observer {
+//            println(it.toString())
+//        })
+//    }
 }

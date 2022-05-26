@@ -1,7 +1,9 @@
 package com.kyonggi.cellification.ui.cell
 
-import android.app.Activity
+import android.app.AlertDialog
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
@@ -14,7 +16,6 @@ import androidx.core.view.GravityCompat
 import androidx.core.view.get
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.data.model.cell.Cell
 import com.kyonggi.cellification.data.model.cell.ResponseCell
@@ -62,7 +63,7 @@ class MainActivity : AppCompatActivity() {
                     } else {
                         App.prefs.clear()
                         handler.postDelayed({
-                            mainDrawerLayout.closeDrawer(Gravity.LEFT)
+                            mainDrawerLayout.closeDrawer(GravityCompat.START)
                         }, 100)
                         startActivity(Intent(this@MainActivity, MainActivity::class.java))
                         finish()
@@ -70,12 +71,19 @@ class MainActivity : AppCompatActivity() {
                 }
                 R.id.nav_setting -> {
                     handler.postDelayed({
-                        mainDrawerLayout.closeDrawer(Gravity.LEFT)
+                        mainDrawerLayout.closeDrawer(GravityCompat.START)
                     }, 100)
                     changeFragment(SettingsFragment())
                 }
                 R.id.nav_credit -> {
-
+                    val builder = AlertDialog.Builder(this, R.style.DeleteDialog)
+                    val dialog = builder.setTitle("만든 사람들")
+                        .setView(R.layout.people)
+                        .setPositiveButton("확인") { _, _ -> }
+                        .create()
+                    dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+                    dialog.setCancelable(false)
+                    dialog.show()
                 }
             }
             true
@@ -113,9 +121,8 @@ class MainActivity : AppCompatActivity() {
         bundle.putInt("liveCell",data.liveCell)
         bundle.putInt("deadCell",data.deadCell)
         bundle.putDouble("viability",data.viability)
-        bundle.putString("createAt", data.createAt.toString())
         bundle.putString("userId",data.userId)
-//        bundle.putString("url",data.url)
+        bundle.putString("url",data.url)
         fragment.arguments = bundle
         supportFragmentManager
             .beginTransaction()
@@ -128,7 +135,7 @@ class MainActivity : AppCompatActivity() {
         bundle.putInt("liveCell",data.liveCell)
         bundle.putInt("deadCell",data.deadCell)
         bundle.putDouble("viability",data.viability)
-//        bundle.putString("url",data.url)
+        bundle.putString("url",data.imageUrl)
         fragment.arguments = bundle
         supportFragmentManager
             .beginTransaction()

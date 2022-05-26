@@ -22,6 +22,7 @@ class LoadingDialog (context: Context) : Dialog(context){
 
     fun setVisible() {
         this.show()
+//        binding.pgbar.isIndeterminate = true
     }
 
     fun setInvisible() {
