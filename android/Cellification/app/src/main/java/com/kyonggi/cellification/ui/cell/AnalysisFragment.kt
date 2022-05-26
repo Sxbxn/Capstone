@@ -70,6 +70,12 @@ class AnalysisFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loading = LoadingDialog(requireContext())
+        loading.cancelButton().setOnClickListener {
+            loading.setInvisible()
+        }
+        loading.retryButton().setOnClickListener {
+            loading.setInvisible()
+        }
         setOnImageButtonClickListener()
         setOnAnalysisButtonClickListener()
     }
@@ -142,10 +148,12 @@ class AnalysisFragment : Fragment() {
                     analysisData =
                         it.data!! // 이 데이터를 AnalysisDoneFragment 에 전달   --- 이미지 정보는 현재 프래그먼트에서 사용
                     mainActivity.changeFragment(AnalysisDoneFragment(), analysisData)
+                    loading.dismiss()
                 }
                 is APIResponse.Error -> {
                     //분석 실패
                     loading.setError()
+                    loading.setInvisible()
                 }
                 is APIResponse.Loading -> {
                     loading.setVisible()

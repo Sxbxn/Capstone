@@ -51,12 +51,13 @@ class CellAdapter(
         private val cellCnt = binding.cellCountText
         private val cellViability = binding.cellViabilityText
         private val cellImage = binding.cellImage
+
         fun bind(cell: ResponseCell) {
             // cell 데이터와 바인드
             cellCnt.text = res.getString(R.string.total_count, cell.totalCell)
             cellViability.text = res.getString(R.string.recycler_percent, cell.viability)
             GlideApp.with(itemView.context)
-                .load("https://capstone-taekang-bucket.s3.ap-northeast-2.amazonaws.com/166443.jpg")
+                .load(cell.url)
                 .placeholder(R.drawable.ic_baseline_settings_24)
                 .error(R.drawable.ic_baseline_settings_24)
                 .fallback(R.drawable.ic_baseline_settings_24)

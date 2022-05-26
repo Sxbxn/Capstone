@@ -20,8 +20,9 @@ class HttpClientModule {
             .addInterceptor(HttpLoggingInterceptor().apply {
                 this.level = HttpLoggingInterceptor.Level.BODY
             })
-            .connectTimeout(3, TimeUnit.MINUTES)
-            .writeTimeout(3,TimeUnit.MINUTES)
+            .connectTimeout(10, TimeUnit.MINUTES)
+            .writeTimeout(10,TimeUnit.MINUTES)
+            .readTimeout(10, TimeUnit.MINUTES)
             .build()
     }
 }

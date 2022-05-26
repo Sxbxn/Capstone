@@ -12,6 +12,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.kyonggi.cellification.R
 import com.kyonggi.cellification.data.model.cell.ResponseCell
 import com.kyonggi.cellification.databinding.FragmentAnalysisDoneBinding
+import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.utils.GlideApp
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -43,7 +44,7 @@ class AnalysisDoneFragment: Fragment() {
             val liveCell = requireArguments().getInt("liveCell")
             val deadCell = requireArguments().getInt("deadCell")
             val viability = requireArguments().getDouble("viability")
-            val userId = requireArguments().getString("userId")
+            val userId = App.prefs.userId.toString()
             val url = requireArguments().getString("url")
 
             GlideApp.with(binding.root)
@@ -55,11 +56,6 @@ class AnalysisDoneFragment: Fragment() {
 
             analysisData = ResponseCell(cellId!!,totalCell,liveCell,deadCell,viability,url!!,userId!!)
         }
-
-    //        GlideApp.with(requireContext())
-//            .load(R.drawable.result_hard)
-//            .transform(CenterCrop(), RoundedCorners(15))
-//            .into(binding.analysisCompleteImage)
     }
 
     private fun setOnReselectOnClickListener() {

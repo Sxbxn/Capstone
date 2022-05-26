@@ -47,7 +47,7 @@ class ResultRecyclerFragment : Fragment() {
         with(binding) {
             totalCountText.text =
                 "Total Count: $total"
-            viability.text = "$Viability%"
+            viability.text = String.format("%.2f",Viability) + "%"
             liveCell.text = live.toString()
             dieCell.text = dead.toString()
         }

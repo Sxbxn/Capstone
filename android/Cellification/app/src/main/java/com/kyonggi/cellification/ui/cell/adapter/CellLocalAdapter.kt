@@ -56,7 +56,7 @@ class CellLocalAdapter(
             cellCnt.text = res.getString(R.string.total_count, (cell.liveCell + cell.deadCell))
             cellViability.text = res.getString(R.string.recycler_percent, cell.viability)
             GlideApp.with(itemView.context)
-                .load("https://capstone-taekang-bucket.s3.ap-northeast-2.amazonaws.com/166443.jpg")
+                .load(cell.imageUrl)
                 .placeholder(R.drawable.ic_baseline_settings_24)
                 .error(R.drawable.ic_baseline_settings_24)
                 .fallback(R.drawable.ic_baseline_settings_24)
