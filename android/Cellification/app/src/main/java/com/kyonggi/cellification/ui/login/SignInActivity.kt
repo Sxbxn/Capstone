@@ -76,8 +76,10 @@ class SignInActivity : AppCompatActivity() {
             buttonSignIn.setOnClickListener {
                 user = User(email, name, pwd)
                 if (checkValidation()) {
-                    // 회원가입 요청
-                    requestSignIn(user)
+                    if (getConnectivityStatus(applicationContext)) {
+                        // 회원가입 요청
+                        requestSignIn(user)
+                    }
                 }
             }
         }

@@ -53,6 +53,7 @@ class ResultFragment : Fragment() {
             //local db에 저장
             val dialog = CustomAlertDialog(requireContext())
             dialog.init("로컬 DB에 저장하시겠습니까?")
+            dialog.getPositive().text ="저장"
             dialog.getPositive().setOnClickListener {
                 cellViewModel.insertCell(cell)
                 cellViewModel.stateListLocal.observe(viewLifecycleOwner, Observer{

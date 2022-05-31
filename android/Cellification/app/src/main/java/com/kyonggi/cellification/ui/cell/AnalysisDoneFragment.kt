@@ -47,7 +47,7 @@ class AnalysisDoneFragment: Fragment() {
             val url = requireArguments().getString("url")
 
             GlideApp.with(binding.root)
-                .load(url)
+                .load(url!!)
                 .transform(CenterCrop(), RoundedCorners(15))
                 .placeholder(R.drawable.ic_baseline_settings_24)
                 .error(R.drawable.ic_baseline_settings_24)

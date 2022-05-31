@@ -27,6 +27,7 @@ import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.utils.APIResponse
 import com.kyonggi.cellification.utils.CustomAlertDialog
+import com.kyonggi.cellification.utils.getConnectivityStatus
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -59,7 +60,7 @@ class StorageFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         changeView(0)
         tabSelected()
-        if(App.prefs.userId != null)
+        if (App.prefs.userId != null)
             searchQuery(0)
     }
 
@@ -71,7 +72,7 @@ class StorageFragment : Fragment() {
                 binding.searchView.setQuery("", false)
                 binding.searchView.clearFocus()
                 changeView(pos!!)
-                if(App.prefs.userId != null)
+                if (App.prefs.userId != null)
                     searchQuery(pos)
             }
 
@@ -86,7 +87,9 @@ class StorageFragment : Fragment() {
     private fun changeView(position: Int) {
         when (position) {
             0 -> {
-                getRemoteCellListFromUser()
+                if (getConnectivityStatus(requireContext())) {
+                    getRemoteCellListFromUser()
+                }
             }
             1 -> {
                 getLocalCellListFromUser()
@@ -124,7 +127,8 @@ class StorageFragment : Fragment() {
                     // error code
                     Toast.makeText(requireActivity(), "로딩 실패", Toast.LENGTH_SHORT).show()
                 }
-                is APIResponse.Loading -> {}
+                is APIResponse.Loading -> {
+                }
             }
         })
     }

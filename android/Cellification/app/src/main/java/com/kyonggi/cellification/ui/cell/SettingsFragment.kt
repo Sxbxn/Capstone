@@ -17,6 +17,7 @@ import com.kyonggi.cellification.ui.login.LogInActivity
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.utils.CustomAlertDialog
 import com.kyonggi.cellification.utils.LoadingDialog
+import com.kyonggi.cellification.utils.getConnectivityStatus
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
@@ -77,29 +78,36 @@ class SettingsFragment : PreferenceFragmentCompat() {
     }
 
     private fun deleteCloud() {
-        val token = "Bearer " + App.prefs.token
-        cellViewModel.deleteAllCell(token, App.prefs.userId.toString())
-        cellViewModel.deleteAndSendCell.observe(this, Observer {
-            when (it) {
-                /**전체삭제시 data가 없어지게 된다. APIResponse 코드상 data가 null이면
-                 * error를 반환하기에 전체삭제로직에서는 반대로 error가 떠야 전체삭제가 정상적으로 이루어진 것이다.
-                 */
-                is APIResponse.Success -> {
-                    Toast.makeText(requireContext(), "삭제실패", Toast.LENGTH_SHORT).show()
+        if (getConnectivityStatus(requireContext())) {
+            val token = "Bearer " + App.prefs.token
+            cellViewModel.deleteAllCell(token, App.prefs.userId.toString())
+            cellViewModel.deleteAndSendCell.observe(this, Observer {
+                when (it) {
+                    /**전체삭제시 data가 없어지게 된다. APIResponse 코드상 data가 null이면
+                     * error를 반환하기에 전체삭제로직에서는 반대로 error가 떠야 전체삭제가 정상적으로 이루어진 것이다.
+                     */
+                    is APIResponse.Success -> {
+                        Toast.makeText(requireContext(), "삭제실패", Toast.LENGTH_SHORT).show()
+                    }
+                    is APIResponse.Error -> {
+                        Toast.makeText(requireContext(),
+                            "현 계정 Cloud 전체 Cell 삭제 성공",
+                            Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
-                is APIResponse.Error -> {
-                    Toast.makeText(requireContext(), "현 계정 Cloud 전체 Cell 삭제 성공", Toast.LENGTH_SHORT)
-                        .show()
-                }
-            }
-        })
+            })
+        }
     }
 
     private fun deleteLocal() {
-        cellViewModel.deleteAllLocalCell(App.prefs.userId.toString())
-        cellViewModel.stateListLocal.observe(this, Observer {
-            Toast.makeText(requireContext(), "현 계정 Local 전체 Cell 삭제 성공", Toast.LENGTH_SHORT).show()
-        })
+        if (getConnectivityStatus(requireContext())) {
+            cellViewModel.deleteAllLocalCell(App.prefs.userId.toString())
+            cellViewModel.stateListLocal.observe(this, Observer {
+                Toast.makeText(requireContext(), "현 계정 Local 전체 Cell 삭제 성공", Toast.LENGTH_SHORT)
+                    .show()
+            })
+        }
     }
 
     private fun logOut() {
@@ -122,24 +130,28 @@ class SettingsFragment : PreferenceFragmentCompat() {
         dialog.init("회원탈퇴 하시겠습니까?")
         dialog.getPositive().setOnClickListener {
             val token = "Bearer " + App.prefs.token
-            userViewModel.withdrawalUser(token, userId)
-            userViewModel.withdrawal.observe(this, Observer { response ->
-                when (response) {
-                    is APIResponse.Success -> {
-                        App.prefs.clear()
-                        Toast.makeText(requireContext(), "회원탈퇴 되었습니다.", Toast.LENGTH_SHORT).show()
-                        startActivity(Intent(requireContext(), LogInActivity::class.java).apply {
-                            this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
-                        })
+            if (getConnectivityStatus(requireContext())) {
+                userViewModel.withdrawalUser(token, userId)
+                userViewModel.withdrawal.observe(this, Observer { response ->
+                    when (response) {
+                        is APIResponse.Success -> {
+                            App.prefs.clear()
+                            Toast.makeText(requireContext(), "회원탈퇴 되었습니다.", Toast.LENGTH_SHORT)
+                                .show()
+                            startActivity(Intent(requireContext(),
+                                LogInActivity::class.java).apply {
+                                this.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY)
+                            })
+                        }
+                        is APIResponse.Error -> {
+                            loading.setError()
+                        }
+                        is APIResponse.Loading -> {
+                            loading.setVisible()
+                        }
                     }
-                    is APIResponse.Error -> {
-                        loading.setError()
-                    }
-                    is APIResponse.Loading -> {
-                        loading.setVisible()
-                    }
-                }
-            })
+                })
+            }
         }
         dialog.getNegative().setOnClickListener {
             handler.postDelayed({

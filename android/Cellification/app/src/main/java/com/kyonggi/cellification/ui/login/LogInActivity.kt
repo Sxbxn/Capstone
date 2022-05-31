@@ -65,7 +65,9 @@ class LogInActivity : AppCompatActivity() {
                     shake(editTextLoginId, this@LogInActivity)
                 } else {
                     // 로그인 요청
-                    requestLogin(userLogin)
+                    if (getConnectivityStatus(applicationContext)) {
+                        requestLogin(userLogin)
+                    }
                 }
             }
         }

@@ -22,10 +22,7 @@ import com.kyonggi.cellification.databinding.FragmentAnalysisBinding
 import com.kyonggi.cellification.ui.di.App
 import com.kyonggi.cellification.ui.viewmodel.CellViewModel
 import com.kyonggi.cellification.ui.viewmodel.UserViewModel
-import com.kyonggi.cellification.utils.APIResponse
-import com.kyonggi.cellification.utils.GlideApp
-import com.kyonggi.cellification.utils.LoadingDialog
-import com.kyonggi.cellification.utils.getFullPathFromUri
+import com.kyonggi.cellification.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
@@ -117,24 +114,15 @@ class AnalysisFragment : Fragment() {
                 Toast.makeText(requireContext(), "이미지를 불러와 주십시오", Toast.LENGTH_SHORT).show()
             } else {
                 var fileName = sendFile.name
-                val requestFile = sendFile.asRequestBody("image/jpeg".toMediaTypeOrNull())
+                val requestFile = sendFile.asRequestBody("image/*".toMediaTypeOrNull())
 
                 val token = "Bearer " + App.prefs.token.toString()
                 val body = MultipartBody.Part.createFormData("file", fileName, requestFile)
                 val userId = App.prefs.userId.toString()
-                // test 공간 ------------------
-                //--------------
-//                val cell = Cell(0,9,1,"",90.0,App.prefs.userId.toString())
-//                makeLocalCellTest(cell)
-                // --------------
-//                makeCellTest(token, App.prefs.userId.toString())
-                // --------------
-//                sendCellImage(token, body)
-                // --------------
                 //실제 쓸거
-                analysisCell(token, body, userId)
-
-                // test 공간 ------------------
+                if (getConnectivityStatus(requireContext())) {
+                    analysisCell(token, body, userId)
+                }
             }
         }
     }
