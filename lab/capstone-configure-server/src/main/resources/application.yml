@@ -14,6 +14,8 @@ spring:
       server:
         git:
           uri: https://github.com/KimTaeKang57/capstone-cloud-config.git
+          default-label: main
+          clone-on-start: true
 
 management:
   endpoints:
