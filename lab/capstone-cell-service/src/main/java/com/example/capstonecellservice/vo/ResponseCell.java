@@ -17,6 +17,7 @@ public class ResponseCell {
     private Double viability;
 
     private Date createAt;
+    private String url;
     private String userid;
 
 }

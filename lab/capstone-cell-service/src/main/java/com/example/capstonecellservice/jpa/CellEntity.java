@@ -26,6 +26,8 @@ public class CellEntity implements Serializable {
     private Integer deadCell;  // 죽은 세포 수
     @Column(nullable = false)
     private Double viability; // 몇 퍼센트의 세포가 생존해 있는지 나타내는 수치
+    @Column(nullable = false)
+    private String url;
 
     @Column(nullable = false)
     private String userId;

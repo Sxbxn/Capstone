@@ -1,14 +1,19 @@
 package com.example.capstonecellservice.service;
 
 import com.example.capstonecellservice.dto.CellDto;
+import com.example.capstonecellservice.dto.FlaskResponseDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.jpa.CellRepository;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.io.*;
 import java.util.UUID;
 
 @Service
@@ -23,8 +28,14 @@ public class CellServiceImpl implements CellService {
     }
 
     @Override
-    public CellDto createCell(CellDto cellDto) {
+    public CellDto createCell(CellDto cellDto, FlaskResponseDto flaskResponseDto) throws IOException, ParseException {
+
         cellDto.setCellId(UUID.randomUUID().toString());
+        cellDto.setTotalCell(Integer.parseInt(flaskResponseDto.getTotalCell()));
+        cellDto.setLiveCell(Integer.parseInt(flaskResponseDto.getLiveCell()));
+        cellDto.setDeadCell(Integer.parseInt(flaskResponseDto.getDeadCell()));
+        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
+        cellDto.setUrl(flaskResponseDto.getUrl());
 
         ModelMapper mapper = new ModelMapper();
         mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);

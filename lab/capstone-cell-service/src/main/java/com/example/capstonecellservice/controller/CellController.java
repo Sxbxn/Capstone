@@ -1,19 +1,13 @@
 package com.example.capstonecellservice.controller;
 
 import com.example.capstonecellservice.dto.CellDto;
-import com.example.capstonecellservice.dto.UrlDto;
+import com.example.capstonecellservice.dto.FlaskResponseDto;
 import com.example.capstonecellservice.jpa.CellEntity;
 import com.example.capstonecellservice.service.AwsS3Service;
 import com.example.capstonecellservice.service.CellService;
-import com.example.capstonecellservice.vo.FlaskResponseDto;
-import com.example.capstonecellservice.vo.RequestCell;
 import com.example.capstonecellservice.vo.ResponseCell;
-import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import com.fasterxml.jackson.annotation.PropertyAccessor;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Getter;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.convention.MatchingStrategies;
 
@@ -27,10 +21,10 @@ import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/")
@@ -45,23 +39,23 @@ public class CellController {
         this.awsS3Service = awsS3Service;
     }
 
-    //Create
-    //cell 새로 생성
-    @PostMapping("/{userId}/cells")
-    public ResponseEntity<ResponseCell> createCell(@PathVariable("userId") String userId, @RequestBody RequestCell cell) {
-        ModelMapper mapper = new ModelMapper();
-        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-
-        CellDto cellDto = mapper.map(cell, CellDto.class);
-        cellDto.setUserId(userId);
-
-        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
-        cellService.createCell(cellDto);
-
-        ResponseCell responseCell = mapper.map(cellDto, ResponseCell.class);
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(responseCell);
-    }
+//    //Create
+//    //cell 새로 생성
+//    @PostMapping("/{userId}/cells")
+//    public ResponseEntity<ResponseCell> createCell(@PathVariable("userId") String userId, @RequestBody RequestCell cell) {
+//        ModelMapper mapper = new ModelMapper();
+//        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
+//
+//        CellDto cellDto = mapper.map(cell, CellDto.class);
+//        cellDto.setUserId(userId);
+//
+//        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
+////        cellService.createCell(cellDto);
+//
+//        ResponseCell responseCell = mapper.map(cellDto, ResponseCell.class);
+//
+//        return ResponseEntity.status(HttpStatus.CREATED).body(responseCell);
+//    }
 
     //Read
     //user의 cell 리스트 조회
@@ -101,31 +95,31 @@ public class CellController {
     }
 
     /**
-     * Amazon S3에 이미지 업로드
+     * s3업로드 cell 생성
      */
-    // @PostMapping("/{userId}/cells")
-    @PostMapping("/images")
-    public UrlDto uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile) {
-        UrlDto urlDto = new UrlDto();
+    @PostMapping("/{userId}/cells")
+    public CellDto uploadImage(@RequestPart(value = "file", required = false) MultipartFile multipartFile,
+                              @PathVariable("userId") String userId)
+            throws IOException, org.json.simple.parser.ParseException {
+        CellDto cellDto = new CellDto();
+
+        System.out.println(multipartFile.getOriginalFilename());
+
         FlaskResponseDto flaskResponseDto = StartFlask(multipartFile.getOriginalFilename(), multipartFile);
 
-        /**
-         *
-         * 로컬에서 flask 를 통해 뭐 실행을 해
-         *
-         * cellDto.setCellId(UUID.randomUUID().toString());
-         * json 파일을 이제 cellDto에 저장,
-         * cellDto.set(totalcell), cellDto.set(livecell), cellDto.set(deadcell);
-         * 퍄일을 받거나, 파일을 어떻게 뭐 저장해서, 경로를 어떻게하진 모르겠지만 알아내서
-         * cellDto.setUrl(awsS3Service.uploadImage(multipartFIle));
-         *
-         */
+        ModelMapper mapper = new ModelMapper();
+        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 
-        urlDto.setUrl(awsS3Service.uploadImage(multipartFile));
+        cellDto.setUserId(userId);
+        cellDto.setCellId(UUID.randomUUID().toString());
+        cellDto.setTotalCell(Integer.parseInt(flaskResponseDto.getTotalCell()));
+        cellDto.setLiveCell(Integer.parseInt(flaskResponseDto.getLiveCell()));
+        cellDto.setDeadCell(Integer.parseInt(flaskResponseDto.getDeadCell()));
+        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
+        cellDto.setUrl(flaskResponseDto.getUrl());
+//        cellService.createCell(cellDto, flaskResponseDto);
 
-
-        return urlDto;
-        //return cellDto;
+        return cellDto;
     }
 
     /**
@@ -156,7 +150,8 @@ public class CellController {
             HttpHeaders headers = new HttpHeaders();
             headers.setContentType(MediaType.MULTIPART_FORM_DATA);
 
-            String url = "http://localhost:50000/AI";
+//            String url = "http://127.0.0.1:50000/Detection";
+            String url = "http://172.18.0.8:50000/Detection";
 
             HttpEntity<?> requestMessage = new HttpEntity<>(body, headers);
             response = restTemplate.postForEntity(url, requestMessage, String.class);
@@ -165,13 +160,12 @@ public class CellController {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.configure(DeserializationFeature.ACCEPT_EMPTY_STRING_AS_NULL_OBJECT, true);
             dto = objectMapper.readValue(response.getBody(), FlaskResponseDto.class);
+
         } catch (HttpStatusCodeException e) {
             httpStatus = HttpStatus.valueOf(e.getStatusCode().value());
         } catch (Exception e) {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
         }
-
-//        FlaskResponseDto flaskResponseDto = new FlaskResponseDto();
 
         return dto;
     }
