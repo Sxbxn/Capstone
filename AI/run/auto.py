@@ -6,10 +6,11 @@ import pandas as pd
 import json
 import boto3
 
+from m_config import ACCESS_KEY_ID, ACCESS_SECRET_KEY
+from m_config import BUCKET_NAME
+
 # path = "/Users/kimtaekang/Desktop/study/capstone/AI/run/result/predict"
-ACCESS_KEY_ID = '1'
-ACCESS_SECRET_KEY = '2'
-BUCKET_NAME = 'capstone-taekang-bucket'
+
 # dir = '/Users/kimtaekang/Desktop/study/capstone/AI/'
 dir = '/app/server/'
 test_input = dir + 'run/data/original/'

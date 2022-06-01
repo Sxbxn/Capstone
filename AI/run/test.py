@@ -28,24 +28,6 @@ eureka_client.init(eureka_server="49.50.163.44" + ":8761/eureka",
                    instance_port=rest_port)
 app = Flask(__name__)
 
-# ACCESS_KEY_ID = 'AKIAVHQSGFQYQ255KKMI'
-# ACCESS_SECRET_KEY = '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'
-# BUCKET_NAME = 'capstone-taekang-bucket'
-
-
-# def handle_upload_img(f):  # f = 파일명
-#     s3_client = boto3.client(
-#         's3',
-#         aws_access_key_id=ACCESS_KEY_ID,
-#         aws_secret_access_key=ACCESS_SECRET_KEY
-#     )
-#     response = s3_client.upload_file(
-#         '/Users/kimtaekang/Desktop/study/capstone/AI/run/result/predict/' + f, BUCKET_NAME, f)
-#     location = s3_client.get_bucket_location(Bucket=BUCKET_NAME)['LocationConstraint']
-#     image_url = f'https://{BUCKET_NAME}.s3.{location}.amazonaws.com/{f}'
-#
-#     return image_url
-
 
 @app.route('/info')
 def hello_world():
@@ -68,7 +50,7 @@ def file_upload():
     # img_url = handle_upload_img(filename)
 
     split_f = filename.split('.')[0]
-    with open(path+"/"+split_f+".json", "r") as json_file:
+    with open(path + "/" + split_f + ".json", "r") as json_file:
         json_data = json.load(json_file)
 
     print(json_data)
