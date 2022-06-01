@@ -76,8 +76,8 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/capstone-cell-service/(?<segment>.*), /$\{segment}
-#            - AuthorizationHeaderFilter
-        - id: capstone-detection-service
+            - AuthorizationHeaderFilter
+        - id: AI
           uri: lb://CAPSTONE-DETECTION-SERVICE
           predicates:
             - Path=/capstone-detection-service/**
