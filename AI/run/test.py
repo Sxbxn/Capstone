@@ -1,23 +1,50 @@
 import os
+import boto3
 
-from flask import Flask, request
+from flask import Flask, request, jsonify, json
 from werkzeug.utils import secure_filename
 import py_eureka_client.eureka_client as eureka_client
+import argparse
 from auto import predict
 
-# UPLOAD_FOLDER = '/Users/kimtaekang/Desktop/study/capstone/AI/Development_log/Assets'  # 업로드된 파일이 저장되는 곳
 ALLOWED_EXTENSIONS = set(['jpg'])  # 허용할 파일의 확장자들
 
 image_path = "/app/server/run/data/original"
+# image_path = "/Users/kimtaekang/Desktop/study/capstone/AI/run/data/original"
+path = "/app/server/run/result/predict"
+# path = "/Users/kimtaekang/Desktop/study/capstone/AI/run/result/predict"
 rest_port = 50000
 
-eureka_client.init(eureka_server="3.36.183.94" + ":8761/eureka",
+parser = argparse.ArgumentParser()
+parser.add_argument('host', nargs='?', type=str, default='localhost', help='ex) "localhost"')
+args = parser.parse_args()
+
+HOST_IP = args.host
+print("**************" + HOST_IP + "******************")
+
+# eureka_client.init(eureka_server="http://127.0.0.1:8761/eureka",
+eureka_client.init(eureka_server="49.50.163.44" + ":8761/eureka",
                    app_name="capstone-detection-service",
                    instance_port=rest_port)
 app = Flask(__name__)
 
+# ACCESS_KEY_ID = 'AKIAVHQSGFQYQ255KKMI'
+# ACCESS_SECRET_KEY = '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'
+# BUCKET_NAME = 'capstone-taekang-bucket'
 
-# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# def handle_upload_img(f):  # f = 파일명
+#     s3_client = boto3.client(
+#         's3',
+#         aws_access_key_id=ACCESS_KEY_ID,
+#         aws_secret_access_key=ACCESS_SECRET_KEY
+#     )
+#     response = s3_client.upload_file(
+#         '/Users/kimtaekang/Desktop/study/capstone/AI/run/result/predict/' + f, BUCKET_NAME, f)
+#     location = s3_client.get_bucket_location(Bucket=BUCKET_NAME)['LocationConstraint']
+#     image_url = f'https://{BUCKET_NAME}.s3.{location}.amazonaws.com/{f}'
+#
+#     return image_url
 
 
 @app.route('/info')
@@ -37,7 +64,16 @@ def file_upload():
     # auto.py 실행
     predict()
 
-    return filename
+    # 이미지 업로드
+    # img_url = handle_upload_img(filename)
+
+    split_f = filename.split('.')[0]
+    with open(path+"/"+split_f+".json", "r") as json_file:
+        json_data = json.load(json_file)
+
+    print(json_data)
+
+    return jsonify(json_data)
 
 
 if __name__ == '__main__':

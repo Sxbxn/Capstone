@@ -1,5 +1,8 @@
 Flask==2.1.2
 py-eureka-client==0.10.5
+boto3==1.23.10
+botocore==1.26.10
+s3transfer==0.5.2
 absl-py==1.0.0
 cachetools==5.0.0
 certifi==2021.10.8
@@ -25,6 +28,7 @@ protobuf==3.20.1
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycocotools==2.0.4
+PyMySQL==1.0.2
 pyparsing==3.0.8
 python-dateutil==2.8.2
 pytz==2022.1
@@ -35,12 +39,14 @@ rsa==4.8
 scipy==1.8.0
 seaborn==0.11.2
 six==1.16.0
+SQLAlchemy==1.4.36
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
 tensorboard-plugin-wit==1.8.1
 thop==0.0.31.post2005241907
 torch==1.11.0
 torch-tb-profiler==0.4.0
+torchaudio==0.11.0
 torchvision==0.12.0
 tqdm==4.64.0
 typing_extensions==4.2.0
