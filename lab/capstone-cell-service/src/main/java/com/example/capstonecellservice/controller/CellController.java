@@ -3,6 +3,7 @@ package com.example.capstonecellservice.controller;
 import com.example.capstonecellservice.dto.CellDto;
 import com.example.capstonecellservice.dto.FlaskResponseDto;
 import com.example.capstonecellservice.jpa.CellEntity;
+import com.example.capstonecellservice.jpa.CellRepository;
 import com.example.capstonecellservice.service.AwsS3Service;
 import com.example.capstonecellservice.service.CellService;
 import com.example.capstonecellservice.vo.ResponseCell;
@@ -32,30 +33,14 @@ public class CellController {
 
     CellService cellService;
     private AwsS3Service awsS3Service;
+    CellRepository cellRepository;
 
     @Autowired
-    public CellController(CellService cellService, AwsS3Service awsS3Service) {
+    public CellController(CellService cellService, AwsS3Service awsS3Service, CellRepository cellRepository) {
         this.cellService = cellService;
         this.awsS3Service = awsS3Service;
+        this.cellRepository = cellRepository;
     }
-
-//    //Create
-//    //cell 새로 생성
-//    @PostMapping("/{userId}/cells")
-//    public ResponseEntity<ResponseCell> createCell(@PathVariable("userId") String userId, @RequestBody RequestCell cell) {
-//        ModelMapper mapper = new ModelMapper();
-//        mapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
-//
-//        CellDto cellDto = mapper.map(cell, CellDto.class);
-//        cellDto.setUserId(userId);
-//
-//        cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
-////        cellService.createCell(cellDto);
-//
-//        ResponseCell responseCell = mapper.map(cellDto, ResponseCell.class);
-//
-//        return ResponseEntity.status(HttpStatus.CREATED).body(responseCell);
-//    }
 
     //Read
     //user의 cell 리스트 조회
@@ -118,6 +103,9 @@ public class CellController {
         cellDto.setViability((cellDto.getLiveCell() / (double) cellDto.getTotalCell()) * 100);
         cellDto.setUrl(flaskResponseDto.getUrl());
 //        cellService.createCell(cellDto, flaskResponseDto);
+
+        CellEntity cellEntity = mapper.map(cellDto, CellEntity.class);
+        cellRepository.save(cellEntity);
 
         return cellDto;
     }
