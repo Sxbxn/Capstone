@@ -14,7 +14,7 @@ spring:
     url: jdbc:mariadb://49.50.163.44:3306/capstone?allowPublicKeyRetrieval=true&useSSL=false
     driver-class-name: org.mariadb.jdbc.Driver
     username: root
-    password: xorkd13579!
+    password: 2
   jpa:
     hibernate:
       ddl-auto: update
@@ -37,7 +37,7 @@ cloud:
     s3:
       bucket: capstone-taekang-bucket
     credentials:
-      access-key: 1
+      access-key: 2
       secret-key: 2
     region:
       static: ap-northeast-2
