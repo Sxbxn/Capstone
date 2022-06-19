@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#22343C">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/loadingcellimage"/>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:autoSizeTextType="uniform"
+            android:text="@string/app_name"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="35sp"
+            android:textStyle="normal|bold" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditTextAppStyle"
+            android:theme="@style/EditTextAppStyle"
+            android:id="@+id/emailInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_login_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:drawableStart="@drawable/outline_person_24"
+                android:drawablePadding="10dp"
+                android:textColor="@color/white"
+                android:paddingBottom="16dp"
+                android:hint="@string/email_hint_text"
+                android:textColorHint="@color/menu_color"
+                android:textSize="14sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/EditTextAppStyle"
+            android:theme="@style/EditTextAppStyle"
+            android:id="@+id/pwdInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/cardview_backgroundColor">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editText_login_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/outline_lock_24"
+                android:drawablePadding="10dp"
+                android:textColor="@color/white"
+                android:paddingBottom="16dp"
+                android:hint="@string/pwd_hint_text"
+                android:textColorHint="@color/menu_color"
+                android:textSize="14sp"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_style"
+            android:text="@string/log_in_text"
+            android:textColor="@color/white" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/button_style"
+            android:text="@string/sign_in_text"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:text="@string/forget_pwd_text"
+            android:textColor="#00D4FF" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

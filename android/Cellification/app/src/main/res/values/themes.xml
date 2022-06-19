@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Cellification" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/bottom_navColor</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/livecell_backgroundColor</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/backgroundColor</item>
+        <!-- Customize your theme here. -->
+        <item name="preferenceTheme">@style/preference</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 상태바까지 view를 보여줄 수 있다-->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <!-- 상태바 색상-->
+        <item name="android:statusBarColor">#33D59F9F</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <!-- Query Text Color -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!-- Hint Color -->
+        <item name="android:textColorHint">@color/menu_color</item>
+        <!-- Icon Color -->
+        <item name="android:tint">@color/menu_color</item>
+    </style>
+
+    <style name="preference" parent="@style/PreferenceThemeOverlay">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="EditTextAppStyle" parent="Widget.Design.TextInputLayout">
+        <item name="colorControlNormal">@color/white</item>
+        <item name="colorControlActivated">@color/white</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="boxStrokeErrorColor">@color/white</item>
+        <item name="errorIconDrawable">@null</item>
+        <item name="hintAnimationEnabled">false</item>
+        <item name="hintEnabled">false</item>
+    </style>
+
+    <style name ="DeleteDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@drawable/dialog_style</item>
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:buttonBarNegativeButtonStyle">@style/ButtonStyle</item>
+        <item name="android:buttonBarPositiveButtonStyle">@style/ButtonStyle</item>
+    </style>
+    <style name="ButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/dialog_button</item>
+        <item name="android:background">@drawable/btn_ripple_effect</item>
+        <item name="android:clickable">true</item>
+    </style>
+</resources>

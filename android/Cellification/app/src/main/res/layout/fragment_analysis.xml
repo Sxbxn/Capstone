@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#22343C">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="top">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:autoSizeTextType="uniform"
+            android:text="CELLIFICATION"
+            android:textColor="@color/white"
+            android:textSize="35dp"
+            android:textStyle="normal|bold" />
+
+        <ImageButton
+            android:id="@+id/imageButton_image_select"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/dash_line"
+            android:contentDescription="uploadFile"
+            app:srcCompat="@drawable/ic_baseline_add_circle_outline" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/analysis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_style"
+            android:text="분석"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

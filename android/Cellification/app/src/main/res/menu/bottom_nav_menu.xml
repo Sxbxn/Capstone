@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/storage"
+        android:icon="@drawable/save_menu"
+        android:enabled="true"
+        android:title="저장소"
+        />
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/home_menu"
+        android:enabled="true"
+        android:title="홈"
+        />
+    <item
+        android:id="@+id/settting"
+        android:icon="@drawable/settings_menu"
+        android:enabled="true"
+        android:title="세팅"
+        />
+</menu>

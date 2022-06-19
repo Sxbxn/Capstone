@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_baseline_login"
+            android:title="LOG IN"></item>
+
+        <item android:title=""></item>
+        <item android:title=""></item>
+        <item android:title=""></item>
+    </group>
+    <group>
+        <item android:title="설정">
+            <menu>
+                <item
+                    android:id="@+id/nav_setting"
+                    android:icon="@drawable/ic_baseline_settings_gray"
+                    android:title="SETTING"></item>
+            </menu>
+        </item>
+    </group>
+    <group>
+        <item android:title="만든 사람들">
+            <menu>
+                <item
+                    android:id="@+id/nav_credit"
+                    android:icon="@drawable/ic_baseline_people_24"
+                    android:title="people"></item>
+            </menu>
+        </item>
+    </group>
+    <group>
+        <item android:title="©2022캡스톤디자인"></item>
+    </group>
+</menu>
