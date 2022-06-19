@@ -1,0 +1,11 @@
+server:
+  port: 8761 # test port, 0? : random port ??
+
+spring:
+  application:
+    name: capstone-discoveryservice
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-ㅇregistry: false
